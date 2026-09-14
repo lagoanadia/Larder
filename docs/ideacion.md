@@ -171,8 +171,41 @@ números (P1).
 
 ## 5 · Las 3 columnas (alcance)
 
-_Pendiente._
+| Lo construimos (Larder) | Lo hace Odoo (ERP) | No se hace este curso |
+|---|---|---|
+| Nevera: inventario + aviso de stock bajo + botones +/- | Catálogo maestro de productos y sus precios por tienda (Odoo Products + Pricelists) — Larder solo lo **consulta** vía API para la pestaña Prices | Escaneo de código de barras |
+| Lista de la compra compartida, con control de concurrencia (dos personas marcando a la vez) | Facturación real de la suscripción de 0,99€/mes, si algún día se cobrase de verdad (Odoo Invoicing) | Cobro real con tarjeta / pasarela de pago |
+| Historial de compras + cálculo de quién debe a quién (solo se calcula y se muestra, no se paga automáticamente) | | Notificaciones push |
+| Comparador de precios por tienda, resaltando el más barato | | Liquidar deudas de verdad (transferencias) |
+
+**Por qué así:** nadie os elegiría por construir vuestro propio sistema de
+facturación o de cobro con tarjeta — eso ya está resuelto y cambia con la
+normativa. Sí os elegirían por cómo lleváis la nevera y la lista
+compartida, que es donde está el dolor real (sección 1).
+
+**La rebanada vertical de P1, en una frase:**
+
+> "En P1, un hogar de A Coruña controla su nevera y organiza la lista de la
+> compra compartida sin usar el grupo de WhatsApp, y puede consultar su
+> historial de gasto repartido y comparar precios entre tiendas."
+
+**Orden de construcción:** Nevera → Lista (con concurrencia) → History →
+Prices. Cada una completa (pantalla + lógica + datos reales) antes de
+abrir la siguiente.
 
 ## 6 · Documento de una página
 
-_Pendiente — se rellena al final, resumiendo todo lo anterior._
+| Bloque | Contenido |
+|---|---|
+| **Nombre y mensaje** | **Larder** — Ayudamos a los hogares que comparten piso en A Coruña a controlar qué hay en la nevera y organizar la compra sin duplicados ni viajes extra, sin depender de un grupo de WhatsApp desordenado. |
+| **Público** | La persona que organiza la compra en un hogar compartido de A Coruña — estudiantes, parejas o cualquier grupo que comparte gastos. ~99.700 hogares accesibles en la zona (sección 3). |
+| **Problema** | Iago y [tu nombre] pierden 10-15 min cada vez que hacen la lista a ojo con papel y boli, van a la tienda 2 veces/semana sin planificar, y casi siempre acaban comprando algo duplicado o volviendo por algo olvidado — un gasto que ronda los 1.000€/año (sección 1). |
+| **Números** | 0,99€/mes por hogar. Coste fijo: 0€ (hosting gratuito). Punto de equilibrio: 1 hogar. Mercado accesible: ~99.700 hogares (sección 4). |
+| **Alcance de P1** | Nevera + Lista compartida (con concurrencia) + Historial de gasto + Comparador de precios (datos de precios vía Odoo). Facturación y cobro real, fuera de alcance (sección 5). |
+| **Canal** | Directo: el propio hogar (Iago, Nadia, Muxia y tú) es el primer usuario real — no hace falta convencer a nadie externo para la primera prueba de fuego. |
+| **Qué no haremos** | Escaneo de código de barras, cobro real con tarjeta, notificaciones push, liquidación automática de deudas (sección 5). |
+
+> **Nota sobre el nombre:** "Larder" es una palabra inglesa común (significa
+> "despensa"), lo que puede dificultar encontraros en un buscador frente a
+> resultados de diccionario — algo a revisar en el Bloque P5 (identidad),
+> no ahora. De momento se mantiene el nombre ya elegido.
