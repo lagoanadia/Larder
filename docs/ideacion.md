@@ -133,7 +133,41 @@ bien lograr que os conozcan, que es un problema de canal (P2), no de P1.
 
 ## 4 · Servilleta de 6 casillas
 
-_Pendiente._
+| Casilla | Contenido |
+|---|---|
+| Qué vendemos | Suscripción mensual por hogar (no por persona individual) |
+| A quién | La persona que suele encargarse de organizar la compra en un hogar compartido de A Coruña (estudiante, pareja o grupo que comparte gastos) |
+| A cuánto | 0,99 €/mes por hogar |
+| Qué nos cuesta | Coste fijo: 0 €/mes (nivel gratuito de Render + subdominio gratuito tipo `larder.onrender.com`, sin dominio propio de pago). Coste variable por hogar: 0 € |
+| Cuántos hacen falta | Punto de equilibrio: 1 hogar (con coste fijo 0, cualquier cliente ya es beneficio) |
+| Cuántos hay | ~99.700 hogares accesibles en A Coruña (sección 3) |
+
+**Punto de equilibrio:** margen por cliente = 0,99 € − 0 € = 0,99 €.
+Coste fijo ÷ margen = 0 € ÷ 0,99 € = 0 → en la práctica, **desde el primer
+hogar que pague, hay beneficio**, porque el fundador no adelanta dinero.
+
+> Decisión explícita: no se asume ningún coste de hosting de pago mientras
+> el proyecto no genere ingresos. Esto es válido y muy habitual en
+> proyectos indie, pero tiene un precio técnico que hay que declarar (ver
+> abajo), no solo económico.
+
+**Lectura honesta (y el matiz técnico que viene con "gratis"):** el nivel
+gratuito de Render tiene dos límites reales que afectan al proyecto:
+1. El servicio "duerme" tras un rato sin uso y tarda unos segundos en
+   despertar en la siguiente petición (mala primera impresión para un
+   usuario nuevo).
+2. El disco es **efímero**: si usamos SQLite tal cual, el archivo de la
+   base de datos puede perderse en cada despliegue o reinicio, salvo que
+   se configure almacenamiento persistente (que en Render ya no es
+   gratuito).
+
+Esto no invalida la decisión de no pagar — es información que hay que
+tener antes de decidir dónde vivirán los datos reales de producción más
+adelante (quizá valga usar el disco persistente solo cuando/si el
+proyecto consigue sus primeros hogares de pago). Y el reto de fondo sigue
+siendo el mismo: conseguir que alguien pague por algo que la competencia
+(WhatsApp, papel) da gratis — ese es un problema de canal (P2), no de
+números (P1).
 
 ## 5 · Las 3 columnas (alcance)
 
