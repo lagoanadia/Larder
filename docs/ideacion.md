@@ -84,7 +84,7 @@ enseñarlo en persona).
 |---|---|---|---|
 | **Mercado total** | Todos los hogares de España con 2+ personas | No se cuenta un número exacto: España tiene un tamaño medio de hogar de 2,50 personas, lo que indica que la mayoría de hogares ya son multi-persona | [INE, tamaño medio del hogar 2023](https://www.ine.es/jaxiT3/Tabla.htm?t=60132) |
 | **Mercado accesible** | ≈ 99.700 hogares en A Coruña ciudad | 249.261 habitantes ÷ 2,50 personas/hogar (media nacional aplicada a la ciudad — **es una estimación**, no un conteo directo de hogares de A Coruña) | Población: [INE/IGE 2024](https://hoydiario.es/noticias/galicia/demografia/poblacion-coruna-ine-2024.html) · Tamaño medio: INE 2023 |
-| **Mercado objetivo** | ≈ 650 pisos compartidos de estudiantes en A Coruña | Ver cálculo paso a paso abajo | UDC + Fundación CYD |
+| **Mercado objetivo** | ≈ 99.700 hogares no unipersonales de A Coruña (coincide con el accesible) | Ver nota de ampliación de segmento, abajo | Ver mercado accesible |
 
 ### Método de conteo del mercado objetivo (con supuestos explícitos)
 
@@ -104,17 +104,32 @@ que es una estimación gruesa, no un conteo. Además, deja fuera un segmento
 real que no es de estudiantes: pisos compartidos de jóvenes trabajadores,
 que también sufren el mismo problema pero no salen en estas estadísticas.
 
-**Nota para decidir:** este mercado objetivo se centra en estudiantes por
-ser el segmento con datos públicos más fáciles de encontrar, no
-necesariamente porque sea el mejor punto de partida. Puede convenir revisar
-esto en la conclusión final (sección 6), sobre todo si vuestro propio hogar
-no es un piso de estudiantes.
+**Nota de ampliación de segmento:** al decidir que Larder sirve igual a
+estudiantes, parejas o cualquier grupo que comparta piso y compra, se buscó
+un desglose público de "hogares no familiares / parejas sin hijos" en A
+Coruña para acotar mejor el objetivo — **no se encontró con la fecha y el
+detalle geográfico necesarios** (el INE tiene la categoría a nivel estatal,
+pero no un cruce fiable y reciente a nivel de A Coruña sin encadenar más
+suposiciones de las razonables). Es un resultado válido en sí mismo: mejor
+reconocer el límite de la búsqueda que inventar un porcentaje.
+
+**Consecuencia práctica:** si el producto sirve a cualquier hogar
+multi-persona, el mercado objetivo pasa a coincidir con el mercado
+accesible (~99.700 hogares). Lo que de verdad queda por acotar no es "qué
+tipo de hogar", sino el **canal de entrada** — por quién empezáis de
+verdad (vuestro propio círculo) — que se define en el documento de una
+página (paso 6), no aquí.
+
+El dato de ~650 pisos de estudiantes (arriba) se mantiene documentado como
+un **suelo verificable** dentro de ese mercado más amplio: sabemos que, como
+mínimo, esos existen con fuente pública.
 
 ### Conclusión (provisional, se cierra en el paso 4 — servilleta de números)
 
-Con ≈650 hogares objetivo en A Coruña, hay margen real de mercado si el
-punto de equilibrio (siguiente paso) pide un número bajo de "clientes". Si
-pidiera más de, digamos, 300-400, el modelo sería muy ajustado.
+Con un mercado accesible de ~99.700 hogares en A Coruña, hay margen de sobra
+para que el punto de equilibrio (siguiente paso) tenga sentido, incluso
+siendo conservadores. El riesgo ya no es "no hay suficiente gente" — es más
+bien lograr que os conozcan, que es un problema de canal (P2), no de P1.
 
 ## 4 · Servilleta de 6 casillas
 
