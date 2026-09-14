@@ -73,7 +73,48 @@ soluciones establecidas como Out of Milk fallan).
 
 ## 3 · Estudio de mercado
 
-_Pendiente._
+**Definición del mercado:** hogares de más de una persona que gestionan la
+compra y la nevera de forma conjunta. Delimitación geográfica: A Coruña
+ciudad, por ser la zona que se puede atender de verdad (canal directo,
+enseñarlo en persona).
+
+### Los 3 niveles
+
+| Nivel | Cifra | Cómo se calculó | Fuente |
+|---|---|---|---|
+| **Mercado total** | Todos los hogares de España con 2+ personas | No se cuenta un número exacto: España tiene un tamaño medio de hogar de 2,50 personas, lo que indica que la mayoría de hogares ya son multi-persona | [INE, tamaño medio del hogar 2023](https://www.ine.es/jaxiT3/Tabla.htm?t=60132) |
+| **Mercado accesible** | ≈ 99.700 hogares en A Coruña ciudad | 249.261 habitantes ÷ 2,50 personas/hogar (media nacional aplicada a la ciudad — **es una estimación**, no un conteo directo de hogares de A Coruña) | Población: [INE/IGE 2024](https://hoydiario.es/noticias/galicia/demografia/poblacion-coruna-ine-2024.html) · Tamaño medio: INE 2023 |
+| **Mercado objetivo** | ≈ 650 pisos compartidos de estudiantes en A Coruña | Ver cálculo paso a paso abajo | UDC + Fundación CYD |
+
+### Método de conteo del mercado objetivo (con supuestos explícitos)
+
+1. La UDC tiene >13.300 matriculados (curso 2025-26, ambos campus).
+2. El 31% de universitarios españoles cambia de ciudad para estudiar
+   (Fundación CYD) → **supuesto**: aplicamos ese % nacional a la UDC, sin
+   dato específico de la propia universidad → ≈ 4.123 estudiantes que se
+   mudan a A Coruña.
+3. De esos, el 55% elige piso compartido → ≈ 2.268 estudiantes viviendo en
+   piso compartido.
+4. **Supuesto**: un piso compartido tiene de media 3-4 personas → dividimos
+   entre 3,5 → **≈ 650 pisos compartidos de estudiantes**.
+
+**Margen de error reconocido:** esta cifra encadena 3 supuestos (el % de
+cambio de ciudad, el % que comparte piso, y el tamaño medio del piso), así
+que es una estimación gruesa, no un conteo. Además, deja fuera un segmento
+real que no es de estudiantes: pisos compartidos de jóvenes trabajadores,
+que también sufren el mismo problema pero no salen en estas estadísticas.
+
+**Nota para decidir:** este mercado objetivo se centra en estudiantes por
+ser el segmento con datos públicos más fáciles de encontrar, no
+necesariamente porque sea el mejor punto de partida. Puede convenir revisar
+esto en la conclusión final (sección 6), sobre todo si vuestro propio hogar
+no es un piso de estudiantes.
+
+### Conclusión (provisional, se cierra en el paso 4 — servilleta de números)
+
+Con ≈650 hogares objetivo en A Coruña, hay margen real de mercado si el
+punto de equilibrio (siguiente paso) pide un número bajo de "clientes". Si
+pidiera más de, digamos, 300-400, el modelo sería muy ajustado.
 
 ## 4 · Servilleta de 6 casillas
 
