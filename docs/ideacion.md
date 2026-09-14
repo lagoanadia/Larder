@@ -27,7 +27,49 @@ externa — es un dato de primera mano, no una estimación de mercado.
 
 ## 2 · Estado del arte
 
-_Pendiente._
+Delimitación: soluciones para gestionar la compra/nevera de un hogar
+compartido, vivas hoy, en español o inglés.
+
+### Fichas por solución analizada
+
+| Solución | Categoría | Qué resuelve bien | Qué le reprochan | Precio |
+|---|---|---|---|---|
+| Papel y boli | Solución analógica | Gratis, cero curva de aprendizaje | No hay overview fija: no evita duplicados ni olvidos | 0 € |
+| Grupo de WhatsApp | Solución improvisada | Ya está instalado, todos lo miran a diario | El aviso se pierde entre otros mensajes; no hay estado de "comprado / no comprado" | 0 € |
+| [Bring!](https://apps.apple.com/us/app/bring-grocery-shopping-list/id580669177) | Producto vertical | Listas simples por categorías | Fácil borrar un item sin querer al editar; exige cuenta incluso para uso individual; suscripción sin apenas novedades | Gratis + suscripción opcional |
+| [AnyList](https://justuseapp.com/en/app/522167641/anylist-grocery-shopping-list/reviews) | Producto vertical | Listas compartidas + integración con recetas | Interfaz calificada de "obtusa"; al marcar un item comprado a veces se borra del todo y hay que reescribirlo | Gratis + suscripción opcional |
+| [Out of Milk](https://appgrooves.com/app/out-of-milk-grocery-shopping-list-by-bonial-enterprises-north-america-inc/negative) | Producto vertical | Sincroniza entre varios dispositivos | Varias reseñas dicen que para compartir con pareja/otra persona "busca en otro sitio" por fallos de sincronización | Gratis |
+
+> **Nota sobre el método:** las quejas de arriba están **resumidas por una IA
+> a partir de una búsqueda web** (nivel IA-2). Antes de dar esto por bueno en
+> la entrega, hay que abrir al menos uno de los enlaces y copiar aquí 2-3
+> frases **literales** de una reseña real. Sin eso, esta sección no cumple el
+> requisito de "citas literales, sin corregir" del guion.
+
+### Citas literales de usuarios reales
+
+> _Pendiente — pegar aquí 2-3 frases exactas copiadas de una reseña real
+> (idealmente de Out of Milk, sobre el fallo al compartir la lista)._
+
+### Huecos detectados
+
+- **De usabilidad**: las tres apps analizadas exigen abrir "otra app" aparte
+  del canal que la familia ya usa a diario (el grupo de WhatsApp). Es
+  justo lo que hizo que en casa se probaran 2 veces y se abandonaran por
+  pereza.
+- **Funcional**: ninguna combina lista de la compra con inventario real de
+  nevera (saber qué queda, no solo qué falta comprar).
+- **De fiabilidad en el uso compartido**: Out of Milk falla explícitamente
+  en el caso de compartir con otra persona — que es exactamente el caso de
+  uso de Larder.
+
+### Conclusión
+
+El hueco no es "una lista de la compra más bonita" — de esas ya hay varias,
+gratis. El hueco es una herramienta que combine **nevera + lista
+compartida** sin fricción de aprendizaje, y que de verdad aguante que dos
+personas la toquen a la vez sin perder datos (algo en lo que hasta
+soluciones establecidas como Out of Milk fallan).
 
 ## 3 · Estudio de mercado
 
