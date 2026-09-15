@@ -1,121 +1,67 @@
 import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
+import type { Tab } from './types'
+import { mockFridgeItems, mockMembers } from './data/mockData'
+import Header from './components/Header'
+import TabNav from './components/TabNav'
+import BottomBar from './components/BottomBar'
+import FridgeView from './components/FridgeView'
+import ListView from './components/ListView'
+import HistoryView from './components/HistoryView'
+import PricesView from './components/PricesView'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [activeTab, setActiveTab] = useState<Tab>('fridge')
+  const [activeMemberId, setActiveMemberId] = useState(mockMembers[0].id)
+
+  // El estado de los items vive AQUÍ (en App), no dentro de FridgeView.
+  // Motivo: el Header necesita saber cuántos items están bajos de stock
+  // para pintar el badge "2 low", y Header es "hermano" de FridgeView, no
+  // su hijo — así que el dato tiene que vivir en un antepasado común.
+  const [fridgeItems, setFridgeItems] = useState(mockFridgeItems)
+
+  const activeMember = mockMembers.find((m) => m.id === activeMemberId) ?? mockMembers[0]
+  const lowStockCount = fridgeItems.filter((item) => item.quantity <= item.lowStockThreshold).length
+
+  function handleQuantityChange(itemId: string, delta: number) {
+    // TODO (tuyo): actualiza `fridgeItems` usando setFridgeItems.
+    //
+    // Pistas:
+    // - NUNCA mutes el array directamente (nada de fridgeItems[i].quantity = ...).
+    //   En React el estado se trata como inmutable: hay que crear un array
+    //   NUEVO para que React se entere de que algo cambió y vuelva a renderizar.
+    // - `.map()` es tu amigo aquí: recorre fridgeItems y devuelve un array
+    //   nuevo donde el item que coincide con itemId tiene una quantity
+    //   distinta, y todos los demás se devuelven tal cual.
+    // - No dejes que quantity baje de 0 (usa Math.max(0, ...)).
+    //
+    // Algo así (rellena los huecos):
+    //
+    // setFridgeItems(
+    //   fridgeItems.map((item) =>
+    //     item.id === itemId
+    //       ? { ...item, quantity: Math.max(0, item.quantity + delta) }
+    //       : item
+    //   )
+    // )
+  }
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <div className="app">
+      <Header memberName={activeMember.name} lowStockCount={lowStockCount} />
+      <TabNav activeTab={activeTab} onTabChange={setActiveTab} />
 
-      <div className="ticks"></div>
+      <main className="app-content">
+        {activeTab === 'fridge' && (
+          <FridgeView items={fridgeItems} onQuantityChange={handleQuantityChange} />
+        )}
+        {activeTab === 'list' && <ListView />}
+        {activeTab === 'history' && <HistoryView />}
+        {activeTab === 'prices' && <PricesView />}
+      </main>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+      <BottomBar members={mockMembers} activeMemberId={activeMemberId} onSelectMember={setActiveMemberId} />
+    </div>
   )
 }
 
