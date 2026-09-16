@@ -93,6 +93,47 @@ y centrada en ahorro y control de stock** — el ángulo que ni la app más
 simple ni la más completa cubren, porque ambas piensan en "cocinar", no en
 "gastar menos y no quedarse sin nada".
 
+### Validación con encuesta real (n=10)
+
+Encuesta bilingüe (ES/EN) enviada a conocidos, 9 preguntas basadas en
+hechos del último mes, no en opiniones sobre una app futura. 10 respuestas
+recogidas.
+
+| Dato | Resultado |
+|---|---|
+| Estudiantes / no estudiantes | 7 / 10 estudiantes |
+| Método actual más común | Papel (4/10), Notas (3/10), ninguno (2/10), WhatsApp (1/10) |
+| Ha probado alguna app específica (Bring!, AnyList...) | **0/10** — nadie |
+| Compró algo duplicado al menos 1 vez el último mes | **9/10 (90%)** |
+| Tuvo que volver a la tienda por algo olvidado el último mes | 7/10 (70%) |
+| Lleva alguna cuenta de gastos compartidos | 6/10 (el resto no, o no aplica) |
+
+**Lectura honesta:** el método "ganador" en las conversaciones informales
+(sección 2) era Notas; en esta encuesta, Papel es el más mencionado (4/10).
+Con una muestra de 10 no se puede generalizar ninguno de los dos datos —
+se dejan ambos por escrito, sin forzar que cuadren entre sí.
+
+**Frases literales de la encuesta** (frustración más común al gestionar la
+compra/nevera compartida):
+
+> "No sé quién compró qué" / "I don't know who bought what"
+>
+> "Que la gente no participe a la hora de hacer la compra o que tarden en
+> pagar cuando dividimos gastos"
+>
+> "Las cantidades" — repetida por **dos personas distintas** de forma
+> independiente (señal más fuerte que una queja aislada, según el propio
+> criterio del guion)
+>
+> "Not knowing what the others want, the others eating my stuff" / "when
+> people use the food i planned to use... so I have to use something else"
+
+**Lo que esto valida directamente:** las quejas sobre "no saber quién
+compró qué" y "que tarden en pagar" son exactamente el problema que
+resuelve la pantalla **History** (historial + reparto de gasto) — no es
+una función añadida sin motivo, hay demanda real y verbalizada por
+encuestados que nunca vieron el prototipo.
+
 ## 3 · Estudio de mercado
 
 **Definición del mercado:** hogares de más de una persona que gestionan la
