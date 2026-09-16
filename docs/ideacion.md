@@ -106,6 +106,19 @@ broma "Amor y Paz". Ambos pares se cuentan **una sola vez**; en el caso de
 "Amor y Paz" se descarta además el texto de la frustración (era broma, no
 dato) y se mantiene el resto de sus respuestas, que sí son válidas.
 
+**Nota honesta sobre procedencia geográfica:** los 26 encuestados no son
+de A Coruña — son conocidos repartidos por Suiza, Estados Unidos (Nueva
+Jersey, Washington, Texas), Madrid y el pueblo de Nadia. Esto **no
+invalida** la encuesta, pero sí limita lo que se puede afirmar con ella:
+sirve para validar que el problema (duplicados, olvidos, nula adopción de
+apps, falta de atribución) le pasa al **perfil** — gente joven,
+estudiantes o no, que comparte compra/gasto —, no que le pase
+específicamente en A Coruña. El estudio de mercado (sección 3) sigue
+usando A Coruña como mercado accesible por motivos de canal (es donde se
+puede llegar en persona), no porque la encuesta lo demuestre
+geográficamente. Es una limitación real del método, documentada aquí en
+vez de disimulada.
+
 | Dato | Resultado |
 |---|---|
 | Estudiantes / no estudiantes | 21 / 26 estudiantes |
@@ -201,7 +214,12 @@ apuntados.
 **Definición del mercado:** hogares de más de una persona que gestionan la
 compra y la nevera de forma conjunta. Delimitación geográfica: A Coruña
 ciudad, por ser la zona que se puede atender de verdad (canal directo,
-enseñarlo en persona).
+enseñarlo en persona) — **no** porque la encuesta (sección 2) demuestre
+que el problema es específico de A Coruña: los encuestados son conocidos
+repartidos por varios países y ciudades (ver nota honesta en sección 2),
+así que validan el perfil y el problema, no la geografía. La delimitación
+a A Coruña es una decisión de canal de distribución, no un hallazgo de la
+encuesta.
 
 ### Los 3 niveles
 
