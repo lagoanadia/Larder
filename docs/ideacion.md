@@ -98,7 +98,8 @@ motivo por el que hacer la encuesta era necesario es precisamente este: ya
 existen apps (Bring!, AnyList), y las dos fallan en lo mismo. AnyList
 tiene recetas sugeridas, categorías cuidadas y reconocimiento inteligente
 — y aun así, en la encuesta, la app con más funciones es la que **nadie
-usa hoy** (0/26), mientras que Papel, con cero funciones, gana. No es
+usa hoy** (0/31), mientras que Papel/Notas, sin ninguna función extra,
+ganan. No es
 casualidad: cada función que se añade encima de "escribir un item" es una
 barrera más entre la persona y la lista, y la gente vota con los pies por
 la opción con menos fricción. Digitalizar el papel y boli no significa
@@ -114,10 +115,10 @@ Papel no pueden hacer por diseño" (compartir en tiempo real, saber quién
 hizo qué, avisar de stock) debería mirarse con sospecha, aunque quede
 bonita en una demo.
 
-### Validación con encuesta real (n=26)
+### Validación con encuesta real (n=31)
 
 Encuesta bilingüe (ES/EN) enviada a conocidos, 9 preguntas basadas en
-hechos del último mes, no en opiniones sobre una app futura. 26 respuestas
+hechos del último mes, no en opiniones sobre una app futura. 31 respuestas
 únicas recogidas (se actualiza según van llegando más).
 
 **Nota de limpieza de datos:** dos pares de envíos eran la misma persona
@@ -127,7 +128,7 @@ broma "Amor y Paz". Ambos pares se cuentan **una sola vez**; en el caso de
 "Amor y Paz" se descarta además el texto de la frustración (era broma, no
 dato) y se mantiene el resto de sus respuestas, que sí son válidas.
 
-**Nota honesta sobre procedencia geográfica:** los 26 encuestados no son
+**Nota honesta sobre procedencia geográfica:** los encuestados no son
 de A Coruña — son conocidos repartidos por Suiza, Estados Unidos (Nueva
 Jersey, Washington, Texas), Madrid y el pueblo de Nadia. Esto **no
 invalida** la encuesta, pero sí limita lo que se puede afirmar con ella:
@@ -142,36 +143,40 @@ vez de disimulada.
 
 | Dato | Resultado |
 |---|---|
-| Estudiantes / no estudiantes | 21 / 26 estudiantes |
-| Método actual más común | Papel (11/26), Notas (8/26), ninguno (6/26), WhatsApp (1/26), una app específica (0/26) |
-| Ha probado alguna app específica alguna vez (Bring!, AnyList...) | 2/26 (8%) — pero **0/26 la usa hoy como método** (ver lectura honesta) |
-| Compró algo duplicado al menos 1 vez el último mes | 19/26 (73%) |
-| Tuvo que volver a la tienda por algo olvidado el último mes | 21/26 (81%) |
-| Sufrió ambas cosas el mismo mes (duplicado + viaje olvidado) | 15/26 (58%) |
-| Lleva alguna cuenta de gastos compartidos | 8/26 sí, 9/26 no, 9/26 no aplica |
+| Estudiantes / no estudiantes | 25 / 31 estudiantes |
+| Método actual más común | Notas (12/31), Papel (11/31), ninguno (7/31), WhatsApp (1/31), una app específica (0/31) |
+| Ha probado alguna app específica alguna vez (Bring!, AnyList...) | 2/31 (6%) — pero **0/31 la usa hoy como método** (ver lectura honesta) |
+| Compró algo duplicado al menos 1 vez el último mes | 23/31 (74%) |
+| Tuvo que volver a la tienda por algo olvidado el último mes | 23/31 (74%) |
+| Sufrió ambas cosas el mismo mes (duplicado + viaje olvidado) | 17/31 (55%) |
+| Lleva alguna cuenta de gastos compartidos | 9/31 sí, 12/31 no, 10/31 no aplica |
 
-**Lectura honesta:** con esta tanda, "duplicado" (73%) y "olvido" (81%) ya
-no coinciden en el mismo número — antes, con muestras más pequeñas, era
-casualidad que salieran iguales. El dato conjunto (58% sufre ambas cosas el
-mismo mes) sigue confirmando que no es un problema marginal, y de hecho
-sube respecto a n=19 (53%→58%). Por primera vez aparece gente que volvió a
-la tienda **más de 5 veces** en el mes (2 personas) — antes ese bucket
-siempre estaba vacío. Sigue habiendo solo 2 personas de 26 que han probado
-alguna vez una app (Bring!, "Notas") y ninguna la usa hoy — el mismo
-patrón de "prueban y abandonan" que en n=19, ahora con más muestra
-detrás. Papel sigue a la cabeza como método (11/26, 42%) frente a Notas
-(8/26, 31%), separándose más de lo que estaban en tandas anteriores.
+**Lectura honesta:** el "método ganador" **sigue sin asentarse** — con
+n=26 mandaba Papel (42% vs 31%), con n=31 Notas lo adelanta otra vez
+(39% vs 35%), por solo 1 respuesta de diferencia. La lectura correcta no
+es "ahora gana Notas", es que con una muestra de este tamaño el primer
+puesto es demasiado ajustado para afirmar nada con seguridad — se deja
+así de inestable a propósito, en vez de fijar una conclusión que los
+propios datos no sostienen. Los dos porcentajes de dolor (duplicado,
+olvido) han vuelto a coincidir en 74% — es casualidad estadística, no una
+corrección; ya pasó lo mismo en tandas anteriores y se deshizo con más
+muestra. El dato conjunto (55%, 17/31) se mantiene claramente por encima
+de la mitad. Sigue habiendo solo 2 personas de 31 que han probado alguna
+vez una app (Bring!, "Notas") y ninguna la usa hoy — el patrón de "prueban
+y abandonan" aguanta con más muestra detrás.
 
 **Frases literales de la encuesta** (frustración más común al gestionar la
 compra/nevera compartida), agrupadas por tema:
 
-> **Cooperación / no saber qué hacen los demás** (6 menciones): "No sé
-> quién compró qué" / "I don't know who bought what" · "Not knowing what
-> the others want, the others eating my stuff" · "when people use the
-> food i planned to use... so I have to use something else" · "not
-> knowing if someone bought something just for themself" · "Que compran
-> cosas que no quiero" · "cada vez una compra una cosa, entonces lo
-> complicado es llevar la cuenta de quién compró qué antes"
+> **Cooperación / no saber qué hacen los demás** (8 menciones — el tema
+> más repetido con diferencia): "No sé quién compró qué" / "I don't know
+> who bought what" · "Not knowing what the others want, the others eating
+> my stuff" · "when people use the food i planned to use... so I have to
+> use something else" · "not knowing if someone bought something just for
+> themself" · "Que compran cosas que no quiero" · "cada vez una compra una
+> cosa, entonces lo complicado es llevar la cuenta de quién compró qué
+> antes" · "People eating my food" · "dudar en si comprar algo fuera de la
+> lista y que se lo coma otra persona"
 >
 > **Tracker de gastos** (3 menciones, dos de ellas compartidas con la
 > categoría de arriba): "I don't know who bought what" · "Que la gente no
