@@ -347,20 +347,49 @@ facturación o de cobro con tarjeta — eso ya está resuelto y cambia con la
 normativa. Sí os elegirían por cómo lleváis la nevera y la lista
 compartida, que es donde está el dolor real (sección 1).
 
-**Idea para más adelante, fuera de P1:** añadir un asistente de voz para
-apuntar productos hablando en vez de escribiendo (idea surgida al releer
-la encuesta — Papel y Notas ganan justo porque no tienen fricción para
-apuntar algo rápido). Se deja fuera de esta entrega a propósito: no
-compite en velocidad con "escribir 'leche' en Notas" (la latencia de
-transcribir voz y el corregir errores de reconocimiento pueden ser *más*
-lentos, no menos, y hablarle al móvil en una tienda o cocina compartida
-tiene su propia fricción social). Su valor real no sería "más rápido que
-Notas", sino "tan rápido como Notas pero generando un ítem ya
-estructurado y categorizado" — y construir esa transcripción + comprensión
-del lenguaje desde cero cae en el bloque de "no se hace este curso"
-(como mucho, sería "lo hace" un servicio externo tipo Whisper, nunca algo
-propio). Queda anotado para revisar en un P2, no como compromiso de esta
-entrega.
+### Fridge — visión ampliada (fuera de P1, pero con ruta clara)
+
+Esto **no es compromiso de esta entrega** — es a dónde se podría llegar
+con Fridge más adelante (P2+), pensado sin la limitación mental de "esto
+es demasiado para nosotros", pero anclado a recursos que ya están
+decididos (Odoo, coste fijo 0€, la propia web). Se documenta aparte para
+que no se cuele como alcance obligatorio de P1.
+
+- **Apuntar hablando, no escribiendo — y es más alcanzable de lo que
+  parece.** Los navegadores modernos (Chrome, Edge, con matices en
+  Safari) traen integrada la **Web Speech API**: convierte voz a texto
+  dentro del propio navegador, **gratis y sin servidor propio**. No hace
+  falta "un asistente de IA" construido desde cero — un botón de
+  micrófono ya devuelve texto, que luego se trocea (por comas, por "y") y
+  se intenta emparejar contra el catálogo de Odoo. Si no encuentra
+  coincidencia, se guarda igual como texto libre — nunca bloquea, porque
+  bloquear sería peor que el papel. Entender frases más complejas ("dos
+  docenas de huevos y medio kilo de jamón cortado fino") sí necesitaría
+  un modelo de lenguaje de verdad (tipo la API de Claude), y eso ya cuesta
+  céntimos por petición — el único punto de esta visión que no es 0€
+  garantizado.
+- **Caducidad sin que nadie escriba una fecha.** El catálogo de Odoo, que
+  ya se va a usar para precios, puede llevar también un campo "días de
+  frescura típicos" por categoría (lácteos abiertos: 5 días, verdura: 7
+  días...). Al marcar un producto como "abierto" en Fridge, el contador
+  empieza solo. Responde directamente a las 4 citas de caducidad de la
+  encuesta (sección 2), con el único gesto humano que ya se iba a pedir
+  de todas formas.
+- **Fridge como vista compartida en tiempo real.** Con el mismo stack ya
+  decidido (Node + SQLite), cualquiera del piso podría abrir el móvil
+  **desde la tienda** y ver qué hay ya en casa antes de comprar. Esto
+  ataca directamente el problema más repetido de la encuesta (73%
+  compró algo duplicado) resolviéndolo por diseño, no por fuerza de
+  voluntad de "acordarse de mirar antes de salir".
+- **Fridge → List sin volver a escribir nada.** Un botón "se acabó" en un
+  producto de Fridge lo manda directo a la lista de la compra. Es algo
+  que Papel no puede hacer sin copiar a mano de un sitio a otro — aquí es
+  una función de código.
+
+Se deja todo esto fuera de P1 por foco y tiempo, no porque sea imposible:
+la pieza más "cara" de verdad (el asistente de voz con comprensión de
+frases complejas) es la única que cae en "no se hace este curso"; el
+resto es alcanzable con las mismas piezas gratuitas que P1 ya usa.
 
 **La rebanada vertical de P1, en una frase:**
 
