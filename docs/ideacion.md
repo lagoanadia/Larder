@@ -180,6 +180,22 @@ el principio, no como algo "a vigilar más adelante". Las menciones de
 precio siguen siendo pocas (2), una señal a favor de **Prices** pero sin
 forzarla a más de lo que da de sí.
 
+**Por qué esto no lo puede copiar Notas — el diferenciador real:** la
+queja de "no sé quién compró/consumió/dejó qué" no es solo demanda para
+History, es la prueba de un límite estructural del rival que gana en las
+conversaciones informales (sección 2). Notas es una lista de texto sin
+usuarios: cualquier línea es anónima, nadie sabe quién la escribió ni
+quién la tachó. Larder, al ser colaborativa por diseño, puede atribuir
+cada alta, cada compra y cada "esto es mío" a una persona concreta sin
+esfuerzo extra por parte de nadie — no es una función añadida encima de la
+lista, es una propiedad de cómo está construida desde el principio. Para
+que Notas ofreciera lo mismo, dejaría de ser Notas y pasaría a ser,
+literalmente, otra app. Esto es lo que convierte "más rápido que Notas"
+(que Larder probablemente no puede prometer del todo) en "tan rápido como
+Notas y además con memoria de quién hizo qué" — la ventaja no está en la
+velocidad de apuntar, está en la estructura de los datos una vez
+apuntados.
+
 ## 3 · Estudio de mercado
 
 **Definición del mercado:** hogares de más de una persona que gestionan la
@@ -291,6 +307,21 @@ números (P1).
 facturación o de cobro con tarjeta — eso ya está resuelto y cambia con la
 normativa. Sí os elegirían por cómo lleváis la nevera y la lista
 compartida, que es donde está el dolor real (sección 1).
+
+**Idea para más adelante, fuera de P1:** añadir un asistente de voz para
+apuntar productos hablando en vez de escribiendo (idea surgida al releer
+la encuesta — Papel y Notas ganan justo porque no tienen fricción para
+apuntar algo rápido). Se deja fuera de esta entrega a propósito: no
+compite en velocidad con "escribir 'leche' en Notas" (la latencia de
+transcribir voz y el corregir errores de reconocimiento pueden ser *más*
+lentos, no menos, y hablarle al móvil en una tienda o cocina compartida
+tiene su propia fricción social). Su valor real no sería "más rápido que
+Notas", sino "tan rápido como Notas pero generando un ítem ya
+estructurado y categorizado" — y construir esa transcripción + comprensión
+del lenguaje desde cero cae en el bloque de "no se hace este curso"
+(como mucho, sería "lo hace" un servicio externo tipo Whisper, nunca algo
+propio). Queda anotado para revisar en un P2, no como compromiso de esta
+entrega.
 
 **La rebanada vertical de P1, en una frase:**
 
