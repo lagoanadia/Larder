@@ -93,87 +93,92 @@ y centrada en ahorro y control de stock** — el ángulo que ni la app más
 simple ni la más completa cubren, porque ambas piensan en "cocinar", no en
 "gastar menos y no quedarse sin nada".
 
-### Validación con encuesta real (n=19)
+### Validación con encuesta real (n=26)
 
 Encuesta bilingüe (ES/EN) enviada a conocidos, 9 preguntas basadas en
-hechos del último mes, no en opiniones sobre una app futura. 19 respuestas
-recogidas (se actualiza según van llegando más).
+hechos del último mes, no en opiniones sobre una app futura. 26 respuestas
+únicas recogidas (se actualiza según van llegando más).
+
+**Nota de limpieza de datos:** dos pares de envíos eran la misma persona
+enviando dos veces por accidente (mismos datos, segundos o minutos de
+diferencia): la que respondió "Las cantidades" y la que respondió con la
+broma "Amor y Paz". Ambos pares se cuentan **una sola vez**; en el caso de
+"Amor y Paz" se descarta además el texto de la frustración (era broma, no
+dato) y se mantiene el resto de sus respuestas, que sí son válidas.
 
 | Dato | Resultado |
 |---|---|
-| Estudiantes / no estudiantes | 16 / 19 estudiantes |
-| Método actual más común | Papel (7/19), Notas (6/19), ninguno (5/19), WhatsApp (1/19), una app específica (0/19) |
-| Ha probado alguna app específica alguna vez (Bring!, AnyList...) | 2/19 (11%) — pero **0/19 la usa hoy como método** (ver lectura honesta) |
-| Compró algo duplicado al menos 1 vez el último mes | 14/19 (74%) |
-| Tuvo que volver a la tienda por algo olvidado el último mes | 14/19 (74%) |
-| Sufrió ambas cosas el mismo mes (duplicado + viaje olvidado) | 10/19 (53%) |
-| Lleva alguna cuenta de gastos compartidos | 8/19 (el resto no, o no aplica) |
+| Estudiantes / no estudiantes | 21 / 26 estudiantes |
+| Método actual más común | Papel (11/26), Notas (8/26), ninguno (6/26), WhatsApp (1/26), una app específica (0/26) |
+| Ha probado alguna app específica alguna vez (Bring!, AnyList...) | 2/26 (8%) — pero **0/26 la usa hoy como método** (ver lectura honesta) |
+| Compró algo duplicado al menos 1 vez el último mes | 19/26 (73%) |
+| Tuvo que volver a la tienda por algo olvidado el último mes | 21/26 (81%) |
+| Sufrió ambas cosas el mismo mes (duplicado + viaje olvidado) | 15/26 (58%) |
+| Lleva alguna cuenta de gastos compartidos | 8/26 sí, 9/26 no, 9/26 no aplica |
 
-**Lectura honesta — cambio importante con esta tanda:** hasta n=12,
-literalmente nadie había probado una app de listas. Con 7 respuestas más
-aparecen las dos primeras: una probó **Bring!** y otra **"Notas"** (esta
-última es ambigua — puede que respondiera pensando en la app de notas del
-móvil, no en una app dedicada; se deja tal cual, sin forzarla a encajar).
-Lo interesante es que **ninguna de las dos la usa hoy**: en la Pregunta 3
-("¿cómo organizáis la lista *hoy*?") las dos siguen en 0 para "una app
-específica". Esto no contradice la idea — la refuerza: **el problema no es
-que falte una app, es que las que existen no retienen ni al 100% de la
-gente que las prueba.** La propia persona que probó Bring! lo explica sin
-que se le pregunte (ver cita más abajo): falla cuando los demás del piso no
-colaboran, que es justo el problema de cooperación que ya veníamos viendo.
-El método "ganador" en las conversaciones informales (sección 2) era
-Notas; en esta encuesta manda Papel (7/19 frente a 6/19). Con una muestra
-de 19 sigue sin poder generalizarse ninguno de los dos datos — se dejan
-ambos por escrito, sin forzar que cuadren entre sí. Los porcentajes de
-"duplicado"/"olvido" bajaron una pizca respecto a n=12 (75%→74% en ambos),
-como es esperable con una muestra que sigue creciendo — la cifra conjunta
-(53% sufre las dos cosas el mismo mes) es nueva con esta tanda y refuerza
-que el problema no es marginal.
+**Lectura honesta:** con esta tanda, "duplicado" (73%) y "olvido" (81%) ya
+no coinciden en el mismo número — antes, con muestras más pequeñas, era
+casualidad que salieran iguales. El dato conjunto (58% sufre ambas cosas el
+mismo mes) sigue confirmando que no es un problema marginal, y de hecho
+sube respecto a n=19 (53%→58%). Por primera vez aparece gente que volvió a
+la tienda **más de 5 veces** en el mes (2 personas) — antes ese bucket
+siempre estaba vacío. Sigue habiendo solo 2 personas de 26 que han probado
+alguna vez una app (Bring!, "Notas") y ninguna la usa hoy — el mismo
+patrón de "prueban y abandonan" que en n=19, ahora con más muestra
+detrás. Papel sigue a la cabeza como método (11/26, 42%) frente a Notas
+(8/26, 31%), separándose más de lo que estaban en tandas anteriores.
 
 **Frases literales de la encuesta** (frustración más común al gestionar la
-compra/nevera compartida):
+compra/nevera compartida), agrupadas por tema:
 
-> "No sé quién compró qué" / "I don't know who bought what"
+> **Cooperación / no saber qué hacen los demás** (6 menciones): "No sé
+> quién compró qué" / "I don't know who bought what" · "Not knowing what
+> the others want, the others eating my stuff" · "when people use the
+> food i planned to use... so I have to use something else" · "not
+> knowing if someone bought something just for themself" · "Que compran
+> cosas que no quiero" · "cada vez una compra una cosa, entonces lo
+> complicado es llevar la cuenta de quién compró qué antes"
 >
-> "Que la gente no participe a la hora de hacer la compra o que tarden en
-> pagar cuando dividimos gastos"
+> **Tracker de gastos** (3 menciones, dos de ellas compartidas con la
+> categoría de arriba): "I don't know who bought what" · "Que la gente no
+> participe a la hora de hacer la compra o que tarden en pagar cuando
+> dividimos gastos" · "llevar la cuenta de quién compró qué antes"
 >
-> "Las cantidades" — repetida por **dos personas distintas** de forma
-> independiente (señal más fuerte que una queja aislada, según el propio
-> criterio del guion)
+> **Caducidad / frescura en la nevera** (4 menciones — ya no es una señal
+> aislada): "Tener en cuenta qué productos quedan abiertos, cuáles se
+> pierden antes, etc." · "Cuando la gente en mi apartamento deja la comida
+> en la nevera durante mucho tiempo, y se estropea. No me gusta cuando no
+> está organizado o cuando no tiran su mala comida." · "El desperdicio de
+> comida o incluso la mala organización en los espacios compartidos
+> referentes a la comida como la nevera o despensa" · "Pois supoño que
+> cando algo se acabe ninguén avise. Ej. Miña filla acabou o xamón serrano
+> e non avisou" — esta última describe literalmente el "aviso de stock
+> bajo" que ya estaba en el alcance de Fridge, sin que la persona supiera
+> que existía esa idea.
 >
-> "Not knowing what the others want, the others eating my stuff" / "when
-> people use the food i planned to use... so I have to use something else"
-> / "not knowing if someone bought something just for themself" / "Que
-> compran cosas que no quiero"
+> **Olvidos concretos al comprar**: "Tener que revisar varias veces que
+> no me he olvidado de apuntar algo que necesito comprar y apuntar cosas
+> que ya tengo en casa." · "comprar agua que siempre se nos olvida"
 >
-> "Tener en cuenta qué productos quedan abiertos, cuáles se pierden antes,
-> etc." — señal **nueva**, distinta a las anteriores: apunta a caducidad y
-> frescura, no solo a stock o reparto de gasto.
->
-> "Tener que revisar varias veces que no me he olvidado de apuntar algo
-> que necesito comprar y apuntar cosas que ya tengo en casa." — describe,
-> casi palabra por palabra, el problema que Fridge + List resuelven juntas.
+> **Precio** (2 menciones espontáneas, sin que se preguntara): "Está todo
+> carísimo" / "Comprar, es caro"
 >
 > "Bring, porque si no colaboran los demás pues al ser compartida la
 > compra 🛒 pues mal vamos" — la única persona que probó una app
 > colaborativa real explica ella misma por qué la dejó: no es la app, es
 > que sus compañeros de piso no participaban.
->
-> "Está todo carísimo" / "Comprar, es caro" — dos menciones espontáneas al
-> precio, sin que se preguntara por precios; apunta a la pantalla
-> **Prices** como algo que también les importa, no solo nevera y lista.
 
 **Lo que esto valida directamente:** las quejas sobre "no saber quién
 compró qué" y "que tarden en pagar" son exactamente el problema que
-resuelve la pantalla **History** (historial + reparto de gasto) — no es
-una función añadida sin motivo, hay demanda real y verbalizada por
-encuestados que nunca vieron el prototipo. La cita sobre Bring! confirma
+resuelve la pantalla **History** — hay demanda real y verbalizada por
+encuestados que nunca vieron el prototipo, y la cita sobre Bring! confirma
 que el problema de cooperación no es teórico: rompe incluso una app ya
-colaborativa. La queja de caducidad de productos abiertos sigue siendo una
-señal a vigilar para **Fridge**, y las dos menciones de precio son una
-señal (pequeña, sin forzarla) a favor de que **Prices** también responde a
-algo real, no solo a una idea de la propia Nadia.
+colaborativa. La caducidad de productos ya no es una señal débil: con 4
+menciones espontáneas es, después de cooperación, el segundo tema más
+repetido — vale la pena que **Fridge** contemple avisos de caducidad desde
+el principio, no como algo "a vigilar más adelante". Las menciones de
+precio siguen siendo pocas (2), una señal a favor de **Prices** pero sin
+forzarla a más de lo que da de sí.
 
 ## 3 · Estudio de mercado
 
