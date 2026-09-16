@@ -93,6 +93,27 @@ y centrada en ahorro y control de stock** — el ángulo que ni la app más
 simple ni la más completa cubren, porque ambas piensan en "cocinar", no en
 "gastar menos y no quedarse sin nada".
 
+**Principio de diseño: digitalizar no es añadir, es no estorbar.** El
+motivo por el que hacer la encuesta era necesario es precisamente este: ya
+existen apps (Bring!, AnyList), y las dos fallan en lo mismo. AnyList
+tiene recetas sugeridas, categorías cuidadas y reconocimiento inteligente
+— y aun así, en la encuesta, la app con más funciones es la que **nadie
+usa hoy** (0/26), mientras que Papel, con cero funciones, gana. No es
+casualidad: cada función que se añade encima de "escribir un item" es una
+barrera más entre la persona y la lista, y la gente vota con los pies por
+la opción con menos fricción. Digitalizar el papel y boli no significa
+meterle recetas sugeridas por IA, categorías bonitas ni nada que Papel y
+Notas no tenían — eso es **añadirle complejidad al papel y boli**, y ya
+está demostrado que esa complejidad no se usa. Digitalizar significa que
+el papel y boli **dejen de necesitar un empuje**: que apuntar algo sea
+igual de inmediato que en Notas, pero que lo apuntado quede estructurado,
+compartido y atribuido a quien lo apuntó, sin que la persona tenga que
+hacer nada extra para conseguirlo. Cualquier función de Larder que no
+sirva directamente a "apuntar rápido y sin fricción" o a "lo que Notas y
+Papel no pueden hacer por diseño" (compartir en tiempo real, saber quién
+hizo qué, avisar de stock) debería mirarse con sospecha, aunque quede
+bonita en una demo.
+
 ### Validación con encuesta real (n=26)
 
 Encuesta bilingüe (ES/EN) enviada a conocidos, 9 preguntas basadas en
