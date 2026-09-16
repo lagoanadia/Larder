@@ -30,15 +30,22 @@ externa — es un dato de primera mano, no una estimación de mercado.
 Delimitación: soluciones para gestionar la compra/nevera de un hogar
 compartido, vivas hoy, en español o inglés.
 
-### Fichas por solución analizada
+**Método (actualizado):** en vez de depender solo de reseñas encontradas
+por búsqueda, se hicieron conversaciones informales con amigos que
+gestionan la compra en piso compartido — **estudiantes y gente joven**,
+el mismo perfil que el mercado objetivo (sección 3). Es la vía de
+validación que el propio guion marca como "la más cara y la más fiable de
+las tres": hablar con quien vive el problema, no solo leer sobre él.
 
-| Solución | Categoría | Qué resuelve bien | Qué le reprochan | Precio |
-|---|---|---|---|---|
-| Papel y boli | Solución analógica | Gratis, cero curva de aprendizaje | No hay overview fija: no evita duplicados ni olvidos | 0 € |
-| Grupo de WhatsApp | Solución improvisada | Ya está instalado, todos lo miran a diario | El aviso se pierde entre otros mensajes; no hay estado de "comprado / no comprado" | 0 € |
-| [Bring!](https://apps.apple.com/us/app/bring-grocery-shopping-list/id580669177) | Producto vertical | Listas simples por categorías | Fácil borrar un item sin querer al editar; exige cuenta incluso para uso individual; suscripción sin apenas novedades | Gratis + suscripción opcional |
-| [AnyList](https://justuseapp.com/en/app/522167641/anylist-grocery-shopping-list/reviews) | Producto vertical | Listas compartidas + integración con recetas | Interfaz calificada de "obtusa"; al marcar un item comprado a veces se borra del todo y hay que reescribirlo | Gratis + suscripción opcional |
-| ~~Out of Milk~~ | — | — | **Descartada**: al verificarla no se encontró como app activa/real — el hallazgo de la búsqueda por IA no se pudo confirmar en la fuente original, así que se retira en vez de darla por buena | — |
+### Fichas por solución analizada (con investigación directa)
+
+| Solución | Lo bueno | El problema | Precio |
+|---|---|---|---|
+| Papel y boli | Rápido y sencillo | Se pierde fácil (ej. real: "mi madre siempre lo pierde"); poca organización; de un solo uso — se gasta papel cada vez | No es gratis de verdad: el papel cuesta |
+| **Notas (app del móvil)** | La solución más usada entre el círculo encuestado; simple, bien estructurada, reusable — "la que mejor funciona" en la práctica | No se puede compartir ni coeditar en tiempo real; al ser una app genérica (no específica de listas), se pierde entre el resto de notas | Gratis |
+| [Bring!](https://apps.apple.com/us/app/bring-grocery-shopping-list/id580669177) | Colaborativo de verdad (varias personas a la vez, en tiempo real) | Un paso extra frente a Notas: hay que buscar el ingrediente en su base de datos en vez de solo escribirlo — esa fricción es la razón por la que la gente vuelve a Notas. Su sección "Inspiración" no tiene recetas propias, solo enlaza a webs externas, y no resuelve el caso de uso real (llevar stock, no inspirarse) | Gratis + suscripción opcional |
+| [AnyList](https://justuseapp.com/en/app/522167641/anylist-grocery-shopping-list/reviews) | Reconocimiento inteligente al escribir (escribes "milk" y lo categoriza solo, casi tan rápido como Notas; si no reconoce algo, se queda como texto normal sin penalizar); categorización automática; **escáner de código de barras** integrado; recetas propias o importadas | Todo el valor añadido apunta a **cocinar** (recetas, meal planning de pago) — a quien no le interesa cocinar no le aporta nada. Y lo que de verdad importa aquí, **saber cuánto stock hay y cuánto se gasta**, no lo cubre ni siquiera esta app, la más completa de las analizadas | Gratis + suscripción (meal planning) |
+| ~~Out of Milk~~ | — | **Descartada**: al verificarla no se encontró como app activa/real — el hallazgo de la búsqueda por IA no se pudo confirmar en la fuente original, así que se retira en vez de darla por buena | — |
 
 > **Nota sobre el método (verificación real, no solo declarada):** la fila
 > de "Out of Milk" se generó con una búsqueda por IA (nivel IA-2) y **no
@@ -55,34 +62,36 @@ compartido, vivas hoy, en español o inglés.
 >
 > — Reseña real verificada de **Bring! Grocery Shopping List**, App Store.
 
-(Nota: la queja verificable que se encontró no es sobre "compartir listas"
-como se buscaba en un principio — es sobre el Apple Watch. Sigue siendo
-válida como cita literal real, pero es más débil para defender el hueco de
-Larder que si hubiera sido sobre sincronización entre personas. Es lo que
-hay con lo verificado; mejor esto que una cita más bonita pero inventada.)
+(Esta cita de reseña externa se mantiene como dato secundario verificado.
+La fuente principal de esta sección ya no es la búsqueda por IA, sino las
+conversaciones directas con estudiantes/gente joven descritas arriba.)
 
 ### Huecos detectados
 
-- **De usabilidad**: las dos apps analizadas (Bring!, AnyList) exigen abrir
-  "otra app" aparte del canal que la familia ya usa a diario (el grupo de
-  WhatsApp). Es justo lo que hizo que en casa se probara algo así 2 veces y
-  se abandonara por pereza — esta parte sí es testimonio directo vuestro,
-  no de una búsqueda.
-- **Funcional**: ninguna de las dos combina lista de la compra con
-  inventario real de nevera (saber qué queda, no solo qué falta comprar).
-- **De fiabilidad básica**: incluso en herramientas ya establecidas hay
-  fallos tontos pero reales (AnyList borra un item entero al marcarlo como
-  comprado, en vez de simplemente tacharlo). Es una señal de que ni las
-  apps "serias" tienen esto resuelto del todo.
+- **De posicionamiento (el más importante):** ni Bring! ni AnyList —las dos
+  apps "serias" analizadas— están construidas para ahorrar o controlar
+  stock/gasto. Ambas apuntan a **cocinar y planificar recetas**. No es que
+  les falte pulir una función: apuntan a un problema distinto al vuestro.
+- **De fricción:** cualquier paso extra sobre "simplemente escribir" hace
+  que la gente vuelva a la solución más simple (Notas) — la barrera de
+  entrada para añadir un item tiene que ser mínima, al nivel de Notas o de
+  AnyList (que sí lo consigue con su reconocimiento inteligente).
+- **De colaboración:** la solución que "mejor funciona" en la práctica
+  (Notas) no permite compartir ni coeditar en tiempo real entre
+  convivientes — ahí es donde Bring! sí acierta.
+- **De usabilidad (testimonio propio del hogar):** en casa, el motivo de
+  abandonar una app de listas tras 2 usos fue la pereza de abrir "otra
+  app" aparte del canal de siempre — sigue siendo válido como dato de
+  primera mano.
 
 ### Conclusión
 
 El hueco no es "una lista de la compra más bonita" — de esas ya hay varias,
-gratis. El hueco es una herramienta que combine **nevera + lista
-compartida** sin fricción de aprendizaje (sin tener que abrir/aprender otra
-app aparte del móvil de siempre), y que resista bien lo básico de que dos
-personas la usen al mismo tiempo — algo en lo que ni siquiera las
-soluciones establecidas analizadas están libres de fallos.
+y una (AnyList) hasta iguala la rapidez de Notas. El hueco real es una
+herramienta **tan rápida de usar como Notas, tan colaborativa como Bring!,
+y centrada en ahorro y control de stock** — el ángulo que ni la app más
+simple ni la más completa cubren, porque ambas piensan en "cocinar", no en
+"gastar menos y no quedarse sin nada".
 
 ## 3 · Estudio de mercado
 
