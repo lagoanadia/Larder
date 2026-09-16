@@ -93,28 +93,29 @@ y centrada en ahorro y control de stock** — el ángulo que ni la app más
 simple ni la más completa cubren, porque ambas piensan en "cocinar", no en
 "gastar menos y no quedarse sin nada".
 
-### Validación con encuesta real (n=11)
+### Validación con encuesta real (n=12)
 
 Encuesta bilingüe (ES/EN) enviada a conocidos, 9 preguntas basadas en
-hechos del último mes, no en opiniones sobre una app futura. 11 respuestas
+hechos del último mes, no en opiniones sobre una app futura. 12 respuestas
 recogidas (se actualiza según van llegando más).
 
 | Dato | Resultado |
 |---|---|
-| Estudiantes / no estudiantes | 8 / 11 estudiantes |
-| Método actual más común | Papel (4/11), Notas (4/11), ninguno (2/11), WhatsApp (1/11) |
-| Ha probado alguna app específica (Bring!, AnyList...) | **0/11** — nadie |
-| Compró algo duplicado al menos 1 vez el último mes | 9/11 (82%) |
-| Tuvo que volver a la tienda por algo olvidado el último mes | 8/11 (73%) |
-| Lleva alguna cuenta de gastos compartidos | 6/11 (el resto no, o no aplica) |
+| Estudiantes / no estudiantes | 9 / 12 estudiantes |
+| Método actual más común | Papel (5/12), Notas (4/12), ninguno (2/12), WhatsApp (1/12) |
+| Ha probado alguna app específica (Bring!, AnyList...) | **0/12** — nadie |
+| Compró algo duplicado al menos 1 vez el último mes | 9/12 (75%) |
+| Tuvo que volver a la tienda por algo olvidado el último mes | 9/12 (75%) |
+| Lleva alguna cuenta de gastos compartidos | 6/12 (el resto no, o no aplica) |
 
 **Lectura honesta:** el método "ganador" en las conversaciones informales
-(sección 2) era Notas; en esta encuesta, Papel y Notas van ahora empatados
-(4/11 cada uno). Con una muestra de 11 no se puede generalizar ninguno de
-los dos datos — se dejan ambos por escrito, sin forzar que cuadren entre
-sí. Los dos porcentajes de arriba (82%, 73%) bajaron un poco respecto a la
-lectura con 10 respuestas (90%, 70%) — es lo esperable con una muestra tan
-pequeña, y es la prueba de que estos números son reales y no están
+(sección 2) era Notas; en esta encuesta, Papel pasa ahora a la cabeza
+(5/12 frente a 4/12 de Notas), tras ir empatados con la respuesta anterior.
+Con una muestra de 12 no se puede generalizar ninguno de los dos datos —
+se dejan ambos por escrito, sin forzar que cuadren entre sí. Los dos
+porcentajes de "duplicado"/"olvido" (75%, 75%) bajaron un poco respecto a
+la lectura con 11 respuestas (82%, 73%) — es lo esperable con una muestra
+tan pequeña, y es la prueba de que estos números son reales y no están
 maquillados para parecer más contundentes de lo que son.
 
 **Frases literales de la encuesta** (frustración más común al gestionar la
@@ -131,6 +132,7 @@ compra/nevera compartida):
 >
 > "Not knowing what the others want, the others eating my stuff" / "when
 > people use the food i planned to use... so I have to use something else"
+> / "not knowing if someone bought something just for themself"
 >
 > "Tener en cuenta qué productos quedan abiertos, cuáles se pierden antes,
 > etc." — señal **nueva**, distinta a las anteriores: apunta a caducidad y
