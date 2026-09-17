@@ -13,7 +13,7 @@ servilleta de 6 casillas, las 3 columnas y el documento de una página final.
 
 **DESPUÉS (con datos reales):**
 
-> Iago y [tu nombre] pierden 10-15 minutos cada vez que hacen la lista de la
+> Iago y Nadia pierden 10-15 minutos cada vez que hacen la lista de la
 > compra a ojo con papel y boli, van a la tienda 2 veces por semana sin
 > planificación previa, y casi siempre acaban comprando algo duplicado o
 > volviendo por algo olvidado — un gasto que ronda los 1.000€ al año en
