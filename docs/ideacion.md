@@ -55,7 +55,6 @@ las tres": hablar con quien vive el problema, no solo leer sobre él.
 > como cierto invalida el apartado entero" — así que se corrige, no se
 > disimula.
 
-
 ### Citas literales de usuarios reales
 
 > "El icono de la aplicación aparece marcado como comprado en el Apple
