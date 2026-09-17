@@ -22,7 +22,7 @@ servilleta de 6 casillas, las 3 columnas y el documento de una página final.
 **Cómo se calculó el número:** 10€ perdidos de media por viaje × 2 viajes/semana
 × 52 semanas/año ≈ 1.040€/año.
 
-**Fuente:** experiencia directa del hogar (Iago, Nadia, Muxia). Sin fuente
+**Fuente:** experiencia directa del hogar (Iago y Nadia). Sin fuente
 externa — es un dato de primera mano, no una estimación de mercado.
 
 ## 2 · Estado del arte
