@@ -98,7 +98,7 @@ motivo por el que hacer la encuesta era necesario es precisamente este: ya
 existen apps (Bring!, AnyList), y las dos fallan en lo mismo. AnyList
 tiene recetas sugeridas, categorías cuidadas y reconocimiento inteligente
 — y aun así, en la encuesta, la app con más funciones es la que **nadie
-usa hoy** (0/31), mientras que Papel/Notas, sin ninguna función extra,
+usa hoy** (0/32), mientras que Papel/Notas, sin ninguna función extra,
 ganan. No es
 casualidad: cada función que se añade encima de "escribir un item" es una
 barrera más entre la persona y la lista, y la gente vota con los pies por
@@ -115,11 +115,12 @@ Papel no pueden hacer por diseño" (compartir en tiempo real, saber quién
 hizo qué, avisar de stock) debería mirarse con sospecha, aunque quede
 bonita en una demo.
 
-### Validación con encuesta real (n=31)
+### Validación con encuesta real — resultados finales (n=32)
 
 Encuesta bilingüe (ES/EN) enviada a conocidos, 9 preguntas basadas en
-hechos del último mes, no en opiniones sobre una app futura. 31 respuestas
-únicas recogidas (se actualiza según van llegando más).
+hechos del último mes, no en opiniones sobre una app futura. **Encuesta
+cerrada el 17/09/2026 con 32 respuestas únicas** — esta es la versión
+final para la entrega, ya no se actualiza.
 
 **Nota de limpieza de datos:** dos pares de envíos eran la misma persona
 enviando dos veces por accidente (mismos datos, segundos o minutos de
@@ -143,27 +144,28 @@ vez de disimulada.
 
 | Dato | Resultado |
 |---|---|
-| Estudiantes / no estudiantes | 25 / 31 estudiantes |
-| Método actual más común | Notas (12/31), Papel (11/31), ninguno (7/31), WhatsApp (1/31), una app específica (0/31) |
-| Ha probado alguna app específica alguna vez (Bring!, AnyList...) | 2/31 (6%) — pero **0/31 la usa hoy como método** (ver lectura honesta) |
-| Compró algo duplicado al menos 1 vez el último mes | 23/31 (74%) |
-| Tuvo que volver a la tienda por algo olvidado el último mes | 23/31 (74%) |
-| Sufrió ambas cosas el mismo mes (duplicado + viaje olvidado) | 17/31 (55%) |
-| Lleva alguna cuenta de gastos compartidos | 9/31 sí, 12/31 no, 10/31 no aplica |
+| Estudiantes / no estudiantes | 26 / 32 estudiantes |
+| Método actual más común | Notas (12/32), Papel (11/32), ninguno (8/32), WhatsApp (1/32), una app específica (0/32) |
+| Ha probado alguna app específica alguna vez (Bring!, AnyList...) | 2/32 (6%) — pero **0/32 la usa hoy como método** (ver lectura honesta) |
+| Compró algo duplicado al menos 1 vez el último mes | 23/32 (72%) |
+| Tuvo que volver a la tienda por algo olvidado el último mes | 24/32 (75%) |
+| Sufrió ambas cosas el mismo mes (duplicado + viaje olvidado) | 17/32 (53%) |
+| Lleva alguna cuenta de gastos compartidos | 9/32 sí, 12/32 no, 11/32 no aplica |
 
-**Lectura honesta:** el "método ganador" **sigue sin asentarse** — con
-n=26 mandaba Papel (42% vs 31%), con n=31 Notas lo adelanta otra vez
-(39% vs 35%), por solo 1 respuesta de diferencia. La lectura correcta no
-es "ahora gana Notas", es que con una muestra de este tamaño el primer
-puesto es demasiado ajustado para afirmar nada con seguridad — se deja
-así de inestable a propósito, en vez de fijar una conclusión que los
-propios datos no sostienen. Los dos porcentajes de dolor (duplicado,
-olvido) han vuelto a coincidir en 74% — es casualidad estadística, no una
-corrección; ya pasó lo mismo en tandas anteriores y se deshizo con más
-muestra. El dato conjunto (55%, 17/31) se mantiene claramente por encima
-de la mitad. Sigue habiendo solo 2 personas de 31 que han probado alguna
-vez una app (Bring!, "Notas") y ninguna la usa hoy — el patrón de "prueban
-y abandonan" aguanta con más muestra detrás.
+**Lectura honesta, con la muestra ya cerrada:** el "método ganador" **no
+llega a asentarse en ningún momento** de toda la recogida — pasó de
+empatado, a Papel por delante, a Notas por delante, cambiando de líder en
+cada tanda por 1-2 respuestas. La conclusión correcta no es "gana Notas",
+es que a este tamaño de muestra el primer puesto entre Papel y Notas es
+un empate técnico, y así se deja escrito en vez de fingir una tendencia
+clara. Los dos porcentajes de dolor (72% duplicado, 75% olvido) se separan
+de nuevo tras haber coincidido en la tanda anterior — confirma que esa
+coincidencia fue casualidad de muestra pequeña, no una corrección real. El
+dato conjunto (53%, 17/32) se mantiene estable y claramente por encima de
+la mitad en las últimas tres tandas (58% → 55% → 53%), la señal más sólida
+de toda la encuesta. Se mantienen las 2 personas de 32 que alguna vez
+probaron una app (Bring!, "Notas") sin que ninguna la use hoy — este
+patrón de "prueban y abandonan" no cambió ni una vez en toda la recogida.
 
 **Frases literales de la encuesta** (frustración más común al gestionar la
 compra/nevera compartida), agrupadas por tema:
