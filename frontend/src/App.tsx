@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import type { Tab } from './types'
+import type { FridgeItemStatus, Tab } from './types'
 import { mockFridgeItems, mockMembers } from './data/mockData'
 import Header from './components/Header'
 import TabNav from './components/TabNav'
@@ -21,29 +21,34 @@ function App() {
   const [fridgeItems, setFridgeItems] = useState(mockFridgeItems)
 
   const activeMember = mockMembers.find((m) => m.id === activeMemberId) ?? mockMembers[0]
-  const lowStockCount = fridgeItems.filter((item) => item.quantity <= item.lowStockThreshold).length
+  // Antes esto se CALCULABA comparando quantity con lowStockThreshold.
+  // Con el modelo nuevo (17/09) ya no hay nada que calcular: el estado
+  // bajo de stock se MARCA directamente, así que basta con contar
+  // cuántos items no están en 'ok'.
+  const lowStockCount = fridgeItems.filter((item) => item.status !== 'ok').length
 
-  function handleQuantityChange(itemId: string, delta: number) {
+  function handleStatusChange(itemId: string, status: FridgeItemStatus) {
     // TODO (tuyo): actualiza `fridgeItems` usando setFridgeItems.
+    // Mismo patrón inmutable de siempre, con el campo nuevo:
     //
-    // Pistas:
-    // - NUNCA mutes el array directamente (nada de fridgeItems[i].quantity = ...).
+    // - NUNCA mutes el array directamente (nada de fridgeItems[i].status = ...).
     //   En React el estado se trata como inmutable: hay que crear un array
     //   NUEVO para que React se entere de que algo cambió y vuelva a renderizar.
     // - `.map()` es tu amigo aquí: recorre fridgeItems y devuelve un array
-    //   nuevo donde el item que coincide con itemId tiene una quantity
-    //   distinta, y todos los demás se devuelven tal cual.
-    // - No dejes que quantity baje de 0 (usa Math.max(0, ...)).
+    //   nuevo donde el item que coincide con itemId tiene un status
+    //   distinto, y todos los demás se devuelven tal cual.
     //
     // Algo así (rellena los huecos):
     //
     // setFridgeItems(
     //   fridgeItems.map((item) =>
-    //     item.id === itemId
-    //       ? { ...item, quantity: Math.max(0, item.quantity + delta) }
-    //       : item
+    //     item.id === itemId ? { ...item, status } : item
     //   )
     // )
+    //
+    // Cuando ataquemos List de verdad, aquí también habrá que registrar
+    // un FridgeEvent (ver types/index.ts) para no perder el historial de
+    // consumo — pero eso es para cuando lleguemos a esa pantalla, no ahora.
   }
 
   return (
@@ -53,7 +58,7 @@ function App() {
 
       <main className="app-content">
         {activeTab === 'fridge' && (
-          <FridgeView items={fridgeItems} onQuantityChange={handleQuantityChange} />
+          <FridgeView items={fridgeItems} onStatusChange={handleStatusChange} />
         )}
         {activeTab === 'list' && <ListView />}
         {activeTab === 'history' && <HistoryView />}

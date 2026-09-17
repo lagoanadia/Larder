@@ -1,31 +1,35 @@
-import type { FridgeItem } from '../types'
+import type { FridgeItem, FridgeItemStatus } from '../types'
 
 interface FridgeItemCardProps {
   item: FridgeItem
-  onQuantityChange: (delta: number) => void
+  onStatusChange: (status: FridgeItemStatus) => void
 }
 
-function FridgeItemCard({ item, onQuantityChange }: FridgeItemCardProps) {
-  // TODO (tuyo): monta la tarjeta. Debe mostrar/hacer:
+function FridgeItemCard({ item, onStatusChange }: FridgeItemCardProps) {
+  // TODO (tuyo) — actualizado al nuevo modelo (17/09): ya no hay
+  // cantidades ni botones +/-, eso quedó atrás con el giro de producto
+  // (ver docs/ideacion.md, "Fridge — cómo evita ser otra AnyList").
+  // Monta la tarjeta. Debe mostrar/hacer:
   //   - item.name (ej. "Milk")
-  //   - la cantidad: `${item.quantity} ${item.unit}` (ej. "1 L")
-  //   - un botón "-" cuyo onClick llame a onQuantityChange(-1)
-  //   - un botón "+" cuyo onClick llame a onQuantityChange(1)
+  //   - un indicador visual de item.status ('ok' | 'low' | 'out') —
+  //     puede ser texto ("Bien" / "Queda poco" / "Se acabó") o color,
+  //     lo que prefieras
+  //   - dos botones de ACCIÓN, no de cantidad:
+  //       "Queda poco"  -> onClick llama a onStatusChange('low')
+  //       "Se acabó"    -> onClick llama a onStatusChange('out')
   //
   // Estructura sugerida (ajústala a tu gusto, el CSS lo haremos después):
-  //   <div className="fridge-card">
+  //   <div className={`fridge-card fridge-card--${item.status}`}>
   //     <p className="fridge-card-name">{item.name}</p>
   //     <div className="fridge-card-controls">
-  //       <button type="button" onClick={...}>-</button>
-  //       <span>{item.quantity} {item.unit}</span>
-  //       <button type="button" onClick={...}>+</button>
+  //       <button type="button" onClick={...}>Queda poco</button>
+  //       <button type="button" onClick={...}>Se acabó</button>
   //     </div>
   //   </div>
   //
   // EXTRA (cuando lo de arriba funcione y se vea en el navegador):
-  // calcula si el item está bajo de stock y añade una clase extra:
-  //   const isLow = item.quantity <= item.lowStockThreshold
-  //   className={isLow ? 'fridge-card low' : 'fridge-card'}
+  // un tercer botón "Reponer" -> onStatusChange('ok') te viene bien para
+  // poder probar el ciclo completo a mano mientras no exista la Lista.
   //
   // Borra el `return null` de abajo cuando tengas tu versión.
   return null

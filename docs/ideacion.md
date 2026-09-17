@@ -222,12 +222,11 @@ encuestados que nunca vieron el prototipo, y la cita sobre Bring! confirma
 que el problema de cooperación no es teórico: rompe incluso una app ya
 colaborativa. La caducidad de productos ya no es una señal débil: con 3
 menciones espontáneas es, después de cooperación, el segundo tema más
-repetido — queda anotada como candidata a P2+ (ver "visión ampliada",
-sección 5), porque requiere ampliar el catálogo de Odoo. La queja de
-"se acaba y nadie avisa" sí queda resuelta ya en P1, gratis, como
-consecuencia directa de que Fridge sea una vista compartida (sección 5).
-Las menciones de precio siguen siendo pocas (2), una señal a favor de
-**Prices** pero sin
+repetido — entra en el plan de construcción (sección 5) con un pequeño
+campo de "días de frescura típicos" por categoría en nuestra propia base
+de datos. La queja de "se acaba y nadie avisa" queda resuelta gratis en
+cuanto Fridge sea una vista compartida (sección 5). Las menciones de
+precio siguen siendo pocas (2), una señal a favor de **Prices** pero sin
 forzarla a más de lo que da de sí.
 
 **Por qué esto no lo puede copiar Notas — el diferenciador real:** la
@@ -331,37 +330,61 @@ hogar que pague, hay beneficio**, porque el fundador no adelanta dinero.
 > proyectos indie, pero tiene un precio técnico que hay que declarar (ver
 > abajo), no solo económico.
 
-**Lectura honesta (y el matiz técnico que viene con "gratis"):** el nivel
-gratuito de Render tiene dos límites reales que afectan al proyecto:
-1. El servicio "duerme" tras un rato sin uso y tarda unos segundos en
-   despertar en la siguiente petición (mala primera impresión para un
-   usuario nuevo).
-2. El disco es **efímero**: si usamos SQLite tal cual, el archivo de la
-   base de datos puede perderse en cada despliegue o reinicio, salvo que
-   se configure almacenamiento persistente (que en Render ya no es
-   gratuito).
+**Lectura honesta (y el matiz técnico que viene con "gratis"):** el stack
+se actualizó (17/09) de "Render + SQLite" a Render (backend) + Supabase o
+Neon (Postgres) + Vercel/Netlify (frontend) + bot de Telegram + Gemini API
++ Open Food Facts + GitHub Actions (tareas programadas). Esto arregla
+gratis la limitación que teníamos antes documentada — el disco efímero de
+Render, que podía perder la base de datos SQLite en cada reinicio —,
+porque Supabase/Neon dan Postgres persistente en su propio nivel
+gratuito, no en el disco de Render. Sigue quedando un límite real: el
+backend en Render "duerme" tras un rato sin uso y tarda unos segundos en
+despertar en la siguiente petición (mala primera impresión para un
+usuario nuevo). Los límites de las capas gratuitas (Supabase, Gemini,
+Render) cambian cada pocos meses — se verificarán antes de comprometerse
+con ninguna, con la misma norma que ya aplicamos al retirar el dato de
+"Out of Milk" (sección 2): si no se puede confirmar, no se da por bueno.
 
-Esto no invalida la decisión de no pagar — es información que hay que
-tener antes de decidir dónde vivirán los datos reales de producción más
-adelante (quizá valga usar el disco persistente solo cuando/si el
-proyecto consigue sus primeros hogares de pago). Y el reto de fondo sigue
-siendo el mismo: conseguir que alguien pague por algo que la competencia
-(WhatsApp, papel) da gratis — ese es un problema de canal (P2), no de
-números (P1).
+El reto de fondo sigue siendo el mismo: conseguir que alguien pague por
+algo que la competencia (WhatsApp, papel) da gratis — eso es un problema
+de canal, no de números.
 
 ## 5 · Las 3 columnas (alcance)
 
-| Lo construimos (Larder) | Lo hace Odoo (ERP) | No se hace este curso |
+**Actualización (17/09):** con el giro de producto ("la lista se calcula
+sola, no se escribe") se retira Odoo del plan — el comparador de Prices
+pasa a calcularse sobre el propio historial de compras del hogar
+(`PurchaseItem`, ver más abajo) en vez de sobre un catálogo externo que
+alguien tendría que mantener actualizado a mano. También se decide
+construir para esta entrega lo que antes se dejaba para un P2 hipotético
+(lectura de tickets, predicción de consumo) — la columna "no se hace este
+curso" se queda solo con lo que de verdad no compensa construir nunca en
+este proyecto, no con lo que "todavía no tocaba".
+
+| Lo construimos (Larder) | Lo hace un servicio externo gratuito | No se hace este curso |
 |---|---|---|
-| Nevera: lo que hay en casa, **sin cantidades**. Se rellena sola al marcar algo como comprado en la Lista; se vacía con un único toque "se acabó" (que además lo manda de vuelta a la Lista) | Catálogo maestro de productos y sus precios por tienda (Odoo Products + Pricelists) — Larder solo lo **consulta** vía API para la pestaña Prices | Escaneo de código de barras |
-| Lista de la compra compartida, con control de concurrencia (dos personas marcando a la vez) | Facturación real de la suscripción de 0,99€/mes, si algún día se cobrase de verdad (Odoo Invoicing) | Cobro real con tarjeta / pasarela de pago |
-| Historial de compras + cálculo de quién debe a quién (solo se calcula y se muestra, no se paga automáticamente) | | Notificaciones push |
-| Comparador de precios por tienda, resaltando el más barato | | Liquidar deudas de verdad (transferencias) |
+| Nevera: lo que hay en casa, **sin cantidades** — 3 estados (bien / queda poco / se acabó). Se rellena sola al marcar algo como comprado en la Lista; se vacía con un toque "se acabó" que la devuelve a la Lista | Diccionario de productos para normalizar nombres al escribir, hablar o leer un ticket (Open Food Facts, API abierta y gratuita, sin clave) | Escaneo de código de barras (EAN por cámara) |
+| Lista de la compra que se **genera sola** a partir de la nevera, compartida con control de concurrencia (dos personas marcando a la vez) | Lectura de tickets de compra → items estructurados (Gemini API, free tier) — la IA se usa **solo aquí**; umbrales y predicción son aritmética sobre nuestra propia base de datos | Cobro real con tarjeta / pasarela de pago |
+| Historial de compras + cálculo de quién debe a quién (se calcula y se muestra, no se paga automáticamente) | Aviso al grupo de quién le toca comprar (bot de Telegram, gratis, sin tarjeta) | Facturación real de la suscripción, si algún día se cobrase de verdad |
+| Comparador de precios por tienda, calculado sobre el propio historial de compras del hogar | | Liquidar deudas de verdad (transferencias reales) |
+| Predicción de cuándo reponer cada producto, a partir del propio historial de eventos de la nevera (sin IA — promedio de días entre reposición y "se acabó") | | Notificaciones push nativas del navegador (Web Push/VAPID) — el aviso por Telegram es la excepción declarada abajo |
 
 **Por qué así:** nadie os elegiría por construir vuestro propio sistema de
 facturación o de cobro con tarjeta — eso ya está resuelto y cambia con la
 normativa. Sí os elegirían por cómo lleváis la nevera y la lista
 compartida, que es donde está el dolor real (sección 1).
+
+**Excepción declarada a "notificaciones push" (17/09):** con el giro de
+producto hacia "la lista se calcula sola", el reparto de quién va a
+comprar se avisa con un bot de Telegram al grupo del hogar. Es
+técnicamente una notificación push por otra puerta, y se reconoce aquí en
+vez de fingir que no lo es. Se acepta como excepción, no como cambio de
+regla general, porque: (1) el coste es 0€ y la API de Telegram no exige
+tarjeta ni infraestructura propia de notificaciones (a diferencia de Web
+Push con certificados/VAPID, que sí sigue fuera); (2) sin algún aviso
+fuera de la propia app, "la lista se genera sola" pierde la mitad de su
+gracia — de poco sirve que nadie tenga que escribirla si alguien tiene
+que acordarse de abrir la app para comprobarlo.
 
 ### Fridge — cómo evita ser "otra AnyList"
 
@@ -372,66 +395,50 @@ a una persona que teclee cada vez que gasta un huevo o un litro de leche
 no es digitalizar el papel, es añadirle una tarea que el papel ni siquiera
 pedía. Se corrige aquí en vez de dejarlo pasar.
 
-**Diseño real de Fridge en P1** — sin cantidades, sin +/-, sin gesto
-humano nuevo:
+**Diseño real de Fridge** — sin cantidades, sin +/-, sin gesto humano
+nuevo:
 - Un producto entra en Fridge **solo**, en el momento en que alguien lo
-  marca como comprado en la Lista — cero tecleo adicional, es el mismo
-  gesto que ya se hace al comprar.
+  marca como comprado en la Lista (a mano) o cuando se procesa el ticket
+  de la compra (automático, vía Gemini) — cero tecleo extra en el caso
+  automático, el mismo gesto de siempre en el manual.
 - Fridge es una vista compartida: cualquiera del piso puede abrirla desde
   la tienda y ver qué hay ya en casa antes de comprar — ataca
   directamente el dato más repetido de la encuesta (72% compró algo
   duplicado el último mes).
-- Un producto sale de Fridge con un único toque, "se acabó" — no una
-  cantidad, un sí/no. Ese mismo toque lo manda de vuelta a la Lista, así
-  que el ciclo compra → Fridge → se acaba → Lista se cierra solo, sin que
-  nadie copie nada a mano de un sitio a otro.
+- Un producto pasa de "bien" a "queda poco" a "se acabó" con un toque,
+  nunca con un número. "Se acabó" lo manda de vuelta a la Lista, así que
+  el ciclo compra → Fridge → se acaba → Lista se cierra solo.
+- Cada uno de esos toques (y cada reposición) queda registrado con su
+  fecha (`FridgeEvent` en el modelo de datos) — no para usarlo ya, sino
+  para que la predicción de consumo tenga histórico real que leer en
+  cuanto haya unas semanas de datos.
 
 Esto ya no depende de que nadie lleve la cuenta de "cuántos huevos
-quedan" — solo de dos gestos que la persona ya iba a hacer de todas
-formas (marcar comprado, marcar que se acabó).
+quedan" — solo de gestos que la persona ya iba a hacer de todas formas
+(marcar comprado, marcar que se acabó).
 
-### Fridge — visión ampliada (fuera de P1, pero con ruta clara)
+**Apuntar hablando, no escribiendo.** Los navegadores modernos (Chrome,
+Edge, con matices en Safari) traen integrada la **Web Speech API**:
+convierte voz a texto dentro del propio navegador, gratis y sin servidor
+propio. Un botón de micrófono devuelve texto, que se trocea (por comas,
+por "y") y se intenta emparejar contra el diccionario de Open Food Facts;
+si no encuentra coincidencia, se guarda igual como texto libre — nunca
+bloquea. Entender frases más complejas ("dos docenas de huevos y medio
+kilo de jamón cortado fino") sí necesitaría un LLM de verdad, y ahí es
+donde entra Gemini — el mismo modelo que ya se usa para leer tickets,
+no una pieza nueva.
 
-Esto **no es compromiso de esta entrega** — es a dónde se podría llegar
-con Fridge más adelante (P2+), pensado sin la limitación mental de "esto
-es demasiado para nosotros", pero anclado a recursos que ya están
-decididos (Odoo, coste fijo 0€, la propia web).
+**La rebanada vertical, en una frase:**
 
-- **Apuntar hablando, no escribiendo — y es más alcanzable de lo que
-  parece.** Los navegadores modernos (Chrome, Edge, con matices en
-  Safari) traen integrada la **Web Speech API**: convierte voz a texto
-  dentro del propio navegador, **gratis y sin servidor propio**. No hace
-  falta "un asistente de IA" construido desde cero — un botón de
-  micrófono ya devuelve texto, que luego se trocea (por comas, por "y") y
-  se intenta emparejar contra el catálogo de Odoo. Si no encuentra
-  coincidencia, se guarda igual como texto libre — nunca bloquea, porque
-  bloquear sería peor que el papel. Entender frases más complejas ("dos
-  docenas de huevos y medio kilo de jamón cortado fino") sí necesitaría
-  un modelo de lenguaje de verdad (tipo la API de Claude), y eso ya cuesta
-  céntimos por petición — el único punto de esta visión que no es 0€
-  garantizado.
-- **Caducidad sin que nadie escriba una fecha.** El catálogo de Odoo, que
-  ya se va a usar para precios, puede llevar también un campo "días de
-  frescura típicos" por categoría (lácteos abiertos: 5 días, verdura: 7
-  días...). Al marcar un producto como "abierto" en Fridge, un contador
-  empezaría solo. Responde directamente a las 4 citas de caducidad de la
-  encuesta (sección 2) — se deja fuera de P1 porque exige ampliar el
-  catálogo de Odoo con este campo nuevo, no porque la idea sea mala.
-
-Se deja esto fuera de P1 por foco y tiempo, no porque sea imposible: la
-pieza más "cara" de verdad (el asistente de voz con comprensión de frases
-complejas) es la única que cae en "no se hace este curso"; el resto es
-alcanzable con las mismas piezas gratuitas que P1 ya usa.
-
-**La rebanada vertical de P1, en una frase:**
-
-> "En P1, un hogar de A Coruña controla su nevera y organiza la lista de la
-> compra compartida sin usar el grupo de WhatsApp, y puede consultar su
-> historial de gasto repartido y comparar precios entre tiendas."
+> "Un hogar de A Coruña deja de escribir la lista de la compra: la nevera
+> se rellena sola al comprar, avisa cuando algo se acaba, y la lista sale
+> de ahí. El grupo se entera por Telegram, marca la compra en tiempo real,
+> y consulta después quién debe qué y dónde sale más barato cada cosa."
 
 **Orden de construcción:** Nevera → Lista (con concurrencia) → History →
 Prices. Cada una completa (pantalla + lógica + datos reales) antes de
-abrir la siguiente.
+abrir la siguiente — esto no cambia aunque el alcance de cada pantalla
+haya crecido.
 
 ## 6 · Documento de una página
 
@@ -441,9 +448,9 @@ abrir la siguiente.
 | **Público** | La persona que organiza la compra en un hogar compartido de A Coruña — estudiantes, parejas o cualquier grupo que comparte gastos. ~99.700 hogares accesibles en la zona (sección 3). |
 | **Problema** | Iago y Nadia pierden 10-15 min cada vez que hacen la lista a ojo con papel y boli, van a la tienda 2 veces/semana sin planificar, y casi siempre acaban comprando algo duplicado o volviendo por algo olvidado — un gasto que ronda los 1.000€/año (sección 1). |
 | **Números** | 0,99€/mes por hogar. Coste fijo: 0€ (hosting gratuito). Punto de equilibrio: 1 hogar. Mercado accesible: ~99.700 hogares (sección 4). |
-| **Alcance de P1** | Nevera + Lista compartida (con concurrencia) + Historial de gasto + Comparador de precios (datos de precios vía Odoo). Facturación y cobro real, fuera de alcance (sección 5). |
+| **Alcance** | Nevera sin cantidades (3 estados) + Lista que se genera sola + Historial de gasto + Comparador de precios sobre el propio historial de compras + lectura de tickets y predicción de consumo. Facturación y cobro real, fuera de alcance (sección 5). |
 | **Canal** | Directo: el propio hogar (Iago y Nadia) es el primer usuario real — no hace falta convencer a nadie externo para la primera prueba de fuego. |
-| **Qué no haremos** | Escaneo de código de barras, cobro real con tarjeta, notificaciones push, liquidación automática de deudas (sección 5). |
+| **Qué no haremos** | Escaneo de código de barras, cobro real con tarjeta, notificaciones push nativas del navegador (el aviso va por Telegram), liquidación automática de deudas (sección 5). |
 
 > **Nota sobre el nombre:** "Larder" es una palabra inglesa común (significa
 > "despensa"), lo que puede dificultar encontraros en un buscador frente a
