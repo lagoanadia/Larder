@@ -43,8 +43,8 @@ las tres": hablar con quien vive el problema, no solo leer sobre él.
 |---|---|---|---|
 | Papel y boli | Rápido y sencillo | Se pierde fácil (ej. real: "mi madre siempre lo pierde"); poca organización; de un solo uso — se gasta papel cada vez | No es gratis de verdad: el papel cuesta |
 | **Notas (app del móvil)** | La solución más usada entre el círculo encuestado; simple, bien estructurada, reusable — "la que mejor funciona" en la práctica | No se puede compartir ni coeditar en tiempo real; al ser una app genérica (no específica de listas), se pierde entre el resto de notas | Gratis |
-| [Bring!](https://apps.apple.com/us/app/bring-grocery-shopping-list/id580669177) | Colaborativo de verdad (varias personas a la vez, en tiempo real) | Un paso extra frente a Notas: hay que buscar el ingrediente en su base de datos en vez de solo escribirlo — esa fricción es la razón por la que la gente vuelve a Notas. Su sección "Inspiración" no tiene recetas propias, solo enlaza a webs externas, y no resuelve el caso de uso real (llevar stock, no inspirarse) | Gratis + suscripción opcional |
-| [AnyList](https://justuseapp.com/en/app/522167641/anylist-grocery-shopping-list/reviews) | Reconocimiento inteligente al escribir (escribes "milk" y lo categoriza solo, casi tan rápido como Notas; si no reconoce algo, se queda como texto normal sin penalizar); categorización automática; **escáner de código de barras** integrado; recetas propias o importadas | Todo el valor añadido apunta a **cocinar** (recetas, meal planning de pago) — a quien no le interesa cocinar no le aporta nada. Y lo que de verdad importa aquí, **saber cuánto stock hay y cuánto se gasta**, no lo cubre ni siquiera esta app, la más completa de las analizadas | Gratis + suscripción (meal planning) |
+| [Bring!](https://apps.apple.com/us/app/bring-grocery-shopping-list/id580669177) | Colaborativo de verdad (varias personas a la vez, en tiempo real) | Un paso extra frente a Notas: hay que buscar el ingrediente en su base de datos en vez de solo escribirlo — esa fricción es la razón por la que la gente vuelve a Notas. Su sección "Inspiración" no tiene recetas propias, solo enlaza a webs externas, y no resuelve el caso de uso real (compartir la lista y saber qué hay ya en casa, no inspirarse) | Gratis + suscripción opcional |
+| [AnyList](https://justuseapp.com/en/app/522167641/anylist-grocery-shopping-list/reviews) | Reconocimiento inteligente al escribir (escribes "milk" y lo categoriza solo, casi tan rápido como Notas; si no reconoce algo, se queda como texto normal sin penalizar); categorización automática; **escáner de código de barras** integrado; recetas propias o importadas | Todo el valor añadido apunta a **cocinar** (recetas, meal planning de pago) — a quien no le interesa cocinar no le aporta nada. Y lo que de verdad importa aquí, **saber qué hay ya en casa sin tener que llevar la cuenta manual de cada unidad**, no lo cubre ni siquiera esta app, la más completa de las analizadas | Gratis + suscripción (meal planning) |
 | ~~Out of Milk~~ | — | **Descartada**: al verificarla no se encontró como app activa/real — el hallazgo de la búsqueda por IA no se pudo confirmar en la fuente original, así que se retira en vez de darla por buena | — |
 
 > **Nota sobre el método (verificación real, no solo declarada):** la fila
@@ -69,9 +69,10 @@ conversaciones directas con estudiantes/gente joven descritas arriba.)
 ### Huecos detectados
 
 - **De posicionamiento (el más importante):** ni Bring! ni AnyList —las dos
-  apps "serias" analizadas— están construidas para ahorrar o controlar
-  stock/gasto. Ambas apuntan a **cocinar y planificar recetas**. No es que
-  les falte pulir una función: apuntan a un problema distinto al vuestro.
+  apps "serias" analizadas— están construidas para el acto simple de
+  apuntar y compartir la lista. Ambas apuntan a **cocinar y planificar
+  recetas**. No es que les falte pulir una función: apuntan a un problema
+  distinto al vuestro.
 - **De fricción:** cualquier paso extra sobre "simplemente escribir" hace
   que la gente vuelva a la solución más simple (Notas) — la barrera de
   entrada para añadir un item tiene que ser mínima, al nivel de Notas o de
@@ -89,9 +90,11 @@ conversaciones directas con estudiantes/gente joven descritas arriba.)
 El hueco no es "una lista de la compra más bonita" — de esas ya hay varias,
 y una (AnyList) hasta iguala la rapidez de Notas. El hueco real es una
 herramienta **tan rápida de usar como Notas, tan colaborativa como Bring!,
-y centrada en ahorro y control de stock** — el ángulo que ni la app más
-simple ni la más completa cubren, porque ambas piensan en "cocinar", no en
-"gastar menos y no quedarse sin nada".
+que además dice quién apuntó o consumió cada cosa, y muestra qué hay ya en
+casa sin pedirle a nadie que lleve la cuenta manual de cada unidad** — el
+ángulo que ni la app más simple ni la más completa cubren, porque ambas
+piensan en "cocinar", no en "apuntar la compra sin fricción y saber qué
+falta".
 
 **Principio de diseño: digitalizar no es añadir, es no estorbar.** El
 motivo por el que hacer la encuesta era necesario es precisamente este: ya
@@ -112,8 +115,8 @@ compartido y atribuido a quien lo apuntó, sin que la persona tenga que
 hacer nada extra para conseguirlo. Cualquier función de Larder que no
 sirva directamente a "apuntar rápido y sin fricción" o a "lo que Notas y
 Papel no pueden hacer por diseño" (compartir en tiempo real, saber quién
-hizo qué, avisar de stock) debería mirarse con sospecha, aunque quede
-bonita en una demo.
+hizo qué, avisar cuando algo se acaba sin que nadie tenga que contarlo a
+mano) debería mirarse con sospecha, aunque quede bonita en una demo.
 
 ### Validación con encuesta real — resultados finales (n=32)
 
@@ -185,17 +188,20 @@ compra/nevera compartida), agrupadas por tema:
 > participe a la hora de hacer la compra o que tarden en pagar cuando
 > dividimos gastos" · "llevar la cuenta de quién compró qué antes"
 >
-> **Caducidad / frescura en la nevera** (4 menciones — ya no es una señal
+> **Caducidad / frescura en la nevera** (3 menciones — ya no es una señal
 > aislada): "Tener en cuenta qué productos quedan abiertos, cuáles se
 > pierden antes, etc." · "Cuando la gente en mi apartamento deja la comida
 > en la nevera durante mucho tiempo, y se estropea. No me gusta cuando no
 > está organizado o cuando no tiran su mala comida." · "El desperdicio de
 > comida o incluso la mala organización en los espacios compartidos
-> referentes a la comida como la nevera o despensa" · "Pois supoño que
-> cando algo se acabe ninguén avise. Ej. Miña filla acabou o xamón serrano
-> e non avisou" — esta última describe literalmente el "aviso de stock
-> bajo" que ya estaba en el alcance de Fridge, sin que la persona supiera
-> que existía esa idea.
+> referentes a la comida como la nevera o despensa"
+>
+> **Se acaba y nadie se entera** (1 mención, distinta a la de arriba —
+> esto no es caducidad, es agotamiento sin aviso): "Pois supoño que cando
+> algo se acabe ninguén avise. Ej. Miña filla acabou o xamón serrano e non
+> avisou" — esta es justo la que resuelve el diseño simplificado de
+> Fridge (ver sección 5): al ser una vista compartida, que alguien marque
+> "se acabó" ya avisa a todo el piso, sin lógica extra.
 >
 > **Olvidos concretos al comprar**: "Tener que revisar varias veces que
 > no me he olvidado de apuntar algo que necesito comprar y apuntar cosas
@@ -214,11 +220,14 @@ compró qué" y "que tarden en pagar" son exactamente el problema que
 resuelve la pantalla **History** — hay demanda real y verbalizada por
 encuestados que nunca vieron el prototipo, y la cita sobre Bring! confirma
 que el problema de cooperación no es teórico: rompe incluso una app ya
-colaborativa. La caducidad de productos ya no es una señal débil: con 4
+colaborativa. La caducidad de productos ya no es una señal débil: con 3
 menciones espontáneas es, después de cooperación, el segundo tema más
-repetido — vale la pena que **Fridge** contemple avisos de caducidad desde
-el principio, no como algo "a vigilar más adelante". Las menciones de
-precio siguen siendo pocas (2), una señal a favor de **Prices** pero sin
+repetido — queda anotada como candidata a P2+ (ver "visión ampliada",
+sección 5), porque requiere ampliar el catálogo de Odoo. La queja de
+"se acaba y nadie avisa" sí queda resuelta ya en P1, gratis, como
+consecuencia directa de que Fridge sea una vista compartida (sección 5).
+Las menciones de precio siguen siendo pocas (2), una señal a favor de
+**Prices** pero sin
 forzarla a más de lo que da de sí.
 
 **Por qué esto no lo puede copiar Notas — el diferenciador real:** la
@@ -344,7 +353,7 @@ números (P1).
 
 | Lo construimos (Larder) | Lo hace Odoo (ERP) | No se hace este curso |
 |---|---|---|
-| Nevera: inventario + aviso de stock bajo + botones +/- | Catálogo maestro de productos y sus precios por tienda (Odoo Products + Pricelists) — Larder solo lo **consulta** vía API para la pestaña Prices | Escaneo de código de barras |
+| Nevera: lo que hay en casa, **sin cantidades**. Se rellena sola al marcar algo como comprado en la Lista; se vacía con un único toque "se acabó" (que además lo manda de vuelta a la Lista) | Catálogo maestro de productos y sus precios por tienda (Odoo Products + Pricelists) — Larder solo lo **consulta** vía API para la pestaña Prices | Escaneo de código de barras |
 | Lista de la compra compartida, con control de concurrencia (dos personas marcando a la vez) | Facturación real de la suscripción de 0,99€/mes, si algún día se cobrase de verdad (Odoo Invoicing) | Cobro real con tarjeta / pasarela de pago |
 | Historial de compras + cálculo de quién debe a quién (solo se calcula y se muestra, no se paga automáticamente) | | Notificaciones push |
 | Comparador de precios por tienda, resaltando el más barato | | Liquidar deudas de verdad (transferencias) |
@@ -354,13 +363,39 @@ facturación o de cobro con tarjeta — eso ya está resuelto y cambia con la
 normativa. Sí os elegirían por cómo lleváis la nevera y la lista
 compartida, que es donde está el dolor real (sección 1).
 
+### Fridge — cómo evita ser "otra AnyList"
+
+**Corrección de diseño (17/09):** la primera versión de este documento
+describía Fridge como un inventario con cantidades y botones +/- por
+producto. Es exactamente el mismo error que le achacamos a AnyList: pedir
+a una persona que teclee cada vez que gasta un huevo o un litro de leche
+no es digitalizar el papel, es añadirle una tarea que el papel ni siquiera
+pedía. Se corrige aquí en vez de dejarlo pasar.
+
+**Diseño real de Fridge en P1** — sin cantidades, sin +/-, sin gesto
+humano nuevo:
+- Un producto entra en Fridge **solo**, en el momento en que alguien lo
+  marca como comprado en la Lista — cero tecleo adicional, es el mismo
+  gesto que ya se hace al comprar.
+- Fridge es una vista compartida: cualquiera del piso puede abrirla desde
+  la tienda y ver qué hay ya en casa antes de comprar — ataca
+  directamente el dato más repetido de la encuesta (72% compró algo
+  duplicado el último mes).
+- Un producto sale de Fridge con un único toque, "se acabó" — no una
+  cantidad, un sí/no. Ese mismo toque lo manda de vuelta a la Lista, así
+  que el ciclo compra → Fridge → se acaba → Lista se cierra solo, sin que
+  nadie copie nada a mano de un sitio a otro.
+
+Esto ya no depende de que nadie lleve la cuenta de "cuántos huevos
+quedan" — solo de dos gestos que la persona ya iba a hacer de todas
+formas (marcar comprado, marcar que se acabó).
+
 ### Fridge — visión ampliada (fuera de P1, pero con ruta clara)
 
 Esto **no es compromiso de esta entrega** — es a dónde se podría llegar
 con Fridge más adelante (P2+), pensado sin la limitación mental de "esto
 es demasiado para nosotros", pero anclado a recursos que ya están
-decididos (Odoo, coste fijo 0€, la propia web). Se documenta aparte para
-que no se cuele como alcance obligatorio de P1.
+decididos (Odoo, coste fijo 0€, la propia web).
 
 - **Apuntar hablando, no escribiendo — y es más alcanzable de lo que
   parece.** Los navegadores modernos (Chrome, Edge, con matices en
@@ -378,25 +413,15 @@ que no se cuele como alcance obligatorio de P1.
 - **Caducidad sin que nadie escriba una fecha.** El catálogo de Odoo, que
   ya se va a usar para precios, puede llevar también un campo "días de
   frescura típicos" por categoría (lácteos abiertos: 5 días, verdura: 7
-  días...). Al marcar un producto como "abierto" en Fridge, el contador
-  empieza solo. Responde directamente a las 4 citas de caducidad de la
-  encuesta (sección 2), con el único gesto humano que ya se iba a pedir
-  de todas formas.
-- **Fridge como vista compartida en tiempo real.** Con el mismo stack ya
-  decidido (Node + SQLite), cualquiera del piso podría abrir el móvil
-  **desde la tienda** y ver qué hay ya en casa antes de comprar. Esto
-  ataca directamente el problema más repetido de la encuesta (73%
-  compró algo duplicado) resolviéndolo por diseño, no por fuerza de
-  voluntad de "acordarse de mirar antes de salir".
-- **Fridge → List sin volver a escribir nada.** Un botón "se acabó" en un
-  producto de Fridge lo manda directo a la lista de la compra. Es algo
-  que Papel no puede hacer sin copiar a mano de un sitio a otro — aquí es
-  una función de código.
+  días...). Al marcar un producto como "abierto" en Fridge, un contador
+  empezaría solo. Responde directamente a las 4 citas de caducidad de la
+  encuesta (sección 2) — se deja fuera de P1 porque exige ampliar el
+  catálogo de Odoo con este campo nuevo, no porque la idea sea mala.
 
-Se deja todo esto fuera de P1 por foco y tiempo, no porque sea imposible:
-la pieza más "cara" de verdad (el asistente de voz con comprensión de
-frases complejas) es la única que cae en "no se hace este curso"; el
-resto es alcanzable con las mismas piezas gratuitas que P1 ya usa.
+Se deja esto fuera de P1 por foco y tiempo, no porque sea imposible: la
+pieza más "cara" de verdad (el asistente de voz con comprensión de frases
+complejas) es la única que cae en "no se hace este curso"; el resto es
+alcanzable con las mismas piezas gratuitas que P1 ya usa.
 
 **La rebanada vertical de P1, en una frase:**
 
