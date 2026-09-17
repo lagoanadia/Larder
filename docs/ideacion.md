@@ -13,7 +13,7 @@ servilleta de 6 casillas, las 3 columnas y el documento de una página final.
 
 **DESPUÉS (con datos reales):**
 
-> Iago y [tu nombre] pierden 10-15 minutos cada vez que hacen la lista de la
+> Iago y Nadia pierden 10-15 minutos cada vez que hacen la lista de la
 > compra a ojo con papel y boli, van a la tienda 2 veces por semana sin
 > planificación previa, y casi siempre acaban comprando algo duplicado o
 > volviendo por algo olvidado — un gasto que ronda los 1.000€ al año en
@@ -22,7 +22,7 @@ servilleta de 6 casillas, las 3 columnas y el documento de una página final.
 **Cómo se calculó el número:** 10€ perdidos de media por viaje × 2 viajes/semana
 × 52 semanas/año ≈ 1.040€/año.
 
-**Fuente:** experiencia directa del hogar (Iago, Nadia, Muxia). Sin fuente
+**Fuente:** experiencia directa del hogar (Iago y Nadia). Sin fuente
 externa — es un dato de primera mano, no una estimación de mercado.
 
 ## 2 · Estado del arte
@@ -41,10 +41,10 @@ las tres": hablar con quien vive el problema, no solo leer sobre él.
 
 | Solución | Lo bueno | El problema | Precio |
 |---|---|---|---|
-| Papel y boli | Rápido y sencillo | Se pierde fácil (ej. real: "mi madre siempre lo pierde"); poca organización; de un solo uso — se gasta papel cada vez | No es gratis de verdad: el papel cuesta |
+| Papel y boli | Rápido y sencillo | Se pierde fácil (ej. real: "mi madre siempre lo pierde"); poca organización; de un solo uso — se gasta papel cada vez | Gratis |
 | **Notas (app del móvil)** | La solución más usada entre el círculo encuestado; simple, bien estructurada, reusable — "la que mejor funciona" en la práctica | No se puede compartir ni coeditar en tiempo real; al ser una app genérica (no específica de listas), se pierde entre el resto de notas | Gratis |
-| [Bring!](https://apps.apple.com/us/app/bring-grocery-shopping-list/id580669177) | Colaborativo de verdad (varias personas a la vez, en tiempo real) | Un paso extra frente a Notas: hay que buscar el ingrediente en su base de datos en vez de solo escribirlo — esa fricción es la razón por la que la gente vuelve a Notas. Su sección "Inspiración" no tiene recetas propias, solo enlaza a webs externas, y no resuelve el caso de uso real (compartir la lista y saber qué hay ya en casa, no inspirarse) | Gratis + suscripción opcional |
-| [AnyList](https://justuseapp.com/en/app/522167641/anylist-grocery-shopping-list/reviews) | Reconocimiento inteligente al escribir (escribes "milk" y lo categoriza solo, casi tan rápido como Notas; si no reconoce algo, se queda como texto normal sin penalizar); categorización automática; **escáner de código de barras** integrado; recetas propias o importadas | Todo el valor añadido apunta a **cocinar** (recetas, meal planning de pago) — a quien no le interesa cocinar no le aporta nada. Y lo que de verdad importa aquí, **saber qué hay ya en casa sin tener que llevar la cuenta manual de cada unidad**, no lo cubre ni siquiera esta app, la más completa de las analizadas | Gratis + suscripción (meal planning) |
+| [Bring!](https://apps.apple.com/us/app/bring-grocery-shopping-list/id580669177) | Colaborativo de verdad (varias personas a la vez, en tiempo real) | Un paso extra frente a Notas: hay que buscar el ingrediente en su base de datos en vez de solo escribirlo — esa fricción es la razón por la que la gente vuelve a Notas. Su sección "Inspiración" no tiene recetas propias, solo enlaza a webs externas, y no resuelve el caso de uso real (ser más útil que papel y boli) | Gratis + suscripción opcional |
+| [AnyList](https://justuseapp.com/en/app/522167641/anylist-grocery-shopping-list/reviews) | Reconocimiento inteligente al escribir (escribes "milk" y lo categoriza solo, casi tan rápido como Notas; si no reconoce algo, se queda como texto normal sin penalizar); categorización automática; **escáner de código de barras** integrado; recetas propias o importadas | Todo el valor añadido apunta a **cocinar** (recetas, meal planning de pago) — a quien no le interesa cocinar no le aporta nada. | Gratis + suscripción (meal planning) |
 | ~~Out of Milk~~ | — | **Descartada**: al verificarla no se encontró como app activa/real — el hallazgo de la búsqueda por IA no se pudo confirmar en la fuente original, así que se retira en vez de darla por buena | — |
 
 > **Nota sobre el método (verificación real, no solo declarada):** la fila
@@ -54,6 +54,7 @@ las tres": hablar con quien vive el problema, no solo leer sobre él.
 > justo lo que pide el guion: "un dato inventado por una IA y entregado
 > como cierto invalida el apartado entero" — así que se corrige, no se
 > disimula.
+
 
 ### Citas literales de usuarios reales
 
@@ -439,10 +440,10 @@ abrir la siguiente.
 |---|---|
 | **Nombre y mensaje** | **Larder** — Ayudamos a los hogares que comparten piso en A Coruña a controlar qué hay en la nevera y organizar la compra sin duplicados ni viajes extra, sin depender de un grupo de WhatsApp desordenado. |
 | **Público** | La persona que organiza la compra en un hogar compartido de A Coruña — estudiantes, parejas o cualquier grupo que comparte gastos. ~99.700 hogares accesibles en la zona (sección 3). |
-| **Problema** | Iago y [tu nombre] pierden 10-15 min cada vez que hacen la lista a ojo con papel y boli, van a la tienda 2 veces/semana sin planificar, y casi siempre acaban comprando algo duplicado o volviendo por algo olvidado — un gasto que ronda los 1.000€/año (sección 1). |
+| **Problema** | Iago y Nadia pierden 10-15 min cada vez que hacen la lista a ojo con papel y boli, van a la tienda 2 veces/semana sin planificar, y casi siempre acaban comprando algo duplicado o volviendo por algo olvidado — un gasto que ronda los 1.000€/año (sección 1). |
 | **Números** | 0,99€/mes por hogar. Coste fijo: 0€ (hosting gratuito). Punto de equilibrio: 1 hogar. Mercado accesible: ~99.700 hogares (sección 4). |
 | **Alcance de P1** | Nevera + Lista compartida (con concurrencia) + Historial de gasto + Comparador de precios (datos de precios vía Odoo). Facturación y cobro real, fuera de alcance (sección 5). |
-| **Canal** | Directo: el propio hogar (Iago, Nadia, Muxia y tú) es el primer usuario real — no hace falta convencer a nadie externo para la primera prueba de fuego. |
+| **Canal** | Directo: el propio hogar (Iago y Nadia) es el primer usuario real — no hace falta convencer a nadie externo para la primera prueba de fuego. |
 | **Qué no haremos** | Escaneo de código de barras, cobro real con tarjeta, notificaciones push, liquidación automática de deudas (sección 5). |
 
 > **Nota sobre el nombre:** "Larder" es una palabra inglesa común (significa
