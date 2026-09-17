@@ -113,7 +113,12 @@ consiste en cocinar lo mínimo posible — unos tuppers básicos para toda la
 semana, precisamente para **no tener que cocinar cada día**. Están
 apareciendo sistemas para cocinar menos, no para explorarlo más. Para el
 público de AnyList (gente a la que le gusta cocinar) puede que las
-recetas tengan sentido; para estudiantes, no.
+recetas tengan sentido; para estudiantes, no. La propia encuesta lo
+confirma sin que se preguntara por ello: "I buy random things sometimes
+thinking of making elaborate meals but I never actually make anything out
+of them and they end up rotting" — comprar pensando en cocinar algo
+elaborado y no llegar a hacerlo nunca es exactamente el hueco entre lo
+que asume una app de recetas y lo que la gente joven hace de verdad.
 
 Y el resultado práctico es que ni siquiera cumplen bien su función
 principal: el paso intermedio de recetas/funciones da pereza, así que la
@@ -137,7 +142,7 @@ motivo por el que hacer la encuesta era necesario es precisamente este: ya
 existen apps (Bring!, AnyList), y las dos fallan en lo mismo. AnyList
 tiene recetas sugeridas, categorías cuidadas y reconocimiento inteligente
 — y aun así, en la encuesta, la app con más funciones es la que **nadie
-usa hoy** (0/32), mientras que Papel/Notas, sin ninguna función extra,
+usa hoy** (0/35), mientras que Papel/Notas, sin ninguna función extra,
 ganan. No es
 casualidad: cada función que se añade encima de "escribir un item" es una
 barrera más entre la persona y la lista, y la gente vota con los pies por
@@ -154,7 +159,7 @@ Papel no pueden hacer por diseño" (compartir en tiempo real, saber quién
 hizo qué, avisar cuando algo se acaba sin que nadie tenga que contarlo a
 mano) debería mirarse con sospecha, aunque quede bonita en una demo.
 
-### Validación con encuesta real — resultados finales (n=32)
+### Validación con encuesta real — resultados finales (n=35)
 
 **Por qué una encuesta y no más búsqueda en foros/reseñas:** las reseñas
 de Bring! y AnyList se dividían en dos tipos, y ninguno servía para
@@ -171,9 +176,11 @@ que tenía más sentido preguntarle directamente a la gente que se quiere
 atraer que seguir buscando datos de terceros que no hablan de ese perfil.
 
 Encuesta bilingüe (ES/EN) enviada a conocidos, 9 preguntas basadas en
-hechos del último mes, no en opiniones sobre una app futura. **Encuesta
-cerrada el 17/09/2026 con 32 respuestas únicas** — esta es la versión
-final para la entrega, ya no se actualiza.
+hechos del último mes, no en opiniones sobre una app futura. **35
+respuestas únicas a fecha 17/09/2026** — el formulario sigue técnicamente
+abierto (no se desactivó en Vercel), así que "cerrada" se refiere a que
+esta es la versión que se usa para la entrega, no a que sea físicamente
+imposible que llegue alguna más.
 
 **Nota de limpieza de datos:** dos pares de envíos eran la misma persona
 enviando dos veces por accidente (mismos datos, segundos o minutos de
@@ -197,28 +204,34 @@ vez de disimulada.
 
 | Dato | Resultado |
 |---|---|
-| Estudiantes / no estudiantes | 26 / 32 estudiantes |
-| Método actual más común | Notas (12/32), Papel (11/32), ninguno (8/32), WhatsApp (1/32), una app específica (0/32) |
-| Ha probado alguna app específica alguna vez (Bring!, AnyList...) | 2/32 (6%) — pero **0/32 la usa hoy como método** (ver lectura honesta) |
-| Compró algo duplicado al menos 1 vez el último mes | 23/32 (72%) |
-| Tuvo que volver a la tienda por algo olvidado el último mes | 24/32 (75%) |
-| Sufrió ambas cosas el mismo mes (duplicado + viaje olvidado) | 17/32 (53%) |
-| Lleva alguna cuenta de gastos compartidos | 9/32 sí, 12/32 no, 11/32 no aplica |
+| Estudiantes / no estudiantes | 29 / 35 estudiantes |
+| Método actual más común | Notas (13/35), Papel (12/35), ninguno (9/35), WhatsApp (1/35), una app específica (0/35) |
+| Ha probado alguna app específica alguna vez (Bring!, AnyList...) | 3/35 (9%) — pero **0/35 la usa hoy como método** (ver lectura honesta) |
+| Compró algo duplicado al menos 1 vez el último mes | 26/35 (74%) |
+| Tuvo que volver a la tienda por algo olvidado el último mes | 26/35 (74%) |
+| Sufrió ambas cosas el mismo mes (duplicado + viaje olvidado) | 19/35 (54%) |
+| Lleva alguna cuenta de gastos compartidos | 11/35 sí, 12/35 no, 12/35 no aplica |
 
-**Lectura honesta, con la muestra ya cerrada:** el "método ganador" **no
-llega a asentarse en ningún momento** de toda la recogida — pasó de
-empatado, a Papel por delante, a Notas por delante, cambiando de líder en
-cada tanda por 1-2 respuestas. La conclusión correcta no es "gana Notas",
-es que a este tamaño de muestra el primer puesto entre Papel y Notas es
-un empate técnico, y así se deja escrito en vez de fingir una tendencia
-clara. Los dos porcentajes de dolor (72% duplicado, 75% olvido) se separan
-de nuevo tras haber coincidido en la tanda anterior — confirma que esa
-coincidencia fue casualidad de muestra pequeña, no una corrección real. El
-dato conjunto (53%, 17/32) se mantiene estable y claramente por encima de
-la mitad en las últimas tres tandas (58% → 55% → 53%), la señal más sólida
-de toda la encuesta. Se mantienen las 2 personas de 32 que alguna vez
-probaron una app (Bring!, "Notas") sin que ninguna la use hoy — este
-patrón de "prueban y abandonan" no cambió ni una vez en toda la recogida.
+**Lectura honesta:** el "método ganador" **sigue sin asentarse** — Papel y
+Notas llevan toda la recogida cambiando de líder por 1-2 respuestas; a
+este tamaño de muestra es un empate técnico, no una tendencia, y se deja
+escrito así en vez de forzar un ganador. Los dos porcentajes de dolor
+(duplicado, olvido) han vuelto a coincidir exactamente en 74% — ya había
+pasado antes y se había deshecho con más muestra, así que se trata como
+coincidencia, no como una corrección real. El dato conjunto (54%, 19/35)
+se mantiene estable y claramente por encima de la mitad en toda la
+recogida — la señal más sólida de toda la encuesta.
+
+**Novedad de esta tanda:** por primera vez aparece una **tercera** persona
+que probó una app (Bring!, de nuevo) y la dejó — pero por un motivo
+distinto al de la primera vez. La primera persona la dejó por falta de
+cooperación de sus compañeros de piso; esta la deja por **pereza pura**
+("me acaba dando pereza usarla"). Son dos motivos de abandono distintos
+apuntando al mismo sitio: cada función o paso extra sobre "simplemente
+apuntar" es una razón más para volver a Notas o Papel. Sigue siendo cierto
+que 0/35 usa una app hoy como método — el patrón de "prueban y abandonan"
+no se ha roto ni una vez en toda la recogida, ahora con dos motivos
+documentados en vez de uno.
 
 **Frases literales de la encuesta** (frustración más común al gestionar la
 compra/nevera compartida), agrupadas por tema:
@@ -255,15 +268,26 @@ compra/nevera compartida), agrupadas por tema:
 >
 > **Olvidos concretos al comprar**: "Tener que revisar varias veces que
 > no me he olvidado de apuntar algo que necesito comprar y apuntar cosas
-> que ya tengo en casa." · "comprar agua que siempre se nos olvida"
+> que ya tengo en casa." · "comprar agua que siempre se nos olvida" · "el
+> simple hecho de tener que mirar que me falta"
+>
+> **Compras aspiracionales que acaban en la basura** (2 menciones —
+> validación directa del argumento sobre recetas, ver sección 2): "I buy
+> random things sometimes thinking of making elaborate meals but I never
+> actually make anything out of them and they end up rotting" · "since I
+> grocery shop for myself I just buy whatever but don't always use
+> everything I buy"
 >
 > **Precio** (2 menciones espontáneas, sin que se preguntara): "Está todo
 > carísimo" / "Comprar, es caro"
 >
 > "Bring, porque si no colaboran los demás pues al ser compartida la
-> compra 🛒 pues mal vamos" — la única persona que probó una app
+> compra 🛒 pues mal vamos" — la primera persona que probó una app
 > colaborativa real explica ella misma por qué la dejó: no es la app, es
-> que sus compañeros de piso no participaban.
+> que sus compañeros de piso no participaban. Una segunda persona probó
+> también Bring! y la dejó por un motivo distinto: "dejé de usarla porque
+> me acaba dando pereza usarla" — dos motivos de abandono distintos
+> (cooperación y pereza/fricción) apuntando al mismo sitio.
 
 **Lo que esto valida directamente:** las quejas sobre "no saber quién
 compró qué" y "que tarden en pagar" son exactamente el problema que
@@ -277,7 +301,12 @@ campo de "días de frescura típicos" por categoría en nuestra propia base
 de datos. La queja de "se acaba y nadie avisa" queda resuelta gratis en
 cuanto Fridge sea una vista compartida (sección 5). Las menciones de
 precio siguen siendo pocas (2), una señal a favor de **Prices** pero sin
-forzarla a más de lo que da de sí.
+forzarla a más de lo que da de sí. Las dos citas sobre "compras
+aspiracionales que acaban pudriéndose" son la validación más directa de
+todo el argumento sobre recetas (sección 2, "¿Y si tu app no tiene nada
+chulo?"): son personas comprando pensando en cocinar algo elaborado y
+nunca llegando a hacerlo — exactamente el hueco entre lo que una app
+centrada en recetas asume y lo que la gente joven hace de verdad.
 
 **Por qué esto no lo puede copiar Notas — el diferenciador real:** la
 queja de "no sé quién compró/consumió/dejó qué" no es solo demanda para
