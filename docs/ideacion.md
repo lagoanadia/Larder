@@ -14,13 +14,16 @@ servilleta de 6 casillas, las 3 columnas y el documento de una página final.
 **DESPUÉS (con datos reales):**
 
 > Iago y Nadia pierden 10-15 minutos cada vez que hacen la lista de la
-> compra a ojo con papel y boli, van a la tienda 2 veces por semana sin
-> planificación previa, y casi siempre acaban comprando algo duplicado o
-> volviendo por algo olvidado — un gasto que ronda los 1.000€ al año en
-> compras mal planificadas.
+> compra a ojo con papel y boli, van a la tienda 1-2 veces por semana sin
+> planificación previa, y a menudo acaban comprando algo duplicado o
+> volviendo por algo olvidado — un gasto que ronda entre 260€ y 520€ al
+> año en compras mal planificadas.
 
-**Cómo se calculó el número:** 10€ perdidos de media por viaje × 2 viajes/semana
-× 52 semanas/año ≈ 1.040€/año.
+**Cómo se calculó el número:** 5€ perdidos de media por viaje (no 10€ —
+la primera estimación estaba inflada) × 1-2 viajes/semana × 52
+semanas/año ≈ 260-520€/año. Se deja como rango a propósito, en vez de un
+único número, porque la frecuencia real varía semana a semana y forzar
+una cifra puntual sería más dramático de lo que da de sí el dato.
 
 **Fuente:** experiencia directa del hogar (Iago y Nadia). Sin fuente
 externa — es un dato de primera mano, no una estimación de mercado.
@@ -85,6 +88,39 @@ conversaciones directas con estudiantes/gente joven descritas arriba.)
   app" aparte del canal de siempre — sigue siendo válido como dato de
   primera mano.
 
+### La objeción que hay que anticipar: "¿pero tu app no tiene nada chulo?"
+
+Un desarrollador de AnyList o Bring! podría replicar a todo lo anterior:
+"tu solución (Notas) no tiene ninguna función atractiva como la mía —
+meal prep, recetas, incluso agentes de IA." Es cierto. Pero tampoco la
+tiene el **papel y boli**, que es el sistema que en realidad se está
+intentando digitalizar. Ahí el argumento se vuelve en contra de quien lo
+hace: si ni Notas ni Papel tienen esas funciones y aun así ganan en el uso
+real (sección 2), lo que esas funciones añaden no es "lo que faltaba para
+digitalizar la lista" — es **complejidad y ruido visual encima de un
+sistema que no los pedía**. Es el mismo principio ya escrito más abajo
+("digitalizar no es añadir, es no estorbar"), aplicado aquí antes de que
+lo objete alguien de fuera.
+
+Además, el enfoque de recetas encaja con un público concreto que no es el
+nuestro. Guardar y explorar recetas es relevante para alguien a quien de
+verdad le guste cocinar — un perfil más asentado, quizá de más edad (el
+ejemplo que nos sirve de referencia: una madre de familia que guarda
+recetas). El estereotipo medio de un estudiante independizado no es el de
+una persona apasionada por la cocina; si acaso, la tendencia actual va en
+sentido contrario: el "meal prep" que está de moda entre gente joven
+consiste en cocinar lo mínimo posible — unos tuppers básicos para toda la
+semana, precisamente para **no tener que cocinar cada día**. Están
+apareciendo sistemas para cocinar menos, no para explorarlo más. Para el
+público de AnyList (gente a la que le gusta cocinar) puede que las
+recetas tengan sentido; para estudiantes, no.
+
+Y el resultado práctico es que ni siquiera cumplen bien su función
+principal: el paso intermedio de recetas/funciones da pereza, así que la
+lista en sí queda peor servida que en Notas. La app puede dar una
+sensación bonita de estar más organizado, incluso de ser productivo — pero
+si a la larga nadie quiere seguir abriéndola, esa sensación no vale nada.
+
 ### Conclusión
 
 El hueco no es "una lista de la compra más bonita" — de esas ya hay varias,
@@ -119,6 +155,20 @@ hizo qué, avisar cuando algo se acaba sin que nadie tenga que contarlo a
 mano) debería mirarse con sospecha, aunque quede bonita en una demo.
 
 ### Validación con encuesta real — resultados finales (n=32)
+
+**Por qué una encuesta y no más búsqueda en foros/reseñas:** las reseñas
+de Bring! y AnyList se dividían en dos tipos, y ninguno servía para
+encontrar el hueco. Las reseñas buenas obviamente no aportan nada para
+detectar un problema. Las malas eran, casi todas, quejas de
+compatibilidad técnica (la app se cuelga, no sincroniza con el reloj...),
+no gente quejándose activamente de que le faltara una función o de que el
+enfoque no encajara con su forma de comprar. No parece que nadie haya
+analizado esto en profundidad desde ese ángulo. Y en el propio entorno
+tampoco se veía a mucha gente usando estas apps. El nicho que se quiere
+atraer con Larder es gente joven/estudiantes, y no se encontró ese
+público concreto analizado ni en foros ni en encuestas existentes — así
+que tenía más sentido preguntarle directamente a la gente que se quiere
+atraer que seguir buscando datos de terceros que no hablan de ese perfil.
 
 Encuesta bilingüe (ES/EN) enviada a conocidos, 9 preguntas basadas en
 hechos del último mes, no en opiniones sobre una app futura. **Encuesta
@@ -312,23 +362,34 @@ bien lograr que os conozcan, que es un problema de canal (P2), no de P1.
 
 ## 4 · Servilleta de 6 casillas
 
+**Decisión explícita (17/09): sin monetización.** No se va a cobrar nada
+a quien use Larder, y tampoco se va a adelantar dinero propio en ningún
+momento — coste fijo 0€, siempre. Esto cambia la naturaleza de varias
+casillas: no es un ejercicio de "cuánto cobro y cuándo soy rentable",
+sino de demostrar que el proyecto se sostiene sin depender de que nadie
+pague, porque el objetivo es resolver el problema real (sección 1), no
+construir un negocio en P1.
+
 | Casilla | Contenido |
 |---|---|
-| Qué vendemos | Suscripción mensual por hogar (no por persona individual) |
-| A quién | La persona que suele encargarse de organizar la compra en un hogar compartido de A Coruña (estudiante, pareja o grupo que comparte gastos) |
-| A cuánto | 0,99 €/mes por hogar |
-| Qué nos cuesta | Coste fijo: 0 €/mes (nivel gratuito de Render + subdominio gratuito tipo `larder.onrender.com`, sin dominio propio de pago). Coste variable por hogar: 0 € |
-| Cuántos hacen falta | Punto de equilibrio: 1 hogar (con coste fijo 0, cualquier cliente ya es beneficio) |
-| Cuántos hay | ~99.700 hogares accesibles en A Coruña (sección 3) |
+| Qué vendemos | Nada — no es un producto de pago. Es una herramienta gratuita que resuelve el problema del propio hogar y, si sirve, del de otros hogares parecidos |
+| A quién | Estudiantes que comparten piso en A Coruña — el perfil concreto al que se dirige esta entrega (canal de entrada: el propio círculo) |
+| A cuánto | 0€ — no se cobra nada |
+| Qué nos cuesta | Coste fijo: 0€/mes (niveles gratuitos de todo el stack — Render, Supabase/Neon, Vercel/Netlify, Telegram, Gemini free tier, Open Food Facts). Coste variable por hogar: 0€ |
+| Cuántos hacen falta | No aplica en términos de ingresos — no hay punto de equilibrio que calcular porque no hay precio. El "éxito" aquí es adopción real (que el propio hogar, y ojalá otros, dejen de perder tiempo y dinero), no rentabilidad |
+| Cuántos hay | ≈ 650 pisos de estudiantes en A Coruña (suelo verificable, sección 3) — cifra más ajustada al público concreto de esta casilla que el mercado accesible completo (~99.700 hogares), que sigue documentado en la sección 3 como techo, no como objetivo de esta entrega |
 
-**Punto de equilibrio:** margen por cliente = 0,99 € − 0 € = 0,99 €.
-Coste fijo ÷ margen = 0 € ÷ 0,99 € = 0 → en la práctica, **desde el primer
-hogar que pague, hay beneficio**, porque el fundador no adelanta dinero.
+**Sin punto de equilibrio que calcular:** al no cobrar nada, no hay
+margen por cliente ni cifra de rentabilidad que buscar. Lo único que
+tiene que cuadrar es que el coste fijo siga siendo 0€ — eso sí es una
+condición real: si algún día algún proveedor deja de ofrecer nivel
+gratuito, hay que decidir entre pagar de bolsillo o migrar, no entre
+"subir el precio".
 
-> Decisión explícita: no se asume ningún coste de hosting de pago mientras
-> el proyecto no genere ingresos. Esto es válido y muy habitual en
-> proyectos indie, pero tiene un precio técnico que hay que declarar (ver
-> abajo), no solo económico.
+> Decisión explícita: no se asume ningún coste de hosting de pago, ni se
+> cobra nada a quien use la app. Esto es válido y muy habitual en
+> proyectos indie/personales, pero tiene un precio técnico que hay que
+> declarar (ver abajo), no solo económico.
 
 **Lectura honesta (y el matiz técnico que viene con "gratis"):** el stack
 se actualizó (17/09) de "Render + SQLite" a Render (backend) + Supabase o
@@ -345,9 +406,11 @@ Render) cambian cada pocos meses — se verificarán antes de comprometerse
 con ninguna, con la misma norma que ya aplicamos al retirar el dato de
 "Out of Milk" (sección 2): si no se puede confirmar, no se da por bueno.
 
-El reto de fondo sigue siendo el mismo: conseguir que alguien pague por
-algo que la competencia (WhatsApp, papel) da gratis — eso es un problema
-de canal, no de números.
+El reto de fondo ya no es económico — es conseguir que la gente **use**
+algo nuevo en vez de seguir con WhatsApp o papel, que ya conocen. Sin
+precio de por medio, ese reto se reduce a adopción pura: que el propio
+hogar, y luego otros parecidos, encuentren que de verdad les ahorra
+tiempo — eso es un problema de canal, no de números.
 
 ## 5 · Las 3 columnas (alcance)
 
@@ -365,7 +428,7 @@ este proyecto, no con lo que "todavía no tocaba".
 |---|---|---|
 | Nevera: lo que hay en casa, **sin cantidades** — 3 estados (bien / queda poco / se acabó). Se rellena sola al marcar algo como comprado en la Lista; se vacía con un toque "se acabó" que la devuelve a la Lista | Diccionario de productos para normalizar nombres al escribir, hablar o leer un ticket (Open Food Facts, API abierta y gratuita, sin clave) | Escaneo de código de barras (EAN por cámara) |
 | Lista de la compra que se **genera sola** a partir de la nevera, compartida con control de concurrencia (dos personas marcando a la vez) | Lectura de tickets de compra → items estructurados (Gemini API, free tier) — la IA se usa **solo aquí**; umbrales y predicción son aritmética sobre nuestra propia base de datos | Cobro real con tarjeta / pasarela de pago |
-| Historial de compras + cálculo de quién debe a quién (se calcula y se muestra, no se paga automáticamente) | Aviso al grupo de quién le toca comprar (bot de Telegram, gratis, sin tarjeta) | Facturación real de la suscripción, si algún día se cobrase de verdad |
+| Historial de compras + cálculo de quién debe a quién (se calcula y se muestra, no se paga automáticamente) | Aviso al grupo de quién le toca comprar (bot de Telegram, gratis, sin tarjeta) | Facturación / cobro de ningún tipo — no hay monetización (sección 4) |
 | Comparador de precios por tienda, calculado sobre el propio historial de compras del hogar | | Liquidar deudas de verdad (transferencias reales) |
 | Predicción de cuándo reponer cada producto, a partir del propio historial de eventos de la nevera (sin IA — promedio de días entre reposición y "se acabó") | | Notificaciones push nativas del navegador (Web Push/VAPID) — el aviso por Telegram es la excepción declarada abajo |
 
@@ -445,9 +508,9 @@ haya crecido.
 | Bloque | Contenido |
 |---|---|
 | **Nombre y mensaje** | **Larder** — Ayudamos a los hogares que comparten piso en A Coruña a controlar qué hay en la nevera y organizar la compra sin duplicados ni viajes extra, sin depender de un grupo de WhatsApp desordenado. |
-| **Público** | La persona que organiza la compra en un hogar compartido de A Coruña — estudiantes, parejas o cualquier grupo que comparte gastos. ~99.700 hogares accesibles en la zona (sección 3). |
-| **Problema** | Iago y Nadia pierden 10-15 min cada vez que hacen la lista a ojo con papel y boli, van a la tienda 2 veces/semana sin planificar, y casi siempre acaban comprando algo duplicado o volviendo por algo olvidado — un gasto que ronda los 1.000€/año (sección 1). |
-| **Números** | 0,99€/mes por hogar. Coste fijo: 0€ (hosting gratuito). Punto de equilibrio: 1 hogar. Mercado accesible: ~99.700 hogares (sección 4). |
+| **Público** | Estudiantes que comparten piso en A Coruña — ≈650 pisos como suelo verificable, dentro de un mercado accesible más amplio de ~99.700 hogares (secciones 3 y 4). |
+| **Problema** | Iago y Nadia pierden 10-15 min cada vez que hacen la lista a ojo con papel y boli, van a la tienda 1-2 veces/semana sin planificar, y a menudo acaban comprando algo duplicado o volviendo por algo olvidado — un gasto que ronda entre 260€ y 520€/año (sección 1). |
+| **Números** | 0€ — no se cobra nada. Coste fijo: 0€ (niveles gratuitos de todo el stack). No hay punto de equilibrio que calcular: el objetivo es adopción real, no ingresos (sección 4). |
 | **Alcance** | Nevera sin cantidades (3 estados) + Lista que se genera sola + Historial de gasto + Comparador de precios sobre el propio historial de compras + lectura de tickets y predicción de consumo. Facturación y cobro real, fuera de alcance (sección 5). |
 | **Canal** | Directo: el propio hogar (Iago y Nadia) es el primer usuario real — no hace falta convencer a nadie externo para la primera prueba de fuego. |
 | **Qué no haremos** | Escaneo de código de barras, cobro real con tarjeta, notificaciones push nativas del navegador (el aviso va por Telegram), liquidación automática de deudas (sección 5). |
