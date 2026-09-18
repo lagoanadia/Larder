@@ -338,56 +338,38 @@ encuesta.
 
 ### Los 3 niveles
 
+**Decisión explícita (18/09): el público es estudiantes**, no "cualquier
+hogar multi-persona". Los 3 niveles se calculan ya sobre ese público
+concreto, en vez de sobre hogares genéricos de A Coruña.
+
 | Nivel | Cifra | Cómo se calculó | Fuente |
 |---|---|---|---|
-| **Mercado total** | Todos los hogares de España con 2+ personas | No se cuenta un número exacto: España tiene un tamaño medio de hogar de 2,50 personas, lo que indica que la mayoría de hogares ya son multi-persona | [INE, tamaño medio del hogar 2023](https://www.ine.es/jaxiT3/Tabla.htm?t=60132) |
-| **Mercado accesible** | ≈ 99.700 hogares en A Coruña ciudad | 249.261 habitantes ÷ 2,50 personas/hogar (media nacional aplicada a la ciudad — **es una estimación**, no un conteo directo de hogares de A Coruña) | Población: [INE/IGE 2024](https://hoydiario.es/noticias/galicia/demografia/poblacion-coruna-ine-2024.html) · Tamaño medio: INE 2023 |
-| **Mercado objetivo** | ≈ 99.700 hogares no unipersonales de A Coruña (coincide con el accesible) | Ver nota de ampliación de segmento, abajo | Ver mercado accesible |
-
-### Método de conteo del mercado objetivo (con supuestos explícitos)
-
-1. La UDC tiene >13.300 matriculados (curso 2025-26, ambos campus).
-2. El 31% de universitarios españoles cambia de ciudad para estudiar
-   (Fundación CYD) → **supuesto**: aplicamos ese % nacional a la UDC, sin
-   dato específico de la propia universidad → ≈ 4.123 estudiantes que se
-   mudan a A Coruña.
-3. De esos, el 55% elige piso compartido → ≈ 2.268 estudiantes viviendo en
-   piso compartido.
-4. **Supuesto**: un piso compartido tiene de media 3-4 personas → dividimos
-   entre 3,5 → **≈ 650 pisos compartidos de estudiantes**.
+| **Mercado total** | >13.300 estudiantes matriculados en la UDC | Conteo directo, curso 2025-26, ambos campus | UDC |
+| **Mercado accesible** | ≈ 4.123 estudiantes que vienen de fuera a estudiar a A Coruña | El 31% de universitarios españoles cambia de ciudad para estudiar (dato nacional) → **supuesto**: aplicamos ese % a la UDC, sin dato específico de la propia universidad | [Fundación CYD](https://www.fundacioncyd.org/) |
+| **Mercado objetivo** | ≈ 650 pisos compartidos de estudiantes | De esos ≈4.123, el 55% elige piso compartido (≈2.268 estudiantes) → **supuesto**: un piso compartido tiene de media 3-4 personas, dividimos entre 3,5 | Fundación CYD + supuesto propio |
 
 **Margen de error reconocido:** esta cifra encadena 3 supuestos (el % de
 cambio de ciudad, el % que comparte piso, y el tamaño medio del piso), así
-que es una estimación gruesa, no un conteo. Además, deja fuera un segmento
-real que no es de estudiantes: pisos compartidos de jóvenes trabajadores,
-que también sufren el mismo problema pero no salen en estas estadísticas.
+que es una estimación gruesa, no un conteo exacto. Además, deja fuera un
+segmento real que no es de estudiantes: pisos compartidos de jóvenes
+trabajadores, que también sufren el mismo problema pero no salen en estas
+estadísticas.
 
-**Nota de ampliación de segmento:** al decidir que Larder sirve igual a
-estudiantes, parejas o cualquier grupo que comparta piso y compra, se buscó
-un desglose público de "hogares no familiares / parejas sin hijos" en A
-Coruña para acotar mejor el objetivo — **no se encontró con la fecha y el
-detalle geográfico necesarios** (el INE tiene la categoría a nivel estatal,
-pero no un cruce fiable y reciente a nivel de A Coruña sin encadenar más
-suposiciones de las razonables). Es un resultado válido en sí mismo: mejor
-reconocer el límite de la búsqueda que inventar un porcentaje.
-
-**Consecuencia práctica:** si el producto sirve a cualquier hogar
-multi-persona, el mercado objetivo pasa a coincidir con el mercado
-accesible (~99.700 hogares). Lo que de verdad queda por acotar no es "qué
-tipo de hogar", sino el **canal de entrada** — por quién empezáis de
-verdad (vuestro propio círculo) — que se define en el documento de una
-página (paso 6), no aquí.
-
-El dato de ~650 pisos de estudiantes (arriba) se mantiene documentado como
-un **suelo verificable** dentro de ese mercado más amplio: sabemos que, como
-mínimo, esos existen con fuente pública.
+**Para contexto, no como objetivo de esta entrega:** A Coruña ciudad tiene
+≈99.700 hogares de 2+ personas (249.261 habitantes ÷ 2,50 personas/hogar,
+media nacional aplicada a la ciudad — es una estimación, no un conteo
+directo). Es el techo si algún día Larder sirviera a cualquier hogar
+multi-persona, no solo a estudiantes, pero no es el mercado que se persigue
+en esta entrega. | Población: [INE/IGE 2024](https://hoydiario.es/noticias/galicia/demografia/poblacion-coruna-ine-2024.html) · Tamaño medio: [INE 2023](https://www.ine.es/jaxiT3/Tabla.htm?t=60132)
 
 ### Conclusión (provisional, se cierra en el paso 4 — servilleta de números)
 
-Con un mercado accesible de ~99.700 hogares en A Coruña, hay margen de sobra
-para que el punto de equilibrio (siguiente paso) tenga sentido, incluso
-siendo conservadores. El riesgo ya no es "no hay suficiente gente" — es más
-bien lograr que os conozcan, que es un problema de canal (P2), no de P1.
+Con un mercado objetivo de ≈650 pisos de estudiantes en A Coruña, hay
+margen de sobra para validar el producto empezando por el propio círculo
+(canal de entrada, ver documento de una página, paso 6) sin necesitar ni de
+lejos el techo de 99.700 hogares. El riesgo no es "no hay suficiente
+gente" — es lograr que os conozcan, que es un problema de canal (P2), no
+de P1.
 
 ## 4 · Servilleta de 6 casillas
 
@@ -406,7 +388,7 @@ construir un negocio en P1.
 | A cuánto | 0€ — no se cobra nada |
 | Qué nos cuesta | Coste fijo: 0€/mes (niveles gratuitos de todo el stack — Render, Supabase/Neon, Vercel/Netlify, Telegram, Gemini free tier, Open Food Facts). Coste variable por hogar: 0€ |
 | Cuántos hacen falta | No aplica en términos de ingresos — no hay punto de equilibrio que calcular porque no hay precio. El "éxito" aquí es adopción real (que el propio hogar, y ojalá otros, dejen de perder tiempo y dinero), no rentabilidad |
-| Cuántos hay | ≈ 650 pisos de estudiantes en A Coruña (suelo verificable, sección 3) — cifra más ajustada al público concreto de esta casilla que el mercado accesible completo (~99.700 hogares), que sigue documentado en la sección 3 como techo, no como objetivo de esta entrega |
+| Cuántos hay | ≈ 650 pisos de estudiantes en A Coruña — mercado objetivo de la sección 3 (los ~99.700 hogares de la ciudad quedan documentados ahí solo como techo de contexto, no como objetivo de esta entrega) |
 
 **Sin punto de equilibrio que calcular:** al no cobrar nada, no hay
 margen por cliente ni cifra de rentabilidad que buscar. Lo único que
@@ -537,7 +519,7 @@ haya crecido.
 | Bloque | Contenido |
 |---|---|
 | **Nombre y mensaje** | **Larder** — Ayudamos a los hogares que comparten piso en A Coruña a controlar qué hay en la nevera y organizar la compra sin duplicados ni viajes extra, sin depender de un grupo de WhatsApp desordenado. |
-| **Público** | Estudiantes que comparten piso en A Coruña — ≈650 pisos como suelo verificable, dentro de un mercado accesible más amplio de ~99.700 hogares (secciones 3 y 4). |
+| **Público** | Estudiantes que comparten piso en A Coruña — ≈650 pisos, mercado objetivo de la sección 3 (secciones 3 y 4). |
 | **Problema** | Iago y Nadia pierden 10-15 min cada vez que hacen la lista a ojo con papel y boli, van a la tienda 1-2 veces/semana sin planificar, y a menudo acaban comprando algo duplicado o volviendo por algo olvidado — un gasto que ronda entre 260€ y 520€/año (sección 1). |
 | **Números** | 0€ — no se cobra nada. Coste fijo: 0€ (niveles gratuitos de todo el stack). No hay punto de equilibrio que calcular: el objetivo es adopción real, no ingresos (sección 4). |
 | **Alcance** | Nevera sin cantidades (3 estados) + Lista que se genera sola + Historial de gasto + Comparador de precios sobre el propio historial de compras + lectura de tickets y predicción de consumo. Facturación y cobro real, fuera de alcance (sección 5). |
