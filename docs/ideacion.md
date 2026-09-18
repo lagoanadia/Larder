@@ -50,15 +50,6 @@ las tres": hablar con quien vive el problema, no solo leer sobre él.
 | **Notas (app del móvil)** | La solución más usada entre el círculo encuestado; simple, bien estructurada, reusable — "la que mejor funciona" en la práctica | No se puede compartir ni coeditar en tiempo real; al ser una app genérica (no específica de listas), se pierde entre el resto de notas | Gratis |
 | [Bring!](https://apps.apple.com/us/app/bring-grocery-shopping-list/id580669177) | Colaborativo de verdad (varias personas a la vez, en tiempo real) | Un paso extra frente a Notas: hay que buscar el ingrediente en su base de datos en vez de solo escribirlo — esa fricción es la razón por la que la gente vuelve a Notas. Su sección "Inspiración" no tiene recetas propias, solo enlaza a webs externas, y no resuelve el caso de uso real (ser más útil que papel y boli) | Gratis + suscripción opcional |
 | [AnyList](https://justuseapp.com/en/app/522167641/anylist-grocery-shopping-list/reviews) | Reconocimiento inteligente al escribir (escribes "milk" y lo categoriza solo, casi tan rápido como Notas; si no reconoce algo, se queda como texto normal sin penalizar); categorización automática; **escáner de código de barras** integrado; recetas propias o importadas | Todo el valor añadido apunta a **cocinar** (recetas, meal planning de pago) — a quien no le interesa cocinar no le aporta nada. | Gratis + suscripción (meal planning) |
-| ~~Out of Milk~~ | — | **Descartada**: al verificarla no se encontró como app activa/real — el hallazgo de la búsqueda por IA no se pudo confirmar en la fuente original, así que se retira en vez de darla por buena | — |
-
-> **Nota sobre el método (verificación real, no solo declarada):** la fila
-> de "Out of Milk" se generó con una búsqueda por IA (nivel IA-2) y **no
-> superó la verificación** — al comprobarlo, la app no aparece como
-> real/activa. Se deja constancia aquí en vez de borrarlo sin más, porque es
-> justo lo que pide el guion: "un dato inventado por una IA y entregado
-> como cierto invalida el apartado entero" — así que se corrige, no se
-> disimula.
 
 ### Citas literales de usuarios reales
 
