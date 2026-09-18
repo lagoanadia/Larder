@@ -407,8 +407,7 @@ backend en Render "duerme" tras un rato sin uso y tarda unos segundos en
 despertar en la siguiente petición (mala primera impresión para un
 usuario nuevo). Los límites de las capas gratuitas (Supabase, Groq,
 Render) cambian cada pocos meses — se verificarán antes de comprometerse
-con ninguna, con la misma norma que ya aplicamos al retirar el dato de
-"Out of Milk" (sección 2): si no se puede confirmar, no se da por bueno.
+con ninguna.
 
 El reto de fondo ya no es económico — es conseguir que la gente **use**
 algo nuevo en vez de seguir con WhatsApp o papel, que ya conocen. Sin
