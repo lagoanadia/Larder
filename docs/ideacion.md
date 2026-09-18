@@ -16,14 +16,16 @@ servilleta de 6 casillas, las 3 columnas y el documento de una página final.
 > Iago y Nadia pierden 10-15 minutos cada vez que hacen la lista de la
 > compra a ojo con papel y boli, van a la tienda 1-2 veces por semana sin
 > planificación previa, y a menudo acaban comprando algo duplicado o
-> volviendo por algo olvidado — un gasto que ronda entre 260€ y 520€ al
+> volviendo por algo olvidado — un gasto que ronda entre 200€ y 400€ al
 > año en compras mal planificadas.
 
 **Cómo se calculó el número:** 5€ perdidos de media por viaje (no 10€ —
-la primera estimación estaba inflada) × 1-2 viajes/semana × 52
-semanas/año ≈ 260-520€/año. Se deja como rango a propósito, en vez de un
-único número, porque la frecuencia real varía semana a semana y forzar
-una cifra puntual sería más dramático de lo que da de sí el dato.
+la primera estimación estaba inflada) × 1-2 viajes/semana ≈ 5-10€/semana
+× 40 semanas activas al año (se descuentan ~12 semanas de vacaciones y
+viajes, en las que no se hace la compra habitual del piso) ≈ 200-400€/año.
+Se deja como rango a propósito, en vez de un único número, porque la
+frecuencia real varía semana a semana y forzar una cifra puntual sería
+más dramático de lo que da de sí el dato.
 
 **Fuente:** experiencia directa del hogar (Iago y Nadia). Sin fuente
 externa — es un dato de primera mano, no una estimación de mercado.
@@ -386,7 +388,7 @@ construir un negocio en P1.
 | Qué vendemos | Nada — no es un producto de pago. Es una herramienta gratuita que resuelve el problema del propio hogar y, si sirve, del de otros hogares parecidos |
 | A quién | Estudiantes que comparten piso en A Coruña — el perfil concreto al que se dirige esta entrega (canal de entrada: el propio círculo) |
 | A cuánto | 0€ — no se cobra nada |
-| Qué nos cuesta | Coste fijo: 0€/mes (niveles gratuitos de todo el stack — Render, Supabase/Neon, Vercel/Netlify, Telegram, Gemini free tier, Open Food Facts). Coste variable por hogar: 0€ |
+| Qué nos cuesta | Coste fijo: 0€/mes (niveles gratuitos de todo el stack — Render, Supabase/Neon, Vercel/Netlify, Telegram, Groq free tier, Open Food Facts). Coste variable por hogar: 0€ |
 | Cuántos hacen falta | No aplica en términos de ingresos — no hay punto de equilibrio que calcular porque no hay precio. El "éxito" aquí es adopción real (que el propio hogar, y ojalá otros, dejen de perder tiempo y dinero), no rentabilidad |
 | Cuántos hay | ≈ 650 pisos de estudiantes en A Coruña — mercado objetivo de la sección 3 (los ~99.700 hogares de la ciudad quedan documentados ahí solo como techo de contexto, no como objetivo de esta entrega) |
 
@@ -404,7 +406,7 @@ gratuito, hay que decidir entre pagar de bolsillo o migrar, no entre
 
 **Lectura honesta (y el matiz técnico que viene con "gratis"):** el stack
 se actualizó (17/09) de "Render + SQLite" a Render (backend) + Supabase o
-Neon (Postgres) + Vercel/Netlify (frontend) + bot de Telegram + Gemini API
+Neon (Postgres) + Vercel/Netlify (frontend) + bot de Telegram + Groq API
 + Open Food Facts + GitHub Actions (tareas programadas). Esto arregla
 gratis la limitación que teníamos antes documentada — el disco efímero de
 Render, que podía perder la base de datos SQLite en cada reinicio —,
@@ -412,7 +414,7 @@ porque Supabase/Neon dan Postgres persistente en su propio nivel
 gratuito, no en el disco de Render. Sigue quedando un límite real: el
 backend en Render "duerme" tras un rato sin uso y tarda unos segundos en
 despertar en la siguiente petición (mala primera impresión para un
-usuario nuevo). Los límites de las capas gratuitas (Supabase, Gemini,
+usuario nuevo). Los límites de las capas gratuitas (Supabase, Groq,
 Render) cambian cada pocos meses — se verificarán antes de comprometerse
 con ninguna, con la misma norma que ya aplicamos al retirar el dato de
 "Out of Milk" (sección 2): si no se puede confirmar, no se da por bueno.
@@ -438,7 +440,7 @@ este proyecto, no con lo que "todavía no tocaba".
 | Lo construimos (Larder) | Lo hace un servicio externo gratuito | No se hace este curso |
 |---|---|---|
 | Nevera: lo que hay en casa, **sin cantidades** — 3 estados (bien / queda poco / se acabó). Se rellena sola al marcar algo como comprado en la Lista; se vacía con un toque "se acabó" que la devuelve a la Lista | Diccionario de productos para normalizar nombres al escribir, hablar o leer un ticket (Open Food Facts, API abierta y gratuita, sin clave) | Escaneo de código de barras (EAN por cámara) |
-| Lista de la compra que se **genera sola** a partir de la nevera, compartida con control de concurrencia (dos personas marcando a la vez) | Lectura de tickets de compra → items estructurados (Gemini API, free tier) — la IA se usa **solo aquí**; umbrales y predicción son aritmética sobre nuestra propia base de datos | Cobro real con tarjeta / pasarela de pago |
+| Lista de la compra que se **genera sola** a partir de la nevera, compartida con control de concurrencia (dos personas marcando a la vez) | Lectura de tickets de compra → items estructurados (Groq API, free tier) — la IA se usa **solo aquí**; umbrales y predicción son aritmética sobre nuestra propia base de datos | Cobro real con tarjeta / pasarela de pago |
 | Historial de compras + cálculo de quién debe a quién (se calcula y se muestra, no se paga automáticamente) | Aviso al grupo de quién le toca comprar (bot de Telegram, gratis, sin tarjeta) | Facturación / cobro de ningún tipo — no hay monetización (sección 4) |
 | Comparador de precios por tienda, calculado sobre el propio historial de compras del hogar | | Liquidar deudas de verdad (transferencias reales) |
 | Predicción de cuándo reponer cada producto, a partir del propio historial de eventos de la nevera (sin IA — promedio de días entre reposición y "se acabó") | | Notificaciones push nativas del navegador (Web Push/VAPID) — el aviso por Telegram es la excepción declarada abajo |
@@ -473,7 +475,7 @@ pedía. Se corrige aquí en vez de dejarlo pasar.
 nuevo:
 - Un producto entra en Fridge **solo**, en el momento en que alguien lo
   marca como comprado en la Lista (a mano) o cuando se procesa el ticket
-  de la compra (automático, vía Gemini) — cero tecleo extra en el caso
+  de la compra (automático, vía Groq) — cero tecleo extra en el caso
   automático, el mismo gesto de siempre en el manual.
 - Fridge es una vista compartida: cualquiera del piso puede abrirla desde
   la tienda y ver qué hay ya en casa antes de comprar — ataca
@@ -499,7 +501,7 @@ por "y") y se intenta emparejar contra el diccionario de Open Food Facts;
 si no encuentra coincidencia, se guarda igual como texto libre — nunca
 bloquea. Entender frases más complejas ("dos docenas de huevos y medio
 kilo de jamón cortado fino") sí necesitaría un LLM de verdad, y ahí es
-donde entra Gemini — el mismo modelo que ya se usa para leer tickets,
+donde entra Groq — el mismo modelo que ya se usa para leer tickets,
 no una pieza nueva.
 
 **La rebanada vertical, en una frase:**
@@ -520,7 +522,7 @@ haya crecido.
 |---|---|
 | **Nombre y mensaje** | **Larder** — Ayudamos a los hogares que comparten piso en A Coruña a controlar qué hay en la nevera y organizar la compra sin duplicados ni viajes extra, sin depender de un grupo de WhatsApp desordenado. |
 | **Público** | Estudiantes que comparten piso en A Coruña — ≈650 pisos, mercado objetivo de la sección 3 (secciones 3 y 4). |
-| **Problema** | Iago y Nadia pierden 10-15 min cada vez que hacen la lista a ojo con papel y boli, van a la tienda 1-2 veces/semana sin planificar, y a menudo acaban comprando algo duplicado o volviendo por algo olvidado — un gasto que ronda entre 260€ y 520€/año (sección 1). |
+| **Problema** | Iago y Nadia pierden 10-15 min cada vez que hacen la lista a ojo con papel y boli, van a la tienda 1-2 veces/semana sin planificar, y a menudo acaban comprando algo duplicado o volviendo por algo olvidado — un gasto que ronda entre 200€ y 400€/año (sección 1). |
 | **Números** | 0€ — no se cobra nada. Coste fijo: 0€ (niveles gratuitos de todo el stack). No hay punto de equilibrio que calcular: el objetivo es adopción real, no ingresos (sección 4). |
 | **Alcance** | Nevera sin cantidades (3 estados) + Lista que se genera sola + Historial de gasto + Comparador de precios sobre el propio historial de compras + lectura de tickets y predicción de consumo. Facturación y cobro real, fuera de alcance (sección 5). |
 | **Canal** | Directo: el propio hogar (Iago y Nadia) es el primer usuario real — no hace falta convencer a nadie externo para la primera prueba de fuego. |
