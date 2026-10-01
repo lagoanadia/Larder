@@ -443,12 +443,12 @@ footer .hand{font-size:20px}
       <div class="paper torn">
         <span class="card-tag">entidades</span>
         <ul>
-          <li>Hogar — id, nombre</li>
-          <li>Usuario — id, nombre, email, hogar_id</li>
-          <li>Producto — id (ref. Odoo), nombre, categoría, código de barras</li>
-          <li>LarderItem — id, hogar_id, producto_id, estado, actualizado_en/por</li>
-          <li>ListaItem — id, hogar_id, producto_id, estado, creado_en, comprado_en/por</li>
-          <li>LarderEvento — id, larder_item_id, estado_anterior, estado_nuevo, fecha</li>
+          <li>Hogar — id: ID, nombre: string</li>
+          <li>Usuario — id: ID, nombre: string, email: string, hogar_id: ID (FK)</li>
+          <li>Producto — id: string (ref. Odoo), nombre: string, categoría: string, código de barras: string</li>
+          <li>LarderItem — id: ID, hogar_id: ID (FK), producto_id: string (FK), estado: enum(bien/queda_poco/se_acabó), actualizado_en: timestamp, actualizado_por: ID (FK)</li>
+          <li>ListaItem — id: ID, hogar_id: ID (FK), producto_id: string (FK), estado: enum(pendiente/comprado), creado_en: timestamp, comprado_en: timestamp, comprado_por: ID (FK)</li>
+          <li>LarderEvento — id: ID, larder_item_id: ID (FK), estado_anterior: enum, estado_nuevo: enum, fecha: timestamp</li>
         </ul>
       </div>
     </div>
@@ -477,6 +477,41 @@ footer .hand{font-size:20px}
           <tr><td class="lab">2 — Consultar la lista</td><td>Leer ListaItem · Modificar ListaItem (comprado) · Modificar LarderItem (vuelve a "bien").</td></tr>
         </tbody>
       </table>
+    </div>
+  </div>
+
+  <div class="note" style="--r:-.15deg">
+    <span class="tape" aria-hidden="true"></span>
+    <div class="chart sketch" style="padding:20px 16px">
+      <svg viewBox="0 0 680 280" style="width:100%;height:auto;max-width:560px;display:block;margin:0 auto" role="img" aria-label="Diagrama de flujo de datos entre React, Backend, PostgreSQL y Odoo">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="var(--pen)"/>
+          </marker>
+        </defs>
+        <g font-family="var(--sans)" font-size="15" font-weight="700" fill="var(--ink)">
+          <rect x="20" y="20" width="150" height="56" rx="10" fill="var(--sheet)" stroke="var(--ink)" stroke-width="2.5" filter="url(#wob)"/>
+          <text x="95" y="53" text-anchor="middle">React</text>
+          <rect x="265" y="110" width="150" height="56" rx="10" fill="var(--sheet)" stroke="var(--ink)" stroke-width="2.5" filter="url(#wob)"/>
+          <text x="340" y="143" text-anchor="middle">Backend</text>
+          <rect x="20" y="200" width="150" height="56" rx="10" fill="var(--sheet)" stroke="var(--ink)" stroke-width="2.5" filter="url(#wob)"/>
+          <text x="95" y="233" text-anchor="middle">PostgreSQL</text>
+          <rect x="510" y="110" width="150" height="56" rx="10" fill="var(--sheet)" stroke="var(--ink)" stroke-width="2.5" filter="url(#wob)"/>
+          <text x="585" y="143" text-anchor="middle">Odoo</text>
+        </g>
+        <g stroke="var(--pen)" stroke-width="2.2" fill="none" marker-end="url(#arrow)">
+          <line x1="150" y1="76" x2="275" y2="118"/>
+          <line x1="280" y1="166" x2="150" y2="206"/>
+          <line x1="415" y1="124" x2="508" y2="124"/>
+        </g>
+        <line x1="508" y1="154" x2="415" y2="154" stroke="var(--pen)" stroke-width="2.2" fill="none" marker-end="url(#arrow)"/>
+        <g font-family="var(--sans)" font-size="11.5" fill="var(--soft)">
+          <text x="168" y="95">cambio de estado</text>
+          <text x="150" y="190">nuevo estado + evento</text>
+          <text x="418" y="117">consulta producto</text>
+          <text x="418" y="172">ficha del producto</text>
+        </g>
+      </svg>
     </div>
   </div>
 
