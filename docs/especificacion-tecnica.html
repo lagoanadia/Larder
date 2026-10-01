@@ -89,6 +89,9 @@ th,td{text-align:left;padding:12px 13px;vertical-align:top;border-bottom:2px sol
 tbody tr:last-child td{border-bottom:0}
 th{font-family:var(--hand);font-weight:400;color:var(--pen);font-size:19px;line-height:1;border-bottom-width:3px}
 td.lab{font-stretch:75%;font-weight:800;font-size:13.5px;text-transform:uppercase;white-space:nowrap}
+td.risk{font-weight:700;width:30%}
+td ul.plain{margin:8px 0 0;padding-left:16px}
+td ul.plain li{margin-bottom:6px}
 
 footer{margin-top:50px;padding-top:26px;border-top:2.5px solid var(--ink);display:grid;gap:16px}
 footer .hand{font-size:20px}
@@ -199,14 +202,28 @@ footer .hand{font-size:20px}
       <table>
         <thead><tr><th>riesgo</th><th>solución</th></tr></thead>
         <tbody>
-          <tr><td class="lab">Colaboración</td><td>Pruebas exhaustivas.</td></tr>
-          <tr><td class="lab">Reconocimiento ticket – tienda</td><td>Tener varias opciones en cuenta.</td></tr>
-          <tr><td class="lab">Demasiadas funciones</td><td>Feedback objetivo.</td></tr>
+          <tr><td class="risk">No llegar con las 57h de P1</td><td>Priorizar Larder y List; cualquier resto de Track se mueve a P2 sin excepción.</td></tr>
+          <tr><td class="risk">El ticket de un supermercado no se reconoce bien</td><td>Limitar P1 a 2–3 cadenas conocidas (Mercadona, Lidl, Carrefour) y marcar el resto como "no soportado" en vez de fallar.</td></tr>
+          <tr><td class="risk">Los servicios gratuitos (Render/Groq) bajan de nivel o imponen límites</td><td>Alternativas de pago: Railway, Neon.
+            <ul class="plain">
+              <li>Railway vs Render: Railway cobra por uso real (lo que realmente consumes) en vez de dormir el servidor (apagarlo cuando no hay visitas) como hace Render gratis; Railway desde ~5$/mes, Render de pago desde ~7$/mes.</li>
+              <li>Neon vs Postgres (Render): Neon escala a cero (se apaga solo sin uso y no cuesta nada mientras tanto) y permite branches de la base de datos (copias de prueba para corregir un error sin arriesgar lo real); Neon de pago desde ~19$/mes.</li>
+            </ul>
+          </td></tr>
         </tbody>
       </table>
     </div>
   </div>
-  <p class="src">Inversión en dinero: dominio 10€ · Google Play 25€ · IA / servidores según demanda.</p>
+
+  <h3 class="h3">Inversión en dinero</h3>
+  <div class="notebook">
+    <ul>
+      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Dominio</b><br>10€/año.</li>
+      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Alojamiento</b><br>Vercel (frontend) + Render (backend + PostgreSQL), gratis en nivel básico. La de pago de Vercel (20$/mes) quita los límites de ancho de banda (cuántos datos se entregan a quien visita la web cada mes) y de builds (cuántas veces puede desplegar la web), y permite usar dominios más conocidos (.com, .es, .app, .io, etc.).</li>
+      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Lectura de tickets (IA)</b><br>Groq — varía según el modelo, aún sin decidir; en su nivel gratuito ronda: modelos ligeros 30 RPM / 14.400 RPD / 6.000 TPM, modelos potentes 30 RPM / 1.000 RPD / 12.000 TPM, modelos de audio 20 RPM / 2.000 RPD. Alternativa: Anthropic, más preciso leyendo texto complejo pero más caro. (RPM: peticiones por minuto · RPD: peticiones por día · TPM: texto procesado por minuto.)</li>
+      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Google Play</b><br>25$ pago único.</li>
+    </ul>
+  </div>
 </section>
 
 <section id="casos">
