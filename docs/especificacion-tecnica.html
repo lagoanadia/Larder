@@ -336,11 +336,59 @@ footer .hand{font-size:20px}
     <p>Sistemas de Xestión Empresarial. Qué entra en Odoo y qué se queda fuera, y por qué.</p>
   </div>
 
+  <div class="board">
+    <div class="note" style="--r:-.8deg">
+      <span class="tape" aria-hidden="true"></span>
+      <div class="paper torn">
+        <span class="card-tag">lo construyo yo</span>
+        <ul>
+          <li><b>Larder</b> — despensa con 3 estados (bien / queda poco / se acabó), sin cantidades ni unidades; se actualiza a mano o desde el ticket.</li>
+          <li><b>List</b> — lista de la compra generada automáticamente a partir de lo marcado en Larder; si dos personas la usan a la vez, no se pisan ni duplican la compra.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note" style="--r:.6deg">
+      <span class="tape" aria-hidden="true"></span>
+      <div class="paper torn">
+        <span class="card-tag">lo hace odoo</span>
+        <ul>
+          <li><b>Catálogo de productos</b> (Inventario) — nombre, categoría, unidad, fecha de caducidad y código de barras. Es información básica, igual para cualquier negocio, que cualquier ERP ya trae resuelta de fábrica.</li>
+          <li>El backend solo lo consulta (nunca escribe); Odoo nunca escribe en la base de datos de Larder.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note" style="--r:-1.1deg">
+      <span class="tape" aria-hidden="true"></span>
+      <div class="paper torn">
+        <span class="card-tag bad">no se hace (en p1)</span>
+        <ul>
+          <li><b>Track</b> — reparto de gastos entre miembros del hogar. Se programaría a medida (no el módulo de Gastos de Odoo, pensado para empresa-empleado). Entra en P2.</li>
+          <li><b>Facturación</b> — cobro de la suscripción y de la comisión de afiliación (P2/P3).</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="h3">Qué va en Odoo</h3>
   <div class="notebook">
     <ul>
-      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Inventario</b><span class="tagbadge">pantalla Larder</span><br>Datos maestros: nombre, categoría, unidad, fecha de caducidad. Base de datos de productos existente, con alta automática.</li>
-      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Reparto de gastos</b><span class="tagbadge">pantalla Track</span><br>Datos maestros: hogar, miembro/usuario, precio.</li>
+      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Aplicaciones a instalar</b><br>Odoo Inventario, únicamente — las otras apps (Compras, Ventas, RRHH, CRM) sirven para vender o gestionar personal, y P1 no hace ni una cosa ni la otra.</li>
+      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Datos maestros</b><br>La ficha de cada producto — nombre, categoría, código de barras si lo tiene, unidad, fecha de caducidad.</li>
+      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Origen de los datos</b><br>Odoo no trae un catálogo real ya cargado (no viene con los productos de Mercadona o Froiz de fábrica) — se arranca importando una base abierta de códigos de barras (ej. Open Food Facts) y se completa solo, dando de alta cada producto nuevo la primera vez que se lee su código en un ticket.</li>
+      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Informe / decisión de negocio</b><br>Un informe que muestra qué categorías tienen fecha de caducidad registrada y cuáles no → decide qué categorías completar primero, para que el aviso de caducidad funcione en el mayor número de productos posible desde el lanzamiento.</li>
     </ul>
+  </div>
+
+  <div class="note" style="--r:-.3deg">
+    <span class="tape" aria-hidden="true"></span>
+    <div class="paper sketch">
+      <span class="card-tag">la caducidad existe de serie en odoo</span>
+      <p style="font-size:13px;color:var(--soft);margin:0 0 4px">Capturas reales de la documentación oficial de Odoo 18.0:</p>
+      <img src="img/odoo-expiration-settings.png" alt="Ajuste de lotes y números de serie y fechas de caducidad en Odoo" style="width:100%;border:1px solid var(--rule);border-radius:4px">
+      <p style="font-size:12px;color:var(--soft);margin:6px 0 10px">Se activa junto con "Lotes y números de serie": un lote agrupa unidades iguales recibidas juntas y comparten una caducidad.</p>
+      <img src="img/odoo-expiration-form.png" alt="Campo de fecha de caducidad en la ficha de producto de Odoo" style="width:100%;border:1px solid var(--rule);border-radius:4px">
+      <p class="src" style="margin-top:8px">Fuente: <a href="https://www.odoo.com/documentation/18.0/applications/inventory_and_mrp/inventory/product_management/product_tracking/expiration_dates.html">documentación oficial de Odoo — Expiration dates</a>.</p>
+    </div>
   </div>
 
   <div class="board">
