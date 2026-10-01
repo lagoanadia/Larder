@@ -288,8 +288,8 @@ footer .hand{font-size:20px}
         <tbody>
           <tr><td class="lab">El recurso compartido</td><td>Interactuar a la vez con el mismo item.</td></tr>
           <tr><td class="lab">La operación en conflicto</td><td>Larder: marcar el mismo item como "out" dos veces en la lista — imposible. List: comprar dos veces es imposible porque habría que ir a la tienda a la vez.</td></tr>
-          <tr><td class="lab">Qué pasa hoy</td><td class="pending">Pendiente de definir.</td></tr>
-          <tr><td class="lab">Qué debería pasar</td><td class="pending">Pendiente de definir.</td></tr>
+          <tr><td class="lab">Qué pasa hoy</td><td>Usuario A abre List y ve "leche" pendiente. Usuario B abre List casi al mismo tiempo y ve el mismo item. Los dos lo marcan como comprado casi a la vez. Como hoy no hay ningún control de acceso a la pantalla, las dos peticiones se procesan igual — puede duplicarse el registro o quedar un estado inconsistente, sin que ninguno de los dos se entere de que el otro ya lo había hecho. En la práctica es poco probable (habría que ir a la tienda a la vez), pero el prototipo no lo impide.</td></tr>
+          <tr><td class="lab">Qué debería pasar</td><td>No dejar que dos usuarios abran List a la vez: el primero que entra se queda con el control de la pantalla, y el segundo recibe el mensaje "Alguien más está usando la lista ahora mismo, inténtalo en un momento" hasta que el primero la suelte. Así el conflicto no llega a producirse.</td></tr>
         </tbody>
       </table>
     </div>
