@@ -90,8 +90,11 @@ tbody tr:last-child td{border-bottom:0}
 th{font-family:var(--hand);font-weight:400;color:var(--pen);font-size:19px;line-height:1;border-bottom-width:3px}
 td.lab{font-stretch:75%;font-weight:800;font-size:13.5px;text-transform:uppercase;white-space:nowrap}
 td.risk{font-weight:700;width:30%}
-td ul.plain{margin:8px 0 0;padding-left:16px}
-td ul.plain li{margin-bottom:6px}
+ul.plain{margin:8px 0 0;padding-left:16px}
+ul.plain li{margin-bottom:6px}
+ul.plain li ul{margin:4px 0 0;padding-left:18px;list-style:disc}
+ul.plain li ul li{margin-bottom:3px;font-weight:400}
+.notebook li ul.plain{margin-top:6px}
 
 footer{margin-top:50px;padding-top:26px;border-top:2.5px solid var(--ink);display:grid;gap:16px}
 footer .hand{font-size:20px}
@@ -100,6 +103,8 @@ footer .hand{font-size:20px}
 .gloss dd{margin:2px 0 0;font-size:13.5px;color:var(--soft)}
 .sticker{display:inline-flex;align-items:center;gap:10px;width:fit-content;background:var(--marker);padding:11px 18px;font-stretch:75%;font-weight:800;font-size:15px;text-transform:uppercase;text-decoration:none;transform:rotate(-2deg)}
 .sticker:hover{transform:rotate(0deg)}
+.excl{background:rgba(184,50,42,.08);border-left:3px solid var(--clip);border-radius:0 6px 6px 0;padding:10px 16px;margin:4px 0 20px;font-size:14.5px;color:var(--ink)}
+.excl b{color:var(--clip)}
 </style>
 </head>
 <body>
@@ -204,10 +209,21 @@ footer .hand{font-size:20px}
         <tbody>
           <tr><td class="risk">No llegar con las 57h de P1</td><td>Priorizar Larder y List; cualquier resto de Track se mueve a P2 sin excepción.</td></tr>
           <tr><td class="risk">El ticket de un supermercado no se reconoce bien</td><td>Limitar P1 a 2–3 cadenas conocidas (Mercadona, Lidl, Carrefour) y marcar el resto como "no soportado" en vez de fallar.</td></tr>
-          <tr><td class="risk">Los servicios gratuitos (Render/Groq) bajan de nivel o imponen límites</td><td>Alternativas de pago: Railway, Neon.
+          <tr><td class="risk">Los servicios gratuitos (Render/Groq) bajan de nivel o imponen límites</td><td>Alternativas de pago:
             <ul class="plain">
-              <li>Railway vs Render: Railway cobra por uso real (lo que realmente consumes) en vez de dormir el servidor (apagarlo cuando no hay visitas) como hace Render gratis; Railway desde ~5$/mes, Render de pago desde ~7$/mes.</li>
-              <li>Neon vs Postgres (Render): Neon escala a cero (se apaga solo sin uso y no cuesta nada mientras tanto) y permite branches de la base de datos (copias de prueba para corregir un error sin arriesgar lo real); Neon de pago desde ~19$/mes.</li>
+              <li><b>Railway</b> (alt. a Render)
+                <ul>
+                  <li>Cobra por uso real, no por tener el servidor encendido (Render deja "dormir" el servicio gratis sin visitas).</li>
+                  <li>Desde ~5$/mes (Render de pago: ~7$/mes).</li>
+                </ul>
+              </li>
+              <li><b>Neon</b> (alt. al Postgres de Render)
+                <ul>
+                  <li>Se apaga solo sin uso y no cuesta nada mientras tanto (escala a cero).</li>
+                  <li>Permite copias de prueba de la base de datos (branches) para corregir errores sin tocar los datos reales.</li>
+                  <li>Desde ~19$/mes.</li>
+                </ul>
+              </li>
             </ul>
           </td></tr>
         </tbody>
@@ -219,9 +235,28 @@ footer .hand{font-size:20px}
   <div class="notebook">
     <ul>
       <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Dominio</b><br>10€/año.</li>
-      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Alojamiento</b><br>Vercel (frontend) + Render (backend + PostgreSQL), gratis en nivel básico. La de pago de Vercel (20$/mes) quita los límites de ancho de banda (cuántos datos se entregan a quien visita la web cada mes) y de builds (cuántas veces puede desplegar la web), y permite usar dominios más conocidos (.com, .es, .app, .io, etc.).</li>
-      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Lectura de tickets (IA)</b><br>Groq — varía según el modelo, aún sin decidir; en su nivel gratuito ronda: modelos ligeros 30 RPM / 14.400 RPD / 6.000 TPM, modelos potentes 30 RPM / 1.000 RPD / 12.000 TPM, modelos de audio 20 RPM / 2.000 RPD. Alternativa: Anthropic, más preciso leyendo texto complejo pero más caro. (RPM: peticiones por minuto · RPD: peticiones por día · TPM: texto procesado por minuto.)</li>
+      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Alojamiento</b><br><b>Vercel</b> (frontend) + <b>Render</b> (backend + PostgreSQL) — gratis en nivel básico.
+        <ul class="plain">
+          <li>De pago, Vercel (20$/mes) añade:
+            <ul>
+              <li>Más ancho de banda (datos entregados a quien visita la web cada mes).</li>
+              <li>Más builds (veces que puede desplegar la web).</li>
+              <li>Dominios propios más conocidos (.com, .es, .app, .io, etc.).</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Lectura de tickets (IA)</b><br><b>Groq</b> — modelo aún sin decidir.
+        <ul class="plain">
+          <li>Modelos ligeros: 30 RPM / 14.400 RPD / 6.000 TPM.</li>
+          <li>Modelos potentes: 30 RPM / 1.000 RPD / 12.000 TPM.</li>
+          <li>Modelos de audio: 20 RPM / 2.000 RPD.</li>
+          <li>Alternativa: <b>Anthropic</b> — más preciso con texto complejo, más caro.</li>
+          <li>RPM: peticiones/minuto · RPD: peticiones/día · TPM: texto procesado/minuto.</li>
+        </ul>
+      </li>
       <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Google Play</b><br>25$ pago único.</li>
+      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>App Store</b><br>99$/año.</li>
     </ul>
   </div>
 </section>
@@ -261,7 +296,7 @@ footer .hand{font-size:20px}
       </table>
     </div>
   </div>
-  <p class="src">No entra en P1: dar de alta productos nuevos a mano · fotos o iconos por producto · historial visible de cambios de estado.</p>
+  <p class="excl"><b>No entra en P1:</b> dar de alta productos nuevos a mano · fotos o iconos por producto · historial visible de cambios de estado.</p>
 
   <div class="note" style="--r:.35deg">
     <span class="tape" aria-hidden="true"></span>
@@ -291,7 +326,7 @@ footer .hand{font-size:20px}
       </table>
     </div>
   </div>
-  <p class="src">No entra en P1: ordenar la lista por pasillo o categoría · añadir productos a mano sin pasar por Larder · cantidades o notas por ítem.</p>
+  <p class="excl"><b>No entra en P1:</b> ordenar la lista por pasillo o categoría · añadir productos a mano sin pasar por Larder · cantidades o notas por ítem.</p>
 </section>
 
 <section id="erp">
