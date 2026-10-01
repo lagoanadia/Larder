@@ -240,13 +240,28 @@ footer .hand{font-size:20px}
         <thead><tr><th colspan="2">Caso 1 · Marcar un item como "out" en Larder</th></tr></thead>
         <tbody>
           <tr><td class="lab">Quién</td><td>Cualquier miembro del hogar.</td></tr>
-          <tr><td class="lab">Pasos</td><td>1. Ver productos con sus estados · 2. Click en "out" · 3. La app guarda el cambio y lo refleja · 4. Se añade a la lista de la compra.</td></tr>
+          <tr><td class="lab">Pasos</td><td>
+            <ul class="plain">
+              <li>1. Abre la pantalla Larder.</li>
+              <li>2. Ve los productos del hogar con su estado actual (bien / queda poco / se acabó).</li>
+              <li>3. Toca el producto que se ha acabado.</li>
+              <li>4. El estado cambia a "out" y la app guarda el cambio en el backend.</li>
+              <li>5. El cambio se refleja al instante para el resto del hogar.</li>
+              <li>6. El producto se añade automáticamente a List.</li>
+            </ul>
+          </td></tr>
           <tr><td class="lab">Resultado</td><td>El estado queda actualizado en la base de datos y aparece en List sin que nadie lo anote a mano.</td></tr>
-          <tr><td class="lab">Qué falla</td><td>Falta de conexión · dos personas cambian el mismo producto a la vez.</td></tr>
+          <tr><td class="lab">Qué falla</td><td>
+            <ul class="plain">
+              <li>Falta de conexión → la app muestra "sincronizando" y reintenta; si falla del todo, avisa "no se pudo guardar, inténtalo de nuevo".</li>
+              <li>Dos personas cambian el mismo producto a la vez → gana el último cambio confirmado por el servidor, y la otra persona ve el estado real en vez de uno desfasado.</li>
+            </ul>
+          </td></tr>
         </tbody>
       </table>
     </div>
   </div>
+  <p class="src">No entra en P1: dar de alta productos nuevos a mano · fotos o iconos por producto · historial visible de cambios de estado.</p>
 
   <div class="note" style="--r:.35deg">
     <span class="tape" aria-hidden="true"></span>
@@ -255,13 +270,28 @@ footer .hand{font-size:20px}
         <thead><tr><th colspan="2">Caso 2 · Marcar como comprado un item dentro de List</th></tr></thead>
         <tbody>
           <tr><td class="lab">Quién</td><td>Cualquier miembro del hogar.</td></tr>
-          <tr><td class="lab">Pasos</td><td>1. Sacar foto al ticket · 2. El item se repone automáticamente y se borra de la lista.</td></tr>
+          <tr><td class="lab">Pasos</td><td>
+            <ul class="plain">
+              <li>1. Abre List y ve lo que está pendiente ("queda poco" o "se acabó").</li>
+              <li>2. Hace la compra en la tienda.</li>
+              <li>3. Al volver, saca una foto al ticket.</li>
+              <li>4. La app lee el ticket y detecta los productos comprados.</li>
+              <li>5. Cada producto comprado vuelve a Larder en estado "bien".</li>
+              <li>6. El item desaparece de List para todos al instante.</li>
+            </ul>
+          </td></tr>
           <tr><td class="lab">Resultado</td><td>List siempre refleja el estado real de Larder.</td></tr>
-          <tr><td class="lab">Qué falla</td><td>Falta de conexión.</td></tr>
+          <tr><td class="lab">Qué falla</td><td>
+            <ul class="plain">
+              <li>Falta de conexión → la app guarda la foto localmente y reintenta enviarla al volver la conexión, mostrando "pendiente de subir".</li>
+              <li>El ticket no se reconoce bien (letra borrosa, cadena no soportada) → la app marca los productos no reconocidos y pide confirmarlos a mano.</li>
+            </ul>
+          </td></tr>
         </tbody>
       </table>
     </div>
   </div>
+  <p class="src">No entra en P1: ordenar la lista por pasillo o categoría · añadir productos a mano sin pasar por Larder · cantidades o notas por ítem.</p>
 </section>
 
 <section id="erp">
