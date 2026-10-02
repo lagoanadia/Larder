@@ -1,0 +1,606 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Larder — Especificación técnica</title>
+<meta name="description" content="Especificación técnica de Larder: plan de una página, casos de uso, delimitación con el ERP, sección crítica, modelo de datos y pantallas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Covered+By+Your+Grace&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --paper:#EEECE7; --sheet:#FBFAF6; --ink:#141414; --soft:#5B5A55; --rule:#CFCCC3;
+  --pen:#1D2B8F; --marker:#F6D649; --clip:#B8322A; --clip2:#D9A21C; --lined:#C9D6EE;
+  --tape:rgba(236,226,196,.78);
+  --hand:"Covered By Your Grace","Comic Sans MS","Segoe Print",cursive;
+  --sans:"Archivo","Arial Narrow",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{background:var(--paper)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;padding-inline:20px;padding-block:0 72px;overflow-x:hidden}
+.wrap{max-width:1000px;margin:0 auto}
+h1,h2,h3{margin:0;line-height:1;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+.hand{font-family:var(--hand);color:var(--pen);font-weight:400;letter-spacing:.02em}
+.caps{font-stretch:75%;font-weight:700;text-transform:uppercase;letter-spacing:.02em;font-size:14px;line-height:1.25}
+.num{font-variant-numeric:tabular-nums}
+.hl{background:linear-gradient(transparent 55%,var(--marker) 55%,var(--marker) 92%,transparent 92%);padding-inline:2px}
+.sketch{position:relative}
+.sketch::after{content:"";position:absolute;inset:0;border:2.5px solid var(--ink);border-radius:10px 22px 12px 18px / 18px 10px 22px 12px;filter:url(#wob);pointer-events:none}
+
+nav.top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 28px;padding-block:18px;border-bottom:2.5px solid var(--ink)}
+.logo{font-stretch:62%;font-weight:800;font-size:26px;letter-spacing:-.01em;text-decoration:none}
+nav.top ul{display:flex;flex-wrap:wrap;gap:6px 20px;margin:0;padding:0;list-style:none}
+nav.top ul a{font-size:15px;text-decoration:none}
+nav.top ul a:hover{text-decoration:underline wavy var(--pen) 1.5px;text-underline-offset:5px}
+
+.wordmark{position:relative;padding-block:36px 16px}
+.wordmark h1{font-stretch:62%;font-weight:800;font-size:clamp(52px,13vw,140px);letter-spacing:-.02em;line-height:.86;text-transform:uppercase}
+.wordmark .note{position:absolute;right:0;top:0;transform:rotate(-4deg);font-size:clamp(18px,2.6vw,26px);text-align:right;line-height:1.05}
+.wordmark .note svg{display:block;margin:2px 30px 0 auto;width:30px;height:36px}
+@media (max-width:640px){.wordmark{padding-top:10px}.wordmark .note{position:static;transform:rotate(-2deg);text-align:left;margin-bottom:6px}.wordmark .note svg{display:none}}
+
+.intro{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px;align-items:start;padding-block:6px 8px}
+.intro p.lede{font-size:18px;max-width:58ch}
+.intro .who{font-size:clamp(18px,2.4vw,22px);line-height:1.2;transform:rotate(-1.5deg)}
+@media (max-width:720px){.intro{grid-template-columns:1fr}}
+.tag-pc{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);background:var(--marker);padding:3px 10px;border-radius:3px;transform:rotate(-2deg);margin-bottom:8px}
+
+section{padding-block:48px 18px;display:grid;gap:24px}
+.shead{display:grid;gap:8px}
+.lvl-tag{display:inline-flex;align-items:center;gap:10px;font-size:20px}
+.lvl-tag .ring{position:relative;display:inline-grid;place-items:center;width:36px;height:36px}
+.lvl-tag .ring svg{position:absolute;inset:-4px;width:44px;height:44px}
+.shead h2{font-stretch:62%;font-weight:800;font-size:clamp(28px,4.6vw,46px);text-transform:uppercase;letter-spacing:-.01em;line-height:.98}
+.shead h3.sub{font-family:var(--hand);color:var(--soft);font-weight:400;font-size:17px;margin-top:2px}
+.shead p{max-width:66ch;font-size:16px}
+
+.board{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:32px 26px;align-items:start}
+.note{position:relative;transform:rotate(var(--r,0deg))}
+.paper{background:var(--sheet);padding:24px 20px 22px;display:grid;gap:12px;box-shadow:0 2px 0 rgba(0,0,0,.06),0 10px 18px -12px rgba(0,0,0,.35)}
+.torn{clip-path:polygon(0 5px,6% 0,13% 4px,21% 1px,29% 5px,38% 0,46% 4px,55% 1px,63% 5px,72% 0,80% 3px,89% 0,100% 4px,100% calc(100% - 3px),94% 100%,86% calc(100% - 5px),77% 100%,68% calc(100% - 4px),58% 100%,49% calc(100% - 5px),40% 100%,31% calc(100% - 3px),22% 100%,13% calc(100% - 5px),5% 100%,0 calc(100% - 3px))}
+.tape{position:absolute;z-index:2;top:-12px;left:50%;width:92px;height:25px;background:var(--tape);transform:translateX(-50%) rotate(-3deg);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.clip{position:absolute;z-index:2;top:-24px;left:18px;width:24px;height:58px}
+.clip.gold{left:auto;right:20px}
+.paper h3{font-stretch:75%;font-weight:700;font-size:18px;line-height:1.25}
+.paper p{font-size:15px;color:var(--ink)}
+.paper ul{margin:0;padding-left:18px;display:grid;gap:5px}
+.paper li{font-size:14.5px;line-height:1.4}
+.src{font-size:12.5px;color:var(--soft)}
+.card-tag{font-family:var(--hand);font-size:20px;line-height:1;color:var(--pen)}
+.card-tag.bad{color:var(--clip)}
+
+.big{font-stretch:62%;font-weight:800;font-size:46px;line-height:.9;letter-spacing:-.02em}
+.big small{font-size:.42em}
+
+.quote{font-family:var(--hand);color:var(--pen);font-size:clamp(20px,3vw,30px);line-height:1.2;max-width:56ch;transform:rotate(-.6deg);margin:0}
+.quote cite{display:block;font-family:var(--sans);font-style:normal;color:var(--soft);font-size:13.5px;margin-top:10px;transform:rotate(.6deg)}
+
+.notebook{background-color:var(--sheet);background-image:linear-gradient(90deg,transparent 54px,#E59A95 54px,#E59A95 56px,transparent 56px),repeating-linear-gradient(transparent 0 43px,var(--lined) 43px 45px);padding:12px 20px 18px 74px;transform:rotate(.3deg)}
+.notebook ul{margin:0;padding:0;list-style:none}
+.notebook li{position:relative;min-height:45px;padding:10px 0 8px;font-size:15.5px;line-height:1.5}
+.notebook li svg.box{position:absolute;left:-46px;top:12px;width:26px;height:26px}
+.notebook li svg.box *{fill:none;stroke:var(--ink);stroke-width:2.5;stroke-linejoin:round;filter:url(#wob)}
+.tagbadge{display:inline-block;font-family:var(--hand);color:var(--ink);background:var(--marker);padding:0 8px;margin-left:6px;line-height:1.4;font-size:15px;transform:rotate(-3deg)}
+.pending{font-style:italic;color:var(--soft)}
+
+.chart{background:var(--sheet);overflow-x:auto;padding:6px 4px}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:14.5px}
+th,td{text-align:left;padding:12px 13px;vertical-align:top;border-bottom:2px solid var(--ink)}
+tbody tr:last-child td{border-bottom:0}
+th{font-family:var(--hand);font-weight:400;color:var(--pen);font-size:19px;line-height:1;border-bottom-width:3px}
+td.lab{font-stretch:75%;font-weight:800;font-size:13.5px;text-transform:uppercase;white-space:nowrap}
+td.risk{font-weight:700;width:30%}
+ul.plain{margin:8px 0 0;padding-left:16px}
+ul.plain li{margin-bottom:6px}
+ul.plain li ul{margin:4px 0 0;padding-left:18px;list-style:disc}
+ul.plain li ul li{margin-bottom:3px;font-weight:400}
+.notebook li ul.plain{margin-top:6px}
+
+footer{margin-top:50px;padding-top:26px;border-top:2.5px solid var(--ink);display:grid;gap:16px}
+footer .hand{font-size:20px}
+.gloss{display:grid;gap:9px}
+.gloss dt{font-family:var(--hand);color:var(--pen);font-size:18px;line-height:1}
+.gloss dd{margin:2px 0 0;font-size:13.5px;color:var(--soft)}
+.sticker{display:inline-flex;align-items:center;gap:10px;width:fit-content;background:var(--marker);padding:11px 18px;font-stretch:75%;font-weight:800;font-size:15px;text-transform:uppercase;text-decoration:none;transform:rotate(-2deg)}
+.sticker:hover{transform:rotate(0deg)}
+.excl{background:rgba(184,50,42,.08);border-left:3px solid var(--clip);border-radius:0 6px 6px 0;padding:10px 16px;margin:4px 0 20px;font-size:14.5px;color:var(--ink)}
+.excl b{color:var(--clip)}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="wob" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7"/>
+      <feDisplacementMap in="SourceGraphic" scale="3.2"/>
+    </filter>
+    <symbol id="paperclip" viewBox="0 0 26 64"><path d="M9 48V12a6 6 0 0 1 12 0v40a9 9 0 0 1-18 0V16" fill="none" stroke-width="3.2" stroke-linecap="round"/></symbol>
+    <symbol id="ring" viewBox="0 0 48 48"><path d="M26 5C12 3 3 13 5 26s16 19 28 15S46 26 42 15 27 3 16 8" fill="none" stroke="#1D2B8F" stroke-width="2.4" stroke-linecap="round"/></symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+
+<nav class="top" aria-label="Secciones">
+  <a class="logo" href="#top">LARDER</a>
+  <ul>
+    <li><a href="#plan">el plan</a></li>
+    <li><a href="#casos">casos de uso</a></li>
+    <li><a href="#erp">el erp</a></li>
+    <li><a href="#critica">sección crítica</a></li>
+    <li><a href="#datos">los datos</a></li>
+    <li><a href="#pantallas">las pantallas</a></li>
+  </ul>
+</nav>
+
+<header id="top">
+  <div class="wordmark">
+    <p class="note hand">¡esta es la<br>especificación!
+      <svg viewBox="0 0 44 52" aria-hidden="true"><path d="M30 2C38 18 30 34 12 46M12 46l12-2M12 46l2-12" fill="none" stroke="#1D2B8F" stroke-width="2.4" stroke-linecap="round"/></svg>
+    </p>
+    <h1>Larder</h1>
+  </div>
+  <div class="intro">
+    <p class="lede">Especificación técnica de Larder para el <span class="hl">Punto de Control 1</span>: el plan en una página, los dos casos de uso, la delimitación con el ERP, la sección crítica de concurrencia, el modelo de datos y las pantallas.</p>
+    <p class="who hand"><span class="tag-pc">Punto de Control 1</span><br>Proyecto 1 · DAM</p>
+  </div>
+</header>
+
+<section id="plan">
+  <div class="shead">
+    <span class="lvl-tag hand"><span class="ring"><svg aria-hidden="true"><use href="#ring"/></svg>1</span> el plan de una página</span>
+    <h2>Del prototipo al cobro, en tres entregas.</h2>
+    <p>La nevera (Larder) se actualiza sola a partir de una foto del ticket; a partir de ahí los productos se reponen o se añaden a la lista, manual o automáticamente. Sin fricción.</p>
+  </div>
+
+  <div class="board">
+    <div class="note" style="--r:-1deg">
+      <span class="tape" aria-hidden="true"></span>
+      <div class="paper torn">
+        <span class="card-tag">quién paga, quién usa</span>
+        <p>Paga el hogar, por hogar. Lo usan los miembros del hogar.</p>
+      </div>
+    </div>
+    <div class="note" style="--r:.8deg">
+      <span class="tape" aria-hidden="true"></span>
+      <div class="paper torn">
+        <span class="card-tag">cómo se gana dinero</span>
+        <div class="big num" style="color:var(--pen);font-size:34px">1,99<small>€/mes</small></div>
+        <p>Freemium: la versión gratis tiene un límite de usos de IA al mes; con Stripe se amplía ese límite (nunca ilimitado, para controlar el coste), con una semana de prueba gratis.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="notebook">
+    <ul>
+      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Larder + Backend + List</b><span class="tagbadge">P1 · 20.11.26</span><br>En React. Gratis. Horas: Larder 17h · Backend 10h · List 30h.</li>
+      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Track + React Native</b><span class="tagbadge">P2 · 22.1.27</span><br>Track es un módulo a medida sobre Odoo. Empieza el cobro. Horas: Track 20h · React Native 10h.</li>
+      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Compare + Afiliación</b><span class="tagbadge">P3 · 26.2.27</span><br>Comisión por afiliación con supermercados. Horas: Compare 13h · Comisión 10h (?).</li>
+    </ul>
+  </div>
+
+  <div class="board">
+    <div class="note" style="--r:-.6deg">
+      <div class="paper sketch">
+        <span class="card-tag">digitalizar · P1</span>
+        <ul><li>Items se loggean correctamente</li><li>API calls correctas</li><li>Reconocimiento de ticket</li><li>Automatización Lista ↔ Larder</li></ul>
+      </div>
+    </div>
+    <div class="note" style="--r:.5deg">
+      <div class="paper sketch">
+        <span class="card-tag">gestionar deudas · P2</span>
+        <ul><li>Cálculo correcto de deudas entre usuarios</li><li>Lectura correcta de items comprados</li><li>Export exitoso de app móvil</li></ul>
+      </div>
+    </div>
+    <div class="note" style="--r:-.4deg">
+      <div class="paper sketch">
+        <span class="card-tag">tiendas y comparación · P3</span>
+        <ul><li>Log correcto de tiendas</li><li>Comparación correcta de precios</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="note" style="--r:-.3deg">
+    <span class="tape" aria-hidden="true"></span>
+    <div class="chart sketch">
+      <table>
+        <thead><tr><th>riesgo</th><th>solución</th></tr></thead>
+        <tbody>
+          <tr><td class="risk">No llegar con las 57h de P1</td><td>Priorizar Larder y List; cualquier resto de Track se mueve a P2 sin excepción.</td></tr>
+          <tr><td class="risk">El ticket de un supermercado no se reconoce bien</td><td>Limitar P1 a 2–3 cadenas conocidas (Mercadona, Lidl, Carrefour) y marcar el resto como "no soportado" en vez de fallar.</td></tr>
+          <tr><td class="risk">Los servicios gratuitos (Render/Groq) bajan de nivel o imponen límites</td><td>Alternativas de pago:
+            <ul class="plain">
+              <li><b>Railway</b> (alt. a Render)
+                <ul>
+                  <li>Cobra por uso real, no por tener el servidor encendido (Render deja "dormir" el servicio gratis sin visitas).</li>
+                  <li>Desde ~5$/mes (Render de pago: ~7$/mes).</li>
+                </ul>
+              </li>
+              <li><b>Neon</b> (alt. al Postgres de Render)
+                <ul>
+                  <li>Se apaga solo sin uso y no cuesta nada mientras tanto (escala a cero).</li>
+                  <li>Permite copias de prueba de la base de datos (branches) para corregir errores sin tocar los datos reales.</li>
+                  <li>Desde ~19$/mes.</li>
+                </ul>
+              </li>
+            </ul>
+          </td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <h3 class="h3">Inversión en dinero</h3>
+  <div class="notebook">
+    <ul>
+      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Dominio</b><br>10€/año.</li>
+      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Alojamiento</b><br><b>Vercel</b> (frontend) + <b>Render</b> (backend + PostgreSQL) — gratis en nivel básico.
+        <ul class="plain">
+          <li>De pago, Vercel (20$/mes) añade:
+            <ul>
+              <li>Más ancho de banda (datos entregados a quien visita la web cada mes).</li>
+              <li>Más builds (veces que puede desplegar la web).</li>
+              <li>Dominios propios más conocidos (.com, .es, .app, .io, etc.).</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Lectura de tickets</b><br><b>OCR</b> lee la imagen con plantillas de formatos conocidos; si no reconoce el ticket (confianza por debajo del 80%), se lo pasa a la <b>IA (Groq)</b>, que le crea una plantilla nueva al OCR para que la próxima vez lo lea solo — así el sistema aprende formatos nuevos sin depender de la IA cada vez.
+        <ul class="plain">
+          <li>Modelos ligeros: 30 RPM / 14.400 RPD / 6.000 TPM.</li>
+          <li>Modelos potentes: 30 RPM / 1.000 RPD / 12.000 TPM.</li>
+          <li>Modelos de audio: 20 RPM / 2.000 RPD.</li>
+          <li>Alternativa: <b>Anthropic</b> — más preciso con texto complejo, más caro.</li>
+          <li>RPM: peticiones/minuto · RPD: peticiones/día · TPM: texto procesado/minuto.</li>
+        </ul>
+      </li>
+      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Añadir productos sin ticket (IA)</b><br>El uso real de la IA en el día a día: añadir algo que no viene de un ticket, por voz (el móvil transcribe lo que dices) o por foto/vídeo de la nevera (la IA reconoce los productos y los añade sola).</li>
+      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Google Play</b><br>25$ pago único.</li>
+      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>App Store</b><br>99$/año.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="casos">
+  <div class="shead">
+    <span class="lvl-tag hand"><span class="ring"><svg aria-hidden="true"><use href="#ring"/></svg>2</span> los dos casos de uso</span>
+    <h2>Un gesto para vaciar. Una foto para llenar.</h2>
+    <p>Larder y List se retroalimentan: marcar algo como agotado lo manda a la lista; comprarlo lo devuelve a Larder.</p>
+  </div>
+
+  <div class="note" style="--r:-.4deg">
+    <span class="tape" aria-hidden="true"></span>
+    <div class="chart sketch">
+      <table>
+        <thead><tr><th colspan="2">Caso 1 · Marcar un item como "out" en Larder</th></tr></thead>
+        <tbody>
+          <tr><td class="lab">Quién</td><td>Cualquier miembro del hogar.</td></tr>
+          <tr><td class="lab">Pasos</td><td>
+            <ul class="plain">
+              <li>1. Abre la pantalla Larder.</li>
+              <li>2. Ve los productos del hogar con su estado actual (bien / queda poco / se acabó).</li>
+              <li>3. Toca el producto que se ha acabado.</li>
+              <li>4. El estado cambia a "out" y la app guarda el cambio en el backend.</li>
+              <li>5. El cambio se refleja al instante para el resto del hogar.</li>
+              <li>6. El producto se añade automáticamente a List.</li>
+            </ul>
+          </td></tr>
+          <tr><td class="lab">Resultado</td><td>El estado queda actualizado en la base de datos y aparece en List sin que nadie lo anote a mano.</td></tr>
+          <tr><td class="lab">Qué falla</td><td>
+            <ul class="plain">
+              <li>Falta de conexión → la app muestra "sincronizando" y reintenta; si falla del todo, avisa "no se pudo guardar, inténtalo de nuevo".</li>
+              <li>Dos personas cambian el mismo producto a la vez → gana el último cambio confirmado por el servidor, y la otra persona ve el estado real en vez de uno desfasado.</li>
+            </ul>
+          </td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p class="excl"><b>No entra en P1:</b> dar de alta productos nuevos a mano · fotos o iconos por producto · historial visible de cambios de estado.</p>
+
+  <div class="note" style="--r:.35deg">
+    <span class="tape" aria-hidden="true"></span>
+    <div class="chart sketch">
+      <table>
+        <thead><tr><th colspan="2">Caso 2 · Marcar como comprado un item dentro de List</th></tr></thead>
+        <tbody>
+          <tr><td class="lab">Quién</td><td>Cualquier miembro del hogar.</td></tr>
+          <tr><td class="lab">Pasos</td><td>
+            <ul class="plain">
+              <li>1. Abre List y ve lo que está pendiente ("queda poco" o "se acabó").</li>
+              <li>2. Hace la compra en la tienda.</li>
+              <li>3. Al volver, saca una foto al ticket.</li>
+              <li>4. La app lee el ticket y detecta los productos comprados.</li>
+              <li>5. Cada producto comprado vuelve a Larder en estado "bien".</li>
+              <li>6. El item desaparece de List para todos al instante.</li>
+            </ul>
+          </td></tr>
+          <tr><td class="lab">Resultado</td><td>List siempre refleja el estado real de Larder.</td></tr>
+          <tr><td class="lab">Qué falla</td><td>
+            <ul class="plain">
+              <li>Falta de conexión → la app guarda la foto localmente y reintenta enviarla al volver la conexión, mostrando "pendiente de subir".</li>
+              <li>El OCR no reconoce el formato del ticket (confianza por debajo del 80%) → se pasa a la IA, que crea una plantilla nueva para que el OCR lo reconozca solo la próxima vez; mientras tanto, pide confirmar los productos a mano.</li>
+            </ul>
+          </td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p class="excl"><b>No entra en P1:</b> ordenar la lista por pasillo o categoría · añadir productos a mano sin pasar por Larder · cantidades o notas por ítem.</p>
+</section>
+
+<section id="erp">
+  <div class="shead">
+    <span class="lvl-tag hand"><span class="ring"><svg aria-hidden="true"><use href="#ring"/></svg>3</span> delimitación con el erp</span>
+    <h2>Con Odoo, no como Odoo.</h2>
+    <p>Sistemas de Xestión Empresarial. Qué entra en Odoo y qué se queda fuera, y por qué.</p>
+  </div>
+
+  <div class="board">
+    <div class="note" style="--r:-.8deg">
+      <span class="tape" aria-hidden="true"></span>
+      <div class="paper torn">
+        <span class="card-tag">lo construyo yo</span>
+        <ul>
+          <li><b>Larder</b> — despensa con 3 estados (bien / queda poco / se acabó), sin cantidades ni unidades; se actualiza a mano o desde el ticket.</li>
+          <li><b>List</b> — lista de la compra generada automáticamente a partir de lo marcado en Larder; si dos personas la usan a la vez, no se pisan ni duplican la compra.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note" style="--r:.6deg">
+      <span class="tape" aria-hidden="true"></span>
+      <div class="paper torn">
+        <span class="card-tag">lo hace odoo</span>
+        <ul>
+          <li><b>Catálogo de productos</b> (Inventario) — nombre, categoría, unidad, fecha de caducidad y código de barras. Es información básica, igual para cualquier negocio, que cualquier ERP ya trae resuelta de fábrica.</li>
+          <li>El backend solo lo consulta (nunca escribe); Odoo nunca escribe en la base de datos de Larder.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note" style="--r:-1.1deg">
+      <span class="tape" aria-hidden="true"></span>
+      <div class="paper torn">
+        <span class="card-tag bad">no se hace (en p1)</span>
+        <ul>
+          <li><b>Track</b> — reparto de gastos entre miembros del hogar. Se programaría a medida (no el módulo de Gastos de Odoo, pensado para empresa-empleado). Entra en P2.</li>
+          <li><b>Facturación</b> — cobro de la suscripción y de la comisión de afiliación (P2/P3).</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="h3">Qué va en Odoo</h3>
+  <div class="notebook">
+    <ul>
+      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Aplicaciones a instalar</b><br>Odoo Inventario, únicamente — las otras apps (Compras, Ventas, RRHH, CRM) sirven para vender o gestionar personal, y P1 no hace ni una cosa ni la otra.</li>
+      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Datos maestros</b><br>La ficha de cada producto — nombre, categoría, código de barras si lo tiene, unidad, fecha de caducidad.</li>
+      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Origen de los datos</b><br>Odoo no trae un catálogo real ya cargado (no viene con los productos de Mercadona o Froiz de fábrica) — se arranca importando una base abierta de códigos de barras (ej. Open Food Facts) y se completa solo, dando de alta cada producto nuevo la primera vez que se lee su código en un ticket.</li>
+      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Informe / decisión de negocio</b><br>Un informe que muestra qué categorías tienen fecha de caducidad registrada y cuáles no → decide qué categorías completar primero, para que el aviso de caducidad funcione en el mayor número de productos posible desde el lanzamiento.</li>
+    </ul>
+  </div>
+
+</section>
+
+<section id="critica">
+  <div class="shead">
+    <span class="lvl-tag hand"><span class="ring"><svg aria-hidden="true"><use href="#ring"/></svg>4</span> la sección crítica</span>
+    <h2>Dos personas, el mismo item, a la vez.</h2>
+    <p>Servicios y Procesos.</p>
+  </div>
+
+  <div class="note" style="--r:-.3deg">
+    <span class="tape" aria-hidden="true"></span>
+    <div class="chart sketch">
+      <table>
+        <thead><tr><th>pregunta</th><th>respuesta</th></tr></thead>
+        <tbody>
+          <tr><td class="lab">El recurso compartido</td><td>Interactuar a la vez con el mismo item.</td></tr>
+          <tr><td class="lab">La operación en conflicto</td><td>Larder: marcar el mismo item como "out" dos veces en la lista — imposible. List: comprar dos veces es imposible porque habría que ir a la tienda a la vez.</td></tr>
+          <tr><td class="lab">Qué pasa hoy</td><td>Usuario A abre List y ve "leche" pendiente. Usuario B abre List casi al mismo tiempo y ve el mismo item. Los dos lo marcan como comprado casi a la vez. Como hoy no hay ningún control de acceso a la pantalla, las dos peticiones se procesan igual — puede duplicarse el registro o quedar un estado inconsistente, sin que ninguno de los dos se entere de que el otro ya lo había hecho. En la práctica es poco probable (habría que ir a la tienda a la vez), pero el prototipo no lo impide.</td></tr>
+          <tr><td class="lab">Qué debería pasar</td><td>No dejar que dos usuarios abran List a la vez: el primero que entra se queda con el control de la pantalla, y el segundo recibe el mensaje "Alguien más está usando la lista ahora mismo, inténtalo en un momento" hasta que el primero la suelte. Así el conflicto no llega a producirse.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="notebook">
+    <ul>
+      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Tarea en segundo plano</b><br>Restock automático de Larder cuando List detecta una compra.</li>
+      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Marcado de "comprado" automático</b><br>Al confirmar el ticket.</li>
+      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Recuento de deudas automático</b><br>Track, P2.</li>
+      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Evento de compra automática</b><br>Disparado al backend.</li>
+    </ul>
+  </div>
+
+  <h3 class="h3">Depuración y documentación</h3>
+  <div class="notebook">
+    <ul>
+      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Qué se loggea</b><br>Fallos de lectura de ticket, errores de conexión con Odoo, conflictos de concurrencia en List.</li>
+      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Dónde</b><br>Consola del backend en desarrollo; servicio de logs del hosting en producción.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="datos">
+  <div class="shead">
+    <span class="lvl-tag hand"><span class="ring"><svg aria-hidden="true"><use href="#ring"/></svg>5</span> modelo de datos e integraciones</span>
+    <h2>Seis tablas, dos flujos, una fuente de verdad.</h2>
+    <p>Acceso a Datos.</p>
+  </div>
+
+  <div class="board">
+    <div class="note" style="--r:-.7deg">
+      <span class="tape" aria-hidden="true"></span>
+      <div class="paper torn">
+        <span class="card-tag">entidades</span>
+        <ul>
+          <li>Hogar — id: ID, nombre: string</li>
+          <li>Usuario — id: ID, nombre: string, email: string, hogar_id: ID (FK)</li>
+          <li>Producto — id: string (ref. Odoo), nombre: string, categoría: string, código de barras: string</li>
+          <li>LarderItem — id: ID, hogar_id: ID (FK), producto_id: string (FK), estado: enum(bien/queda_poco/se_acabó), actualizado_en: timestamp, actualizado_por: ID (FK)</li>
+          <li>ListaItem — id: ID, hogar_id: ID (FK), producto_id: string (FK), estado: enum(pendiente/comprado), creado_en: timestamp, comprado_en: timestamp, comprado_por: ID (FK)</li>
+          <li>LarderEvento — id: ID, larder_item_id: ID (FK), estado_anterior: enum, estado_nuevo: enum, fecha: timestamp</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note" style="--r:.5deg">
+      <span class="tape" aria-hidden="true"></span>
+      <div class="paper torn">
+        <span class="card-tag">relaciones y claves</span>
+        <ul>
+          <li>Hogar 1—N Usuario, LarderItem, ListaItem</li>
+          <li>Producto 1—N LarderItem, ListaItem</li>
+          <li>Usuario 1—N LarderItem / ListaItem</li>
+          <li>LarderItem 1—N LarderEvento</li>
+          <li>Producto usa el id de Odoo, no se duplica la clave</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="note" style="--r:-.25deg">
+    <span class="tape" aria-hidden="true"></span>
+    <div class="chart sketch">
+      <table>
+        <thead><tr><th>caso</th><th>operaciones</th></tr></thead>
+        <tbody>
+          <tr><td class="lab">1 — Marcar producto</td><td>Leer LarderItem · Modificar LarderItem · Crear LarderEvento · Crear ListaItem (si se_acabo).</td></tr>
+          <tr><td class="lab">2 — Consultar la lista</td><td>Leer ListaItem · Modificar ListaItem (comprado) · Modificar LarderItem (vuelve a "bien").</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="note" style="--r:-.15deg">
+    <span class="tape" aria-hidden="true"></span>
+    <div class="chart sketch" style="padding:20px 16px">
+      <svg viewBox="0 0 680 280" style="width:100%;height:auto;max-width:560px;display:block;margin:0 auto" role="img" aria-label="Diagrama de flujo de datos entre React, Backend, PostgreSQL y Odoo">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="var(--pen)"/>
+          </marker>
+        </defs>
+        <g font-family="var(--sans)" font-size="15" font-weight="700" fill="var(--ink)">
+          <rect x="20" y="20" width="150" height="56" rx="10" fill="var(--sheet)" stroke="var(--ink)" stroke-width="2.5" filter="url(#wob)"/>
+          <text x="95" y="53" text-anchor="middle">React</text>
+          <rect x="265" y="110" width="150" height="56" rx="10" fill="var(--sheet)" stroke="var(--ink)" stroke-width="2.5" filter="url(#wob)"/>
+          <text x="340" y="143" text-anchor="middle">Backend</text>
+          <rect x="20" y="200" width="150" height="56" rx="10" fill="var(--sheet)" stroke="var(--ink)" stroke-width="2.5" filter="url(#wob)"/>
+          <text x="95" y="233" text-anchor="middle">PostgreSQL</text>
+          <rect x="510" y="110" width="150" height="56" rx="10" fill="var(--sheet)" stroke="var(--ink)" stroke-width="2.5" filter="url(#wob)"/>
+          <text x="585" y="143" text-anchor="middle">Odoo</text>
+        </g>
+        <g stroke="var(--pen)" stroke-width="2.2" fill="none" marker-end="url(#arrow)">
+          <line x1="150" y1="76" x2="275" y2="118"/>
+          <line x1="280" y1="166" x2="150" y2="206"/>
+          <line x1="415" y1="124" x2="508" y2="124"/>
+        </g>
+        <line x1="508" y1="154" x2="415" y2="154" stroke="var(--pen)" stroke-width="2.2" fill="none" marker-end="url(#arrow)"/>
+        <g font-family="var(--sans)" font-size="11.5" fill="var(--soft)">
+          <text x="168" y="95">cambio de estado</text>
+          <text x="150" y="190">nuevo estado + evento</text>
+          <text x="418" y="117">consulta producto</text>
+          <text x="418" y="172">ficha del producto</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="note" style="--r:.3deg">
+    <span class="tape" aria-hidden="true"></span>
+    <div class="chart sketch">
+      <table>
+        <thead><tr><th>desde → hacia</th><th>qué dato viaja</th><th>cuándo</th></tr></thead>
+        <tbody>
+          <tr><td class="lab">React → Backend</td><td>Cambio de estado de un producto en Larder</td><td>Al tocar un producto</td></tr>
+          <tr><td class="lab">Backend → PostgreSQL</td><td>Nuevo estado + evento de Larder</td><td>Al confirmar el cambio</td></tr>
+          <tr><td class="lab">Backend → Odoo</td><td>Consulta de nombre/categoría</td><td>Producto nuevo</td></tr>
+          <tr><td class="lab">Odoo → Backend</td><td>Ficha del producto</td><td>Respuesta a la consulta</td></tr>
+          <tr><td class="lab">React → Backend</td><td>Marcar ítem de lista como comprado</td><td>Al tocar "comprado"</td></tr>
+          <tr><td class="lab">Backend → PostgreSQL</td><td>Actualización de ListaItem + LarderItem</td><td>Al confirmar la compra</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p class="src">Decisión clave: Larder y List viven en PostgreSQL, propio del backend. Odoo solo se consulta para el catálogo — nunca escribe en la base de datos de Larder ni al revés.</p>
+</section>
+
+<section id="pantallas">
+  <div class="shead">
+    <span class="lvl-tag hand"><span class="ring"><svg aria-hidden="true"><use href="#ring"/></svg>6</span> las pantallas</span>
+    <h2>Dos pantallas web, una nativa.</h2>
+    <p>Multimedia y Dispositivos Móviles. Larder y List, accesibles desde una barra de navegación simple; no hay más pantallas en P1.</p>
+  </div>
+
+  <div class="board">
+    <div class="note" style="--r:-.8deg">
+      <span class="tape" aria-hidden="true"></span>
+      <div class="paper torn">
+        <span class="card-tag">cargando</span>
+        <p>Filas de producto en gris, sin contenido, mientras se cargan los datos del hogar.</p>
+      </div>
+    </div>
+    <div class="note" style="--r:.6deg">
+      <span class="tape" aria-hidden="true"></span>
+      <div class="paper torn">
+        <span class="card-tag">vacía</span>
+        <p>"Aún no hay productos en tu nevera", con una breve indicación de cómo añadir el primero.</p>
+      </div>
+    </div>
+    <div class="note" style="--r:-.5deg">
+      <span class="tape" aria-hidden="true"></span>
+      <div class="paper torn">
+        <span class="card-tag bad">con error</span>
+        <p>"No se pudo cargar" con botón "Reintentar", sin perder lo que ya estaba en pantalla.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="notebook">
+    <ul>
+      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Componentes repetidos</b><span class="tagbadge">mínimo 3</span><br>Tarjeta de producto (Larder y List) · Selector de estado (Larder) · Indicador de sincronización (ambas) · Barra de navegación (toda la app).</li>
+    </ul>
+  </div>
+
+  <div class="note" style="--r:-.3deg">
+    <span class="tape" aria-hidden="true"></span>
+    <div class="chart sketch">
+      <table>
+        <thead><tr><th colspan="2">La pantalla que va a React Native</th></tr></thead>
+        <tbody>
+          <tr><td class="lab">Cuál</td><td>Larder — marcar productos.</td></tr>
+          <tr><td class="lab">Por qué esa</td><td>Es el gesto espontáneo: se hace en la cocina, con el móvil en la mano, en el momento en que algo se acaba.</td></tr>
+          <tr><td class="lab">Qué cambia</td><td>Toque grande sin hover, menos productos visibles a la vez (scroll), conectividad intermitente.</td></tr>
+          <tr><td class="lab">Qué se guarda en local</td><td>El último estado conocido de cada producto y los cambios pendientes de enviar, para no perderlos si se pierde la conexión o si se gira la pantalla (cambio de orientación).</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="board">
+    <div class="note" style="--r:-.6deg">
+      <span class="tape" aria-hidden="true"></span>
+      <div class="paper sketch">
+        <span class="card-tag">wireframe</span>
+        <img src="img/wireframe-larder.jpg" alt="Wireframe de la pantalla Larder: cabecera, filtros, tarjeta flotante de 'se acabó' y grid de productos" style="width:100%;border:1px solid var(--rule);border-radius:4px">
+      </div>
+    </div>
+    <div class="note" style="--r:.4deg">
+      <span class="tape" aria-hidden="true"></span>
+      <div class="paper sketch">
+        <span class="card-tag">mockup visual</span>
+        <img src="img/mockup-larder.jpg" alt="Mockup visual de la pantalla Larder con estilo iOS 26 Liquid Glass" style="width:100%;border:1px solid var(--rule);border-radius:4px">
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="hand">mapa de navegación</span>
+  <p style="font-size:14.5px;color:var(--soft);max-width:66ch">Dos pantallas en P1 — Larder y List — accesibles desde una barra de navegación simple. Desde Larder se puede ir a List y viceversa.</p>
+  <a class="sticker" href="https://larder-estado-del-arte.vercel.app/">← estado del arte y estudio de mercado</a>
+</footer>
+
+</div>
+</body></html>
