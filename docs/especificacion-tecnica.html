@@ -166,8 +166,8 @@ footer .hand{font-size:20px}
       <span class="tape" aria-hidden="true"></span>
       <div class="paper torn">
         <span class="card-tag">cómo se gana dinero</span>
-        <div class="big num" style="color:var(--pen);font-size:34px">14,99<small>€/año</small></div>
-        <p>Freemium: con Stripe se desbloquean las funciones con IA, con una semana de prueba gratis.</p>
+        <div class="big num" style="color:var(--pen);font-size:34px">1,99<small>€/mes</small></div>
+        <p>Freemium: la versión gratis tiene un límite de usos de IA al mes; con Stripe se amplía ese límite (nunca ilimitado, para controlar el coste), con una semana de prueba gratis.</p>
       </div>
     </div>
   </div>
@@ -183,19 +183,19 @@ footer .hand{font-size:20px}
   <div class="board">
     <div class="note" style="--r:-.6deg">
       <div class="paper sketch">
-        <span class="card-tag">criterio de salida · P1</span>
+        <span class="card-tag">digitalizar · P1</span>
         <ul><li>Items se loggean correctamente</li><li>API calls correctas</li><li>Reconocimiento de ticket</li><li>Automatización Lista ↔ Larder</li></ul>
       </div>
     </div>
     <div class="note" style="--r:.5deg">
       <div class="paper sketch">
-        <span class="card-tag">criterio de salida · P2</span>
+        <span class="card-tag">gestionar deudas · P2</span>
         <ul><li>Cálculo correcto de deudas entre usuarios</li><li>Lectura correcta de items comprados</li><li>Export exitoso de app móvil</li></ul>
       </div>
     </div>
     <div class="note" style="--r:-.4deg">
       <div class="paper sketch">
-        <span class="card-tag">criterio de salida · P3</span>
+        <span class="card-tag">tiendas y comparación · P3</span>
         <ul><li>Log correcto de tiendas</li><li>Comparación correcta de precios</li></ul>
       </div>
     </div>
@@ -246,7 +246,7 @@ footer .hand{font-size:20px}
           </li>
         </ul>
       </li>
-      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Lectura de tickets (IA)</b><br><b>Groq</b> — modelo aún sin decidir.
+      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Lectura de tickets</b><br><b>OCR</b> lee la imagen con plantillas de formatos conocidos; si no reconoce el ticket (confianza por debajo del 80%), se lo pasa a la <b>IA (Groq)</b>, que le crea una plantilla nueva al OCR para que la próxima vez lo lea solo — así el sistema aprende formatos nuevos sin depender de la IA cada vez.
         <ul class="plain">
           <li>Modelos ligeros: 30 RPM / 14.400 RPD / 6.000 TPM.</li>
           <li>Modelos potentes: 30 RPM / 1.000 RPD / 12.000 TPM.</li>
@@ -255,6 +255,7 @@ footer .hand{font-size:20px}
           <li>RPM: peticiones/minuto · RPD: peticiones/día · TPM: texto procesado/minuto.</li>
         </ul>
       </li>
+      <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Añadir productos sin ticket (IA)</b><br>El uso real de la IA en el día a día: añadir algo que no viene de un ticket, por voz (el móvil transcribe lo que dices) o por foto/vídeo de la nevera (la IA reconoce los productos y los añade sola).</li>
       <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>Google Play</b><br>25$ pago único.</li>
       <li><svg class="box" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 4 23 3 22 23 4 22Z"/></svg><b>App Store</b><br>99$/año.</li>
     </ul>
@@ -319,7 +320,7 @@ footer .hand{font-size:20px}
           <tr><td class="lab">Qué falla</td><td>
             <ul class="plain">
               <li>Falta de conexión → la app guarda la foto localmente y reintenta enviarla al volver la conexión, mostrando "pendiente de subir".</li>
-              <li>El ticket no se reconoce bien (letra borrosa, cadena no soportada) → la app marca los productos no reconocidos y pide confirmarlos a mano.</li>
+              <li>El OCR no reconoce el formato del ticket (confianza por debajo del 80%) → se pasa a la IA, que crea una plantilla nueva para que el OCR lo reconozca solo la próxima vez; mientras tanto, pide confirmar los productos a mano.</li>
             </ul>
           </td></tr>
         </tbody>
